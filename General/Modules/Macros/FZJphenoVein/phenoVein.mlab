@@ -1,0 +1,612 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module phenoVein_VeinWidth {
+  internal  {
+    frame = "5429 -2283 152 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "-672 496 568 436"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _scriptingconsole {
+        geometry = "667 379 600 500"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_VeinWidth
+    transparencyActiveSkel = 0.40000001
+    branchingPointSurroundingSize = 17
+    maxVeinThickness = 0.1
+    startValueSquare = 0.01
+    startValueSigma = 0.01
+    currentVein = 0
+    veinLength = -1
+    veinWidthChiSqr = -1
+    calculationStopped = FALSE
+    status = 1
+    showFittingPlot = TRUE
+    renderVein = TRUE
+    chooseVeinManually = 0
+    veinLengthAndWidth = ""
+  }
+}
+module StringUtils {
+  internal  {
+    frame = "6117 -1755 88 56"
+    moduleGroupName = SettingsManager
+    windows  {
+      window _default {
+        geometry = "1024 534 697 479"
+        sizeHint = "370 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StringUtils
+    operationType = Concatenate
+    string1 = ""
+    string2 = .pvi
+    string3 = ""
+    string4 = ""
+    string5 = ""
+    string6 = ""
+    stringPrefix = [
+    stringPostfix = ]
+    toggle1 = TRUE
+    toggle2 = TRUE
+    toggle3 = FALSE
+    toggle4 = FALSE
+    toggle5 = FALSE
+    toggle6 = FALSE
+    togglePrefix = FALSE
+    togglePostfix = FALSE
+    separator = ""
+    selectSeparator = 0
+    toggleIgnoreCase = FALSE
+    inPos1 = 0
+    inPos2 = 0
+  }
+}
+module phenoVein_ReSkeletonization {
+  internal  {
+    frame = "5255 -2153 192 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "167 388 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_ReSkeletonization
+    autoUpdate = AutoUpdate
+    minEndingVeineSize = 25
+    minAreaSize = 50
+    skelLength = 0
+    transparencyActiveSkel = 0.40000001
+    transparencyDeleteSkel = 0.34999999
+  }
+}
+module phenoVein_WriteResultsToFiles {
+  internal  {
+    frame = "5545 -2395 208 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "1027 220 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _scriptingconsole {
+        geometry = "667 379 600 500"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_WriteResultsToFiles
+    currentVersionNumber = r214
+    colorbarMaximum = 9.9999997e-06
+    sourceFilename = ""
+    outFilename = ""
+    analysisName = sessionName
+    minAreoleSize = 50
+    veinLengthAndWidth = ""
+    pyResultStr = "Output filename: "
+  }
+}
+module phenoVein_ManualCorrection {
+  internal  {
+    frame = "5153 -2051 192 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "769 175 1108 658"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_ManualCorrection
+    removeCSOFilename = ""
+    removeMarkerFilename = ""
+    addCSOFilename = ""
+    useLiveWire = 0
+    costImage = 1
+    creationMode = CreationModeOpenFreehand
+    clearAllVeins = 0
+    skelLength = 0
+    transparencyActiveSkel = 0.40000001
+    transparencyDeleteSkel = 0.34999999
+    outFilename = ""
+  }
+}
+module phenoVein_CreateOutfilename {
+  internal  {
+    frame = "5813 -1755 200 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "261 580 990 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_CreateOutfilename
+    analysisName = sessionName
+    outFilename = ""
+    sourceFilename = ""
+  }
+}
+module phenoVein_Skeletonization {
+  internal  {
+    frame = "5025 -1947 176 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "-566 256 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_Skeletonization
+    currentThreshold = 16886.832
+    savedThreshold = 6000
+    autoSaveThreshold = FALSE
+    filteredImageWeight = 1
+    minAreaSize = 250
+    skeletonUpdateMode = Off
+    showSkeleton = TRUE
+    skelLength = 332.133075016008
+    minObjectSize = 150
+    inputUpToDate = FALSE
+    transparencyActiveSkel = 0.40000001
+    transparencyDeleteSkel = 0.34999999
+  }
+}
+module phenoVein_FrangiFiltering {
+  internal  {
+    frame = "5009 -1835 176 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "-576 390 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 495 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _scriptingconsole {
+        geometry = "667 379 600 500"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_FrangiFiltering
+    startSigma = 4
+    endSigma = 10
+    nbrOfScales = 3
+    closingKernelSize = 9
+    boundaryErosion = 7
+    inputUpToDate = FALSE
+    frangiAutoUpdate = FALSE
+  }
+}
+module phenoVein_LeafBackgroundSegmentation {
+  internal  {
+    frame = "5089 -1739 256 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "717 269 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _scriptingconsole {
+        geometry = "667 379 600 500"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_LeafBackgroundSegmentation
+    createLeafMask = 1
+    RG_BG_lowerThreshold = 0
+    RG_BG_upperThreshold = 10000
+    BG_MarkerList = "[(3.35265 2.83105 0.5) #1, (0.5925 1.5325 0.5) #2]"
+    Leaf_MarkerList = "[(6.13909 5.57631 0.5) #1, (1.7025 1.5575 0.5) #2]"
+    autoUpdate = AutoUpdate
+  }
+}
+module phenoVein_LoadImage {
+  internal  {
+    frame = "5257 -1590 160 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "717 269 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_LoadImage
+    imageFilename = ""
+    vectorLengthMM = 22
+    scalingVector = ""
+    colorChannel = 2
+    pixelSizeXY = 0.005
+    selectRegionOfInterest = 1
+    startWorldPos = "-1 -1 -1"
+    endWorldPos = "-1 -1 -1"
+    invertImage = 1
+  }
+}
+module LocalFileName {
+  internal  {
+    frame = "6353 -1755 112 56"
+    moduleGroupName = SettingsManager
+    windows  {
+      window _default {
+        geometry = "755 525 424 208"
+        sizeHint = "424 208"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LocalFileName
+    localName = $(NETWORK)/phenoVein_Init.pvi
+    checkIfFileExists = FALSE
+  }
+}
+module SettingsManager {
+  internal  {
+    frame = "6285 -1840 232 64"
+    moduleGroupName = SettingsManager
+    windows  {
+      window _default {
+        geometry = "1607 30 310 1054"
+        sizeHint = "310 417"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SettingsManagerGeneralParameters
+    storedFields = "
+vectorLengthMM
+scalingVector
+pixelSizeXY
+colorChannel
+invertImage
+selectRegionOfInterest
+startWorldPos
+endWorldPos
+createLeafMask
+RG_BG_lowerThreshold
+RG_BG_upperThreshold
+BG_MarkerList
+Leaf_MarkerList
+RG_BG_autoUpdate
+frangiNumberOfSteps
+frangiLowerSigma
+frangiUpperSigma
+frangiClosingKernelSize
+frangiBoundaryErosion
+frangiAutoUpdate
+skel_updateMode
+skel_savedThreshold
+skel_currentThreshold
+skel_filteredImageWeight
+skel_minAreaSize
+RSO_minObjectSize
+skel_autoSaveThreshold
+skel_updateMode
+MC_addProcessorSwitch
+MC_costImage
+MC_clearAllVeins
+MC_creationMode
+RSIV_minEndingVeineSize
+transparencyActiveSkel
+transparencyDeleteSkel
+VW_maxVeinThickness
+VW_startValueSquare
+VW_startValueSigma
+WTF_colorbarMaximum"
+    restrictLoad = FALSE
+    autoLoad = FALSE
+    filename = D:/20_Code/MeVisLab-Develop/phenoVein/General/Modules/Macros/FZJphenoVein/phenoVein_Init.pvi
+    postfix = ""
+    settingsString = "vectorLengthMM = 22;
+scalingVector = [(2788.5 712.5 0.5)(58 3205 0) #1];
+pixelSizeXY = 0.005;
+colorChannel = 2;
+invertImage = 1;
+selectRegionOfInterest = 1;
+startWorldPos = 3233.39501953125 1841.18151855469 -1;
+endWorldPos = 5391.7373046875 3562.91284179688 -1;
+createLeafMask = 1;
+RG_BG_lowerThreshold = 0;
+RG_BG_upperThreshold = 10000;
+BG_MarkerList = [(3.35265 2.83105 0.5) #1];
+Leaf_MarkerList = [(6.13909 5.57631 0.5) #1];
+RG_BG_autoUpdate = AutoUpdate;
+frangiNumberOfSteps = 3;
+frangiLowerSigma = 4;
+frangiUpperSigma = 10;
+frangiClosingKernelSize = 9;
+frangiBoundaryErosion = 7;
+frangiAutoUpdate = FALSE;
+skel_updateMode = Off;
+skel_savedThreshold = 6000;
+skel_currentThreshold = 6000;
+skel_filteredImageWeight = 1;
+skel_minAreaSize = 250;
+RSO_minObjectSize = 150;
+skel_autoSaveThreshold = FALSE;
+skel_updateMode = Off;
+MC_addProcessorSwitch = 0;
+MC_costImage = 1;
+MC_clearAllVeins = 0;
+MC_creationMode = CreationModeOpenPolyline;
+RSIV_minEndingVeineSize = 25;
+transparencyActiveSkel = 0.40000001;
+transparencyDeleteSkel = 0.34999999;
+VW_maxVeinThickness = 0.1;
+VW_startValueSquare = 0.01;
+VW_startValueSigma = 0.01;
+WTF_colorbarMaximum = 4"
+    autoRestore = FALSE
+    separatorChar = ;
+  }
+}
+module SettingsManager {
+  internal  {
+    frame = "6057 -1840 208 64"
+    moduleGroupName = SettingsManager
+    windows  {
+      window _default {
+        geometry = "1273 30 321 1068"
+        sizeHint = "310 417"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SettingsManagerCurrentSession
+    storedFields = "
+imageFilename
+analysisName
+vectorLengthMM
+scalingVector
+pixelSizeXY
+colorChannel
+invertImage
+selectRegionOfInterest
+startWorldPos
+endWorldPos
+createLeafMask
+RG_BG_lowerThreshold
+RG_BG_upperThreshold
+BG_MarkerList
+Leaf_MarkerList
+frangiNumberOfSteps
+frangiLowerSigma
+frangiUpperSigma
+frangiClosingKernelSize
+frangiBoundaryErosion
+skel_savedThreshold
+skel_currentThreshold
+skel_filteredImageWeight
+skel_minAreaSize
+RSO_minObjectSize
+RSIV_minEndingVeineSize
+MC_clearAllVeins
+MC_removeCSOFilename
+MC_addCSOFilename
+RSIV_minEndingVeineSize
+VW_maxVeinThickness
+VW_startValueSquare
+VW_startValueSigma
+WTF_colorbarMaximum
+WTF_outFilename
+"
+    restrictLoad = FALSE
+    autoLoad = FALSE
+    filename = ""
+    postfix = ""
+    settingsString = "imageFilename = I:/20 Mitarbeiter/Buehler/Bilder Carola/_DSC8012.JPG;
+analysisName = Jonas_r204;
+vectorLengthMM = 25;
+scalingVector = [(2261.5 1070.5 0.5)(66 2550 0) #1];
+pixelSizeXY = 0.0096991;
+colorChannel = 2;
+invertImage = 1;
+selectRegionOfInterest = 1;
+startWorldPos = 3418.74877929688 1746.44519042969 0.5;
+endWorldPos = 4675.0361328125 3027.4462890625 0.5;
+createLeafMask = 1;
+RG_BG_lowerThreshold = 0;
+RG_BG_upperThreshold = 22000;
+BG_MarkerList = [(123.865 90.5226 0.5) #1, (1.20754 7.89992 0.5) #2];
+Leaf_MarkerList = [(125.81 92.5018 0.5) #1, (2.56541 7.09489 0.5) #2];
+frangiNumberOfSteps = 3;
+frangiLowerSigma = 4;
+frangiUpperSigma = 10;
+frangiClosingKernelSize = 9;
+frangiBoundaryErosion = 7;
+skel_savedThreshold = 6000;
+skel_currentThreshold = 8039.6094;
+skel_filteredImageWeight = 1;
+skel_minAreaSize = 250;
+RSO_minObjectSize = 150;
+RSIV_minEndingVeineSize = 25;
+MC_clearAllVeins = 0;
+MC_removeCSOFilename = I:/20 Mitarbeiter/Buehler/Bilder Carola/_DSC8012_phenoVein/_DSC8012_Jonas_r204_removeCSO.cso;
+MC_addCSOFilename = I:/20 Mitarbeiter/Buehler/Bilder Carola/_DSC8012_phenoVein/_DSC8012_Jonas_r204_addCSO.cso;
+RSIV_minEndingVeineSize = 25;
+VW_maxVeinThickness = 0.1;
+VW_startValueSquare = 0.01;
+VW_startValueSigma = 0.01;
+WTF_colorbarMaximum = 4;
+WTF_outFilename = I:/20 Mitarbeiter/Buehler/Bilder Carola/_DSC8012_phenoVein/_DSC8012_Jonas_r204"
+    autoRestore = FALSE
+    separatorChar = ;
+  }
+}
+connections  {
+  phenoVein_VeinWidth.input0 = phenoVein_ReSkeletonization.output0
+  phenoVein_VeinWidth.input1 = phenoVein_LeafBackgroundSegmentation.output1
+  phenoVein_VeinWidth.input2 = phenoVein_LoadImage.output0
+  phenoVein_VeinWidth.input3 = phenoVein_LoadImage.output1
+  StringUtils.string1 = phenoVein_CreateOutfilename.outFilename
+  phenoVein_ReSkeletonization.input0 = phenoVein_ManualCorrection.output0
+  phenoVein_ReSkeletonization.input1 = phenoVein_LeafBackgroundSegmentation.output1
+  phenoVein_ReSkeletonization.input2 = phenoVein_LoadImage.output1
+  phenoVein_WriteResultsToFiles.input3 = phenoVein_VeinWidth.output0
+  phenoVein_WriteResultsToFiles.input0 = phenoVein_ReSkeletonization.output0
+  phenoVein_WriteResultsToFiles.input1 = phenoVein_LeafBackgroundSegmentation.output1
+  phenoVein_WriteResultsToFiles.input2 = phenoVein_LoadImage.output1
+  phenoVein_WriteResultsToFiles.sourceFilename = phenoVein_CreateOutfilename.sourceFilename
+  phenoVein_WriteResultsToFiles.outFilename = phenoVein_CreateOutfilename.outFilename
+  phenoVein_WriteResultsToFiles.analysisName = phenoVein_CreateOutfilename.analysisName
+  phenoVein_WriteResultsToFiles.minAreoleSize = phenoVein_ReSkeletonization.minAreaSize
+  phenoVein_WriteResultsToFiles.veinLengthAndWidth = phenoVein_VeinWidth.veinLengthAndWidth
+  phenoVein_ManualCorrection.input0 = phenoVein_Skeletonization.output0
+  phenoVein_ManualCorrection.input1 = phenoVein_LoadImage.output1
+  phenoVein_ManualCorrection.input2 = phenoVein_FrangiFiltering.output0
+  phenoVein_ManualCorrection.outFilename = phenoVein_CreateOutfilename.outFilename
+  phenoVein_CreateOutfilename.input0 = phenoVein_LoadImage.output1
+  phenoVein_Skeletonization.input0 = phenoVein_FrangiFiltering.output0
+  phenoVein_Skeletonization.input1 = phenoVein_LeafBackgroundSegmentation.output0
+  phenoVein_Skeletonization.input2 = phenoVein_LeafBackgroundSegmentation.output1
+  phenoVein_FrangiFiltering.input0 = phenoVein_LoadImage.output0
+  phenoVein_FrangiFiltering.input1 = phenoVein_LeafBackgroundSegmentation.output1
+  phenoVein_LeafBackgroundSegmentation.input0 = phenoVein_LoadImage.output0
+  SettingsManagerGeneralParameters.filename = LocalFileName.trueName
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 650
+        objectName = SettingsManager
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}

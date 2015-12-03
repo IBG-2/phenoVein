@@ -1,0 +1,729 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module FieldBypass {
+  internal  {
+    frame = "965 -619 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "539 644 184 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass2
+    inputString0 = "0 0"
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = "0 0"
+    noBypass = FALSE
+    onlyIfChanged = TRUE
+  }
+}
+module FieldBypass {
+  internal  {
+    frame = "965 -563 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "539 225 184 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass3
+    inputString0 = 1
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = 1
+    noBypass = FALSE
+    onlyIfChanged = TRUE
+  }
+}
+module FieldBypass {
+  internal  {
+    frame = "1213 -563 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "747 226 184 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass4
+    inputString0 = 1
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = 1
+    noBypass = FALSE
+    onlyIfChanged = TRUE
+  }
+}
+module FieldBypass {
+  internal  {
+    frame = "1213 -619 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "744 645 184 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass5
+    inputString0 = "0 0"
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = "0 0"
+    noBypass = FALSE
+    onlyIfChanged = TRUE
+  }
+}
+module NotificationCounter {
+  internal  {
+    frame = "133 -1299 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-923 653 585 163"
+        sizeHint = "585 163"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = NotificationCounter
+    mode = Image
+    inExternalFieldName = ""
+    countValidNotificationsExtra = TRUE
+  }
+}
+module BoolArithmetic {
+  internal  {
+    frame = "129 -915 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-533 458 188 228"
+        sizeHint = "188 228"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = BoolArithmetic
+    inputBool1 = TRUE
+    inputBool2 = FALSE
+    operation = Identity
+  }
+}
+module Bypass {
+  internal  {
+    frame = "286 -914 72 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-784 421 152 20"
+        sizeHint = "100 20"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Bypass
+    noBypass = FALSE
+  }
+}
+module Info {
+  internal  {
+    frame = "61 -915 56 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1259 728 564 375"
+        sizeHint = "564 375"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Info
+    bypassIndex = -1
+    inPlaceIndex = 0
+  }
+}
+module Scale {
+  internal  {
+    frame = "290 -1186 64 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-504 203 245 337"
+        sizeHint = "233 337"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale
+    inputMin = 0
+    inputMax = 6002.64013671875
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = UInt16
+    outputMin = 0
+    outputMax = 65535
+  }
+}
+module phenoVein_BackgroundMask {
+  internal  {
+    frame = "801 -155 192 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "-647 387 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_BackgroundMask
+    bypass = TRUE
+    noBypass = FALSE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "478 -7 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1162 700 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "-1319 558 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan1
+    updateMode = AutoClear
+    typeSelect = "Proposed Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "266 -7 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1625 700 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "-1837 557 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan0
+    updateMode = AutoClear
+    typeSelect = "Proposed Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module View2D {
+  internal  {
+    frame = "725 -1283 120 56"
+    moduleGroupName = Frangi
+    windows  {
+      window _default {
+        geometry = "-1872 89 944 562"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "992 30 562 1068"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "-318 105 268 530"
+        sizeHint = "253 530"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D2
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "709 -355 120 56"
+    moduleGroupName = Frangi
+    windows  {
+      window _default {
+        geometry = "-1120 591 944 562"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "12 30 500 1068"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "841 364 268 530"
+        sizeHint = "253 530"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D1
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 23757
+    lutWidth = 44236
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module Vesselness {
+  internal  {
+    frame = "274 -813 96 56"
+    moduleGroupName = Frangi
+    windows  {
+      window _default {
+        geometry = "-846 477 209 369"
+        sizeHint = "207 369"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Vesselness
+    startSigma = 4
+    endSigma = 10
+    nbrOfScales = 3
+    unit = voxel
+    calc2D = TRUE
+    normalizedMeasure = FALSE
+    darkVessels = FALSE
+    autoUpdate = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "117 -675 120 56"
+    moduleGroupName = Frangi
+    windows  {
+      window _default {
+        geometry = "1136 341 433 593"
+        sizeHint = "433 593"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageStatistics
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = TRUE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module Mask {
+  internal  {
+    frame = "282 -677 80 56"
+    moduleGroupName = Frangi
+    windows  {
+      window _default {
+        geometry = "65 359 371 94"
+        sizeHint = "248 94"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 10829.689
+  }
+}
+module FastMorphology {
+  internal  {
+    frame = "474 -386 120 56"
+    moduleGroupName = Frangi
+    windows  {
+      window _default {
+        geometry = "556 654 338 392"
+        sizeHint = "338 392"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FastMorphology
+    morphologicOperation = Erosion
+    xSize = 7
+    ySize = 7
+    zSize = 1
+    cSize = 0
+    tSize = 0
+    uSize = 0
+    useInputMaxValue = FALSE
+    userSetMaxValue = 1
+    autoUpdate = TRUE
+    useGreyScaleMorphology = FALSE
+    boundaryHandling = "Propagate boundary values"
+    boundaryFillValue = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "273 -1019 96 56"
+    moduleGroupName = Frangi
+    windows  {
+      window _default {
+        geometry = "916 418 293 497"
+        sizeHint = "293 497"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 9
+    kernelY = 9
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 69 elems, 9x9x1x1x1x1"
+    numKernelElements = 69
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "269 -1099 104 56"
+    moduleGroupName = Frangi
+    windows  {
+      window _default {
+        geometry = "1229 418 293 497"
+        sizeHint = "293 497"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 9
+    kernelY = 9
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 69 elems, 9x9x1x1x1x1"
+    numKernelElements = 69
+    kernelElementsSum = 0
+  }
+}
+connections  {
+  FieldBypass2.inputString0 = View2D1.sliceOrigin
+  FieldBypass3.inputString0 = View2D1.sliceZoom
+  FieldBypass4.inputString0 = View2D2.sliceZoom
+  FieldBypass5.inputString0 = View2D2.sliceOrigin
+  BoolArithmetic.inputBool1 = Info.dataValid
+  Bypass.input0 = Vesselness.output0
+  Bypass.noBypass = BoolArithmetic.negatedOutputBool
+  Info.input0 = Mask.output0
+  Scale.input0 = Morphology1.output0
+  phenoVein_BackgroundMask.input0 = MinMaxScan1.output0
+  phenoVein_BackgroundMask.noBypass = MinMaxScan1.trueMinValue
+  View2D2.inImage = Scale.output0
+  View2D2.inInvPreLUT = phenoVein_BackgroundMask.nodeOut0
+  View2D2.sliceZoom = FieldBypass3.outputString
+  View2D2.sliceOrigin = FieldBypass2.outputString
+  View2D1.inImage = MinMaxScan0.output0
+  View2D1.inInvPreLUT = phenoVein_BackgroundMask.nodeOut0
+  View2D1.sliceZoom = FieldBypass4.outputString
+  View2D1.sliceOrigin = FieldBypass5.outputString
+  Vesselness.input0 = Mask.output0
+  ImageStatistics.input0 = MinMaxScan0.output0
+  ImageStatistics.input1 = FastMorphology.output0
+  Mask.input0 = MinMaxScan0.output0
+  Mask.input1 = FastMorphology.output0
+  Mask.background = ImageStatistics.totalMean
+  FastMorphology.input0 = MinMaxScan1.output0
+  FastMorphology.ySize = FastMorphology.xSize
+  Morphology.input0 = Bypass.output0
+  Morphology.kernelY = Morphology.kernelX
+  Morphology1.input0 = Morphology.output0
+  Morphology1.kernelX = Morphology.kernelX
+  Morphology1.kernelY = Morphology.kernelX
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 59
+        objectName = ""
+        parentUniqueId = 0
+        frame = "796 -226 196 140"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = "only if mask contains zeros, i.e. there is background"
+        titleText = bypass
+        isCollapsed = False
+        titleFrame = "801 -221 186 22"
+      }
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 60
+        objectName = ""
+        parentUniqueId = 0
+        frame = "379 -834 317 111"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = "makes the calculation significantly slower!
+So mask is disconnected. Maybe calculation behaviour is different at leaf boundary"
+        titleText = "using the image mask"
+        isCollapsed = False
+        titleFrame = "384 -829 307 22"
+      }
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 61
+        objectName = ""
+        parentUniqueId = 0
+        frame = "363 -1092 213 124"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = "but still faster when used with gray values instead of binary images"
+        titleText = "spherical Kernel are slow"
+        isCollapsed = False
+        titleFrame = "368 -1087 203 22"
+      }
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 70
+        objectName = ""
+        parentUniqueId = 0
+        frame = "347 -1268 122 119"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = "uint16 for output is neccessary, delete maybe"
+        titleText = "Not sure if "
+        isCollapsed = False
+        titleFrame = "352 -1263 112 22"
+      }
+    }
+  }
+}

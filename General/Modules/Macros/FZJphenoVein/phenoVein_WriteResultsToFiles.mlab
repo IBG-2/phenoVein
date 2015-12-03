@@ -1,0 +1,3225 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module Arithmetic2 {
+  internal  {
+    frame = "7181 -4299 104 56"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "268 585 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic21
+    function = Multiply
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "7177 -4079 128 64"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "1168 605 403 380"
+        sizeHint = "403 380"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = minAreaSize
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 25
+    threshWidth = 50
+    threshMin = 0
+    threshMax = 50
+    lowerUserValue = 0
+    innerUserValue = 0
+    upperUserValue = 1
+    changeMinMax = FALSE
+    changedMin = 0
+    changedMax = 1000
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "6080 -4062 168 64"
+    moduleGroupName = TraitExtraction
+    windows  {
+      window _default {
+        geometry = "1092 357 448 480"
+        sizeHint = "448 480"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = numberOfSkeletonPieces
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    outputLargestClusterOnEachSlice = FALSE
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0
+    maxClusterSize = -1
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    invertLargestCluster = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "6124 -3962 96 56"
+    moduleGroupName = TraitExtraction
+    windows  {
+      window _default {
+        geometry = "860 597 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic2
+    function = Subtract
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module FileInformation {
+  internal  {
+    frame = "6718 -3813 112 56"
+    moduleGroupName = SaveOriginalImage
+    windows  {
+      window _default {
+        geometry = "-817 619 260 371"
+        sizeHint = "260 371"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FileInformation
+    path = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/_DSC7849_Blatt 74_193a_croppedOriginal.tif"
+    dirname = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/"
+    filename = "_DSC7849_Blatt 74_193a_croppedOriginal.tif"
+    basename = "_DSC7849_Blatt 74_193a_croppedOriginal"
+    extension = .tif
+    type = File
+    size = 6517318
+    createDate = 2015-10-22T13:25:10
+    exists = TRUE
+    isDirectory = FALSE
+    isReadable = TRUE
+    isWritable = TRUE
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "5627 -3633 104 56"
+    moduleGroupName = SaveVeinBoundaryImage
+    windows  {
+      window _default {
+        geometry = "1279 418 401 502"
+        sizeHint = "401 500"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "890 387 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageSave1
+    taskVerboseLogging = FALSE
+    filename = ""
+    format = PNG
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDerivedImageType = "OTHER\\MEVISLAB"
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = None
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Best
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module Scale {
+  internal  {
+    frame = "5643 -3409 72 56"
+    moduleGroupName = SaveVeinBoundaryImage
+    windows  {
+      window _default {
+        geometry = "851 461 233 337"
+        sizeHint = "233 337"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale3
+    inputMin = 0
+    inputMax = 1
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = UInt8
+    outputMin = 0
+    outputMax = 255
+  }
+}
+module View2D {
+  internal  {
+    frame = "5771 -3633 120 56"
+    moduleGroupName = SaveVeinBoundaryImage
+    windows  {
+      window _default {
+        geometry = "-951 433 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "-457 482 278 586"
+        sizeHint = "256 586"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D1
+    inventorInputOn = TRUE
+    inventorOutputOn = TRUE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_BLEND
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "6.103515625e-05 -0.0001220703125"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "5599 -3513 160 56"
+    moduleGroupName = SaveVeinBoundaryImage
+    windows  {
+      window _default {
+        geometry = "805 314 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert3
+    changeDimensionInfo = TRUE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "6513 -3187 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1231 504 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan3
+    updateMode = AutoClear
+    typeSelect = "Proposed Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "7294 -4924 160 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "805 314 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert2
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = TRUE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module Replicate {
+  internal  {
+    frame = "7146 -4756 88 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "549 525 264 202"
+        sizeHint = "264 202"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Replicate
+    replicationVector = "1.00 54.00 1.00 1.00 1.00 1.00"
+    replicationVectorX = 1
+    replicationVectorY = 54
+    replicationVectorZ = 1
+    replicationVectorC = 1
+    replicationVectorT = 1
+    replicationVectorU = 1
+    status = Ok
+  }
+}
+module Histogram {
+  internal  {
+    frame = "7153 -4415 160 64"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "10 89 400 378"
+        sizeHint = "400 378"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Histogram_objectSizes
+    useMask = FALSE
+    xRange = "Dynamic Min/Max"
+    maskMode = Weights
+    curveType = Line
+    curveStyle = 0
+    curveTitle = ""
+    updateMode = AutoUpdate
+    useStepFunction = FALSE
+    useBinSizeOneRepresentation = TRUE
+    useBackgroundValue = TRUE
+    backgroundValue = 0
+    binSize = 1
+    maxBinCount = 25000000
+  }
+}
+module ConnectedComponentsStatistics {
+  internal  {
+    frame = "7136 -3824 208 64"
+    moduleGroupName = AerioleSizes
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "-600 636 292 34"
+        sizeHint = "292 34"
+        wasOpen = no
+      }
+      window _scriptingconsole {
+        geometry = "667 379 600 500"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AerioleSizes
+    updateMode = off
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "6277 -3516 160 56"
+    moduleGroupName = SaveLeafMasklImage
+    windows  {
+      window _default {
+        geometry = "805 314 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert1
+    changeDimensionInfo = TRUE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "5938 -3513 152 56"
+    moduleGroupName = Skeleton
+    windows  {
+      window _default {
+        geometry = "805 314 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert
+    changeDimensionInfo = TRUE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "6889 -3818 144 64"
+    moduleGroupName = SaveOriginalImage
+    windows  {
+      window _default {
+        geometry = "-524 474 393 368"
+        sizeHint = "393 366"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SaveMaskedOriginal
+    taskVerboseLogging = FALSE
+    filename = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/_DSC7849_Blatt 74_193a_croppedOriginal_phenoVein/_DSC7849_Blatt 74_193a_croppedOriginal_WITHOUTCOR_croppedOriginal.tif"
+    format = TIFF
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/_DSC7849_Blatt 74_193a_croppedOriginal.tif"
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = FALSE
+    dicomDerived = FALSE
+    dicomDerivedImageType = "OTHER\\MEVISLAB"
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = LZW
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "6921 -3179 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1231 504 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan2
+    updateMode = AutoClear
+    typeSelect = "Proposed Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "6785 -3179 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "772 505 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan1
+    updateMode = AutoClear
+    typeSelect = UInt8
+    preferUnsigned = TRUE
+  }
+}
+module ComposeVector4 {
+  internal  {
+    frame = "7624 -4249 136 56"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "2750 492 340 64"
+        sizeHint = "340 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ComposeVector41
+    x = 821
+    y = 758
+    z = 0
+    d = 0
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "6641 -3187 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "313 505 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan0
+    updateMode = AutoClear
+    typeSelect = UInt8
+    preferUnsigned = TRUE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "7596 -4329 144 56"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "749 436 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay17
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_REPLACE
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 1
+    baseColor = "1 1 1"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module MergeLists {
+  internal  {
+    frame = "7690 -5001 96 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "808 564 318 130"
+        sizeHint = "318 130"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MergeLists
+    updateMode = AutoUpdate
+    alwaysRebuild = TRUE
+    notifyForEachEvent = TRUE
+  }
+}
+module XMarkerListContainer {
+  internal  {
+    frame = "7673 -4905 160 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "1080 174 513 497"
+        sizeHint = "500 497"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = XMarkerListContainer1
+    listString = "[(200 480 0) #1 : = 0.000 mmÂ²]"
+    numItems = 1
+    index = 0
+    persistent = TRUE
+    listStringEnable = FALSE
+    applySelect = FALSE
+    id = 1
+    name = " = 0.000 mmÂ²"
+    newName = ""
+    overflowMode = None
+    maxSize = 1
+    useInsertTemplate = FALSE
+    posXYZ = "200 480 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module StringUtils {
+  internal  {
+    frame = "7705 -4745 96 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "771 239 234 174"
+        sizeHint = "234 174"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StringUtils4
+    operationType = FormatFloat
+    string1 = 0
+    string2 = 3.5999999
+    string3 = ""
+    string4 = ""
+    string5 = ""
+    string6 = ""
+    stringPrefix = [
+    stringPostfix = ]
+    toggle1 = TRUE
+    toggle2 = TRUE
+    toggle3 = FALSE
+    toggle4 = FALSE
+    toggle5 = FALSE
+    toggle6 = FALSE
+    togglePrefix = FALSE
+    togglePostfix = FALSE
+    separator = ""
+    selectSeparator = 0
+    toggleIgnoreCase = FALSE
+    inPos1 = 3
+    inPos2 = 0
+  }
+}
+module StringUtils {
+  internal  {
+    frame = "7705 -4817 96 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "538 474 370 418"
+        sizeHint = "234 174"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StringUtils3
+    operationType = Concatenate
+    string1 = " ="
+    string2 = 0.000
+    string3 = mmÂ²
+    string4 = ""
+    string5 = ""
+    string6 = ""
+    stringPrefix = [
+    stringPostfix = ]
+    toggle1 = TRUE
+    toggle2 = TRUE
+    toggle3 = TRUE
+    toggle4 = FALSE
+    toggle5 = FALSE
+    toggle6 = FALSE
+    togglePrefix = FALSE
+    togglePostfix = FALSE
+    separator = ""
+    selectSeparator = 1
+    toggleIgnoreCase = FALSE
+    inPos1 = 3
+    inPos2 = 0
+  }
+}
+module StringUtils {
+  internal  {
+    frame = "7521 -4817 96 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "538 474 370 418"
+        sizeHint = "234 174"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StringUtils2
+    operationType = Concatenate
+    string1 = " >="
+    string2 = 0.000
+    string3 = mmÂ²
+    string4 = ""
+    string5 = ""
+    string6 = ""
+    stringPrefix = [
+    stringPostfix = ]
+    toggle1 = TRUE
+    toggle2 = TRUE
+    toggle3 = TRUE
+    toggle4 = FALSE
+    toggle5 = FALSE
+    toggle6 = FALSE
+    togglePrefix = FALSE
+    togglePostfix = FALSE
+    separator = ""
+    selectSeparator = 1
+    toggleIgnoreCase = FALSE
+    inPos1 = 3
+    inPos2 = 0
+  }
+}
+module StringUtils {
+  internal  {
+    frame = "7521 -4753 96 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "771 239 234 174"
+        sizeHint = "234 174"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StringUtils1
+    operationType = FormatFloat
+    string1 = 9.9999997e-06
+    string2 = 9.9999997e-06
+    string3 = ""
+    string4 = ""
+    string5 = ""
+    string6 = ""
+    stringPrefix = [
+    stringPostfix = ]
+    toggle1 = TRUE
+    toggle2 = TRUE
+    toggle3 = FALSE
+    toggle4 = FALSE
+    toggle5 = FALSE
+    toggle6 = FALSE
+    togglePrefix = FALSE
+    togglePostfix = FALSE
+    separator = ""
+    selectSeparator = 0
+    toggleIgnoreCase = FALSE
+    inPos1 = 3
+    inPos2 = 0
+  }
+}
+module SubImage {
+  internal  {
+    frame = "7454 -5025 88 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "115 369 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 0
+    sx = 499
+    modifyX = TRUE
+    y = -10
+    sy = 500
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 3
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "7530 -5209 96 56"
+    moduleGroupName = AerioleSizesColorbar
+  }
+  fields  {
+    instanceName = SoGroup11
+  }
+}
+module XMarkerListContainer {
+  internal  {
+    frame = "7485 -4913 152 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "674 354 513 497"
+        sizeHint = "500 497"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = XMarkerListContainer
+    listString = "[(200 -3 0) #1 : >= 0.000 mmÂ²]"
+    numItems = 1
+    index = 0
+    persistent = TRUE
+    listStringEnable = FALSE
+    applySelect = FALSE
+    id = 1
+    name = " >= 0.000 mmÂ²"
+    newName = ""
+    overflowMode = None
+    maxSize = 1
+    useInsertTemplate = FALSE
+    posXYZ = "200 -3 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "7646 -5097 168 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "52 367 620 679"
+        sizeHint = "605 679"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor4
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "0 0 0"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 0
+    minimumAlpha = 0
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = FALSE
+    iconIdx = 0
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_ITEMNAME
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = FALSE
+    textFontSize = 30
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = FALSE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = 0
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = FALSE
+    applySelect = FALSE
+    id = 1
+    name = " >= 0.000 mmÂ²"
+    newName = ""
+    overflowMode = None
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "200 -3 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module SoView2D {
+  internal  {
+    frame = "7538 -5105 96 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "792 458 439 501"
+        sizeHint = "439 501"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2D2
+    viewerId = viewer
+    startSlice = 0
+    sliceStep = 1
+    numSlices = 1
+    numXSlices = 1
+    maxSlice = 0
+    keepSlicesInView = FALSE
+    slab = 1
+    lowerLeft = "0 0"
+    upperRight = "1 1"
+    margin = "0 0"
+    spacing = "0 0"
+    plane = "0 0 1 0.5"
+    sliceZoom = 1
+    sliceZoomSynchronized = 1
+    zoomCenter = "0.5 0.5"
+    minSliceZoomKeyboard = 1
+    sliceOrigin = "0 0"
+    viewingCenter = "0 0 0"
+    enableViewingCenter = FALSE
+    unzoomOnImageChange = FALSE
+    drawImageData = TRUE
+    timePoint = 0
+    maxTimePoint = 0
+    snapToCenter = FALSE
+    standardKeys = TRUE
+    standardKeysNumbers = TRUE
+    standardKeysNeedValidPosition = FALSE
+    passHandledFlagToInventor = FALSE
+    reverseExtensionDrawingOrder = FALSE
+    blendMode = BLEND_REPLACE
+    filterMode = FILTER_NEAREST
+    cacheMode = SLICE_CACHING_OFF
+    sliceAlignX = SLICE_ALIGNX_CENTER
+    sliceAlignY = SLICE_ALIGNY_CENTER
+    useShaders = TRUE
+    applyLut = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    zoomMode = VIEW2D_AUTO_ZOOM
+    zoomModeParameter = 1
+    invertKeyPanningDirections = FALSE
+    invertKeySlicingDirection = FALSE
+    overrideAspectRatio = FALSE
+    overrideAspectRatioValue = 1
+    alphaFactor = 1
+    baseColor = "1 1 1"
+    backgroundAlphaFactor = 0
+    backgroundColor = "0 0 0"
+    cineCenterT = 0
+    cineIntervalT = 0
+    cineCenterZ = 0
+    cineIntervalZ = 0
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    cineFullRangeZ = TRUE
+    cineFullRangeT = TRUE
+    cineAlwaysReset = TRUE
+    status = "Nothing active"
+    deletingEnabled = TRUE
+    handle2DEvents = TRUE
+    handle3DEvents = TRUE
+    useManagedInteraction = FALSE
+    devicePixelSize = 1
+    enableZBuffer = TRUE
+    enableZWrite = TRUE
+  }
+}
+module OffscreenRenderer {
+  internal  {
+    frame = "7506 -5297 144 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "533 539 291 389"
+        sizeHint = "268 389"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "50 362 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OffscreenRenderer2
+    transparencyType = BLEND
+    imageType = RGB
+    bufferType = AUTO
+    stencilBuffer = FALSE
+    size = "450 550"
+    pixelScale = 1
+    bgColor = "0 0 0"
+    enableMultiSampling = FALSE
+    multiSampling = 16
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "7474 -5389 176 64"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "18 81 393 368"
+        sizeHint = "393 366"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1270 370 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SaveAreoleSizesColorbar
+    taskVerboseLogging = FALSE
+    filename = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/_DSC7849_Blatt 74_193a_croppedOriginal_phenoVein/_DSC7849_Blatt 74_193a_croppedOriginal_WITHOUTCOR_AreoleSizes_Colorbar.png"
+    format = PNG
+    comment = ""
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = FALSE
+    dicomDerived = FALSE
+    dicomDerivedImageType = "OTHER\\MEVISLAB"
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = LZW
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Best
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module SwapFlipDimensions {
+  internal  {
+    frame = "7302 -4828 144 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "902 570 131 118"
+        sizeHint = "131 118"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SwapFlipDimensions
+    firstAxis = y
+    secondAxis = x
+    flipNewDim1On = TRUE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "7106 -4924 168 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "805 314 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert10
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = TRUE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module Resample3D {
+  internal  {
+    frame = "7322 -4748 104 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "997 538 327 337"
+        sizeHint = "327 337"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Resample3D
+    keep = "Image size"
+    filter = Nearest_Neighbor
+    isotropic = FALSE
+    filterAlways = FALSE
+    filterAlwaysTolerance = 0
+    zoom = "0.9765625 200 1"
+    imageSize = "500 200 1"
+    voxelSize = "0.004 0.005 1"
+    subVoxelShift = "0 0 0"
+    useReferenceImage = FALSE
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "6355 -4390 168 56"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "665 290 620 679"
+        sizeHint = "605 679"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor1
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 0 0.0156862754374743"
+    selectionTolerance = 10
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 0.79999995
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 7
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = 0
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = FALSE
+    applySelect = FALSE
+    id = 0
+    name = ""
+    newName = ""
+    overflowMode = None
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "1.06749999523163 0.242500007152557 0.5"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "6543 -4390 160 56"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "1290 285 620 679"
+        sizeHint = "605 679"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 1 0"
+    selectionTolerance = 10
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 0.79999995
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 6
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = 0
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = FALSE
+    applySelect = FALSE
+    id = 0
+    name = ""
+    newName = ""
+    overflowMode = None
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "1.20249998569489 0.257499992847443 0.5"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module View2D {
+  internal  {
+    frame = "7110 -5392 192 64"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "2898 988 231 33"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1289 430 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "442 375 268 530"
+        sizeHint = "253 530"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D_areoleSizesColorbar
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = FALSE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_CUBIC_POSTCLASS
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 127.5
+    lutWidth = 255
+    annotationOn = FALSE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module SoView2D {
+  internal  {
+    frame = "7524 -4065 96 56"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "792 458 439 501"
+        sizeHint = "439 501"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2D1
+    viewerId = viewer
+    startSlice = 0
+    sliceStep = 1
+    numSlices = 1
+    numXSlices = 1
+    maxSlice = 0
+    keepSlicesInView = FALSE
+    slab = 1
+    lowerLeft = "0 0"
+    upperRight = "1 1"
+    margin = "0 0"
+    spacing = "0 0"
+    plane = "0 0 1 0.5"
+    sliceZoom = 1
+    sliceZoomSynchronized = 1
+    zoomCenter = "0.5 0.5"
+    minSliceZoomKeyboard = 1
+    sliceOrigin = "0 0"
+    viewingCenter = "0 0 0"
+    enableViewingCenter = FALSE
+    unzoomOnImageChange = FALSE
+    drawImageData = TRUE
+    timePoint = 0
+    maxTimePoint = 0
+    snapToCenter = FALSE
+    standardKeys = TRUE
+    standardKeysNumbers = TRUE
+    standardKeysNeedValidPosition = FALSE
+    passHandledFlagToInventor = FALSE
+    reverseExtensionDrawingOrder = FALSE
+    blendMode = BLEND_REPLACE
+    filterMode = FILTER_NEAREST
+    cacheMode = SLICE_CACHING_OFF
+    sliceAlignX = SLICE_ALIGNX_CENTER
+    sliceAlignY = SLICE_ALIGNY_CENTER
+    useShaders = TRUE
+    applyLut = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    zoomMode = VIEW2D_AUTO_ZOOM
+    zoomModeParameter = 1
+    invertKeyPanningDirections = FALSE
+    invertKeySlicingDirection = FALSE
+    overrideAspectRatio = FALSE
+    overrideAspectRatioValue = 1
+    alphaFactor = 1
+    baseColor = "1 1 1"
+    backgroundAlphaFactor = 0
+    backgroundColor = "0 0 0"
+    cineCenterT = 0
+    cineIntervalT = 0
+    cineCenterZ = 0
+    cineIntervalZ = 0
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    cineFullRangeZ = TRUE
+    cineFullRangeT = TRUE
+    cineAlwaysReset = TRUE
+    status = "Nothing active"
+    deletingEnabled = TRUE
+    handle2DEvents = TRUE
+    handle3DEvents = TRUE
+    useManagedInteraction = FALSE
+    devicePixelSize = 1
+    enableZBuffer = TRUE
+    enableZWrite = TRUE
+  }
+}
+module OffscreenRenderer {
+  internal  {
+    frame = "7452 -4241 144 56"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "872 694 291 359"
+        sizeHint = "268 359"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "50 362 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OffscreenRenderer1
+    transparencyType = BLEND
+    imageType = RGB
+    bufferType = AUTO
+    stencilBuffer = FALSE
+    size = "821 758"
+    pixelScale = 1
+    bgColor = "0 0 0"
+    enableMultiSampling = FALSE
+    multiSampling = 16
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "7468 -4161 96 56"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _viewer {
+        geometry = "552 436 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoGroup8
+  }
+}
+module LUTToMLImage {
+  internal  {
+    frame = "7298 -4649 128 56"
+    moduleGroupName = AerioleSizesColorbar
+    windows  {
+      window _default {
+        geometry = "1149 199 256 229"
+        sizeHint = "256 229"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LUTToMLImage1
+    minIndex = 0
+    maxIndex = 9.99999974737875e-06
+    autoIndexRange = FALSE
+    maxEntry = 255
+    height = 1
+    depth = 1
+    rescale = TRUE
+    rescaleWidth = 512
+  }
+}
+module SoLUTEditor {
+  internal  {
+    frame = "7360 -4069 152 64"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "1395 561 515 450"
+        sizeHint = "515 450"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoLUTEditor_colorbar
+    currentColor = "0 0 0"
+    currentOpacity = 0
+    currentPosition = 0
+    currentIndex = 0
+    rangeMin = 0
+    rangeMax = 9.9999997e-06
+    viewMin = 0
+    viewMax = 9.9999997e-06
+    window = 1
+    level = 0.5
+    allowNewPoints = TRUE
+    colorIsValid = TRUE
+    opacityIsValid = TRUE
+    updateLutWhileDragging = TRUE
+    relativeLut = FALSE
+    rangeInfo = [0.00,0.00]
+    viewRangeInfo = [0.000,0.000]
+    colorInterpolation = InterpolateRGB
+    colorPoints = "[ 0 0 0 0, 1e-010 0 0 1, 1.6667e-006 0 0.501961 1, 3.333e-006 0 1 1, 5e-006 0.501961 1 0.501961, 6.666e-006 1 1 0, 8.33327e-006 1 0.501961 0, 1e-005 1 0 0 ]"
+    alphaPoints = "[ 0 0, 1e-010 1, 1.6667e-006 1, 3.333e-006 1, 5e-006 1, 6.666e-006 1, 8.33327e-006 1, 1e-005 1 ]"
+    alphaFactor = 1
+    newRangeMin = 0
+    newRangeMax = 9.9999997e-06
+    newRangeMode = ScaleFormerLUT
+    colorEditorHeight = 24
+    showColorEditor = TRUE
+    showAlphaEditor = TRUE
+    markerRadius = 4
+    selectedMarkerRadius = 6
+    snapMarkerRadius = 10
+    alphaLineWidth = 2
+    backgroundColor = "0.800000011920929 0.800000011920929 0.800000011920929"
+    borderColor = "0 0 0"
+    alphaLineColor = "0 0 0"
+    histogramColor = "0.400000005960464 0.400000005960464 0.400000005960464"
+    drawColoredMarkers = TRUE
+    markerColor = "1 1 1"
+    selectedMarkerColor = "1 0.5 0.5"
+    selectedTriangleSize = 8
+    triangleSize = 6
+    useAntiAliasing = TRUE
+  }
+}
+module SkeletonBranchingPoints {
+  internal  {
+    frame = "6085 -3855 168 56"
+    moduleGroupName = TraitExtraction
+    windows  {
+      window _default {
+        geometry = "1111 331 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonBranchingPoints
+    autoUpdate = FALSE
+    isUpToDate = TRUE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "6261 -3859 120 64"
+    moduleGroupName = TraitExtraction
+    windows  {
+      window _default {
+        geometry = "141 358 433 593"
+        sizeHint = "433 593"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = TotalLeafArea
+    innerMin = 0.5
+    innerMax = 1
+    autoUpdate = FALSE
+    perSlice = TRUE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "7600 -3985 104 56"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "848 597 240 64"
+        sizeHint = "238 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic13
+    function = Multiply
+    constant = 2.50000002669304e-05
+  }
+}
+module Calculator {
+  internal  {
+    frame = "7608 -3905 88 56"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "2830 209 700 650"
+        sizeHint = "700 650"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = Calculator
+    exp1 = "d1 * d2"
+    exp2 = ""
+    exp3 = ""
+    exp4 = ""
+    exp5 = ""
+    exp6 = ""
+    exp7 = ""
+    exp8 = ""
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0.00500000002669304
+    d2 = 0.00500000002669304
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    v1 = "0 0 0"
+    v2 = "0 0 0"
+    v3 = "0 0 0"
+    v4 = "0 0 0"
+    v5 = "0 0 0"
+    v6 = "0 0 0"
+    domainErrorHandling = Nothing
+    applyMode = AutoApply
+    exp1Comment = ""
+    exp2Comment = ""
+    exp3Comment = ""
+    exp4Comment = ""
+    exp5Comment = ""
+    exp6Comment = ""
+    exp7Comment = ""
+    exp8Comment = ""
+    scalarVariablesComment = ""
+    vectorVariablesComment = ""
+    resultVector1_x = 0
+    resultVector1_y = 0
+    resultVector1_z = 0
+    resultVector2_x = 0
+    resultVector2_y = 0
+    resultVector2_z = 0
+    resultVector3_x = 0
+    resultVector3_y = 0
+    resultVector3_z = 0
+    resultVector4_x = 0
+    resultVector4_y = 0
+    resultVector4_z = 0
+    resultVector5_x = 0
+    resultVector5_y = 0
+    resultVector5_z = 0
+    resultVector6_x = 0
+    resultVector6_y = 0
+    resultVector6_z = 0
+    resultVector7_x = 0
+    resultVector7_y = 0
+    resultVector7_z = 0
+    resultVector8_x = 0
+    resultVector8_y = 0
+    resultVector8_z = 0
+  }
+}
+module Info {
+  internal  {
+    frame = "7708 -3904 88 64"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "1951 520 564 375"
+        sizeHint = "564 375"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PixelSizes
+    bypassIndex = 0
+    inPlaceIndex = -1
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "7460 -3789 96 64"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "848 597 240 64"
+        sizeHint = "238 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = invert
+    function = Invert
+    constant = 0
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "7428 -3909 160 64"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "224 566 602 416"
+        sizeHint = "471 416"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SegmentedAreoles
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    outputLargestClusterOnEachSlice = FALSE
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0
+    maxClusterSize = -1
+    clusterSizeInterpretation = Voxels
+    invertClusterSelection = FALSE
+    invertLargestCluster = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_2D_4_XY
+    useMask = TRUE
+  }
+}
+module SkeletonTotalLength {
+  internal  {
+    frame = "5753 -3855 144 56"
+    moduleGroupName = TraitExtraction
+    windows  {
+      window _default {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonTotalLength
+    totalSkeletonLength = 54.5977807397994
+    autoUpdate = FALSE
+    isUpToDate = TRUE
+  }
+}
+module SkeletonEndPoints {
+  internal  {
+    frame = "5917 -3855 136 56"
+    moduleGroupName = TraitExtraction
+    windows  {
+      window _default {
+        geometry = "197 328 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonEndPoints
+    autoUpdate = FALSE
+    isUpToDate = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "7588 -4413 144 64"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "227 488 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1289 430 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "648 370 268 530"
+        sizeHint = "253 530"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D_areoleSizes
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "-180.408264160156 -39.9620513916016"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "6101 -3631 128 64"
+    moduleGroupName = Skeleton
+    windows  {
+      window _default {
+        geometry = "-951 433 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "-457 482 278 586"
+        sizeHint = "256 586"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D_skeleton
+    inventorInputOn = TRUE
+    inventorOutputOn = TRUE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_BLEND
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "6.103515625e-05 -0.0001220703125"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 127.5
+    lutWidth = 255
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "6211 -4718 120 56"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "-951 433 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "-678 180 278 586"
+        sizeHint = "256 586"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D_overlay
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "-0.0006103515625 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 127.5
+    lutWidth = 255
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "7460 -4413 128 64"
+    moduleGroupName = AerioleSizes
+    windows  {
+      window _default {
+        geometry = "18 81 393 368"
+        sizeHint = "393 366"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1270 370 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SaveAreoleSizes
+    taskVerboseLogging = FALSE
+    filename = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/_DSC7849_Blatt 74_193a_croppedOriginal_phenoVein/_DSC7849_Blatt 74_193a_croppedOriginal_WITHOUTCOR_AreoleSizes.png"
+    format = PNG
+    comment = ""
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = FALSE
+    dicomDerived = FALSE
+    dicomDerivedImageType = "OTHER\\MEVISLAB"
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = LZW
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Best
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "6417 -3632 120 64"
+    moduleGroupName = SaveLeafMasklImage
+    windows  {
+      window _default {
+        geometry = "-951 433 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "841 364 268 530"
+        sizeHint = "253 530"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D_mask
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 127.5
+    lutWidth = 255
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module Scale {
+  internal  {
+    frame = "5978 -3409 72 56"
+    moduleGroupName = Skeleton
+    windows  {
+      window _default {
+        geometry = "851 461 233 337"
+        sizeHint = "233 337"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale1
+    inputMin = 0
+    inputMax = 1
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = UInt8
+    outputMin = 0
+    outputMax = 255
+  }
+}
+module Scale {
+  internal  {
+    frame = "6325 -3412 64 56"
+    moduleGroupName = SaveLeafMasklImage
+    windows  {
+      window _default {
+        geometry = "851 461 233 337"
+        sizeHint = "233 337"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale
+    inputMin = 0
+    inputMax = 1
+    updateMode = AutoUpdateMinMaxOff
+    useTrueRange = FALSE
+    typeSelect = UInt8
+    outputMin = 0
+    outputMax = 255
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "6351 -4714 128 64"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "1279 418 393 368"
+        sizeHint = "393 366"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "596 352 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SaveSkelOverlay
+    taskVerboseLogging = FALSE
+    filename = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/_DSC7849_Blatt 74_193a_croppedOriginal_phenoVein/_DSC7849_Blatt 74_193a_croppedOriginal_WITHOUTCOR_SkelOverlay.jpg"
+    format = JPG
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDerivedImageType = "OTHER\\MEVISLAB"
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = None
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "6191 -4390 144 56"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "1048 655 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay15
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.49999988
+    baseColor = "0 0 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "6035 -4390 136 56"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "595 653 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay5
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.49999988
+    baseColor = "0 1 0.968627452850342"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module BitMorphology {
+  internal  {
+    frame = "6043 -4302 120 56"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "1181 449 339 466"
+        sizeHint = "339 466"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = BitMorphology6
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    kernelX = 5
+    kernelY = 5
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    numKernelElements = 25
+    filterMode = BitDilation
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "6341 -4515 184 56"
+    moduleGroupName = Overlay
+    windows  {
+      window _viewer {
+        geometry = "552 436 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoGroup
+  }
+}
+module ComposeVector4 {
+  internal  {
+    frame = "6513 -4631 128 64"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "710 332 340 64"
+        sizeHint = "340 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ComposeVector
+    x = 821
+    y = 758
+    z = 0
+    d = 0
+  }
+}
+module Info {
+  internal  {
+    frame = "6673 -4627 64 56"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "528 622 564 375"
+        sizeHint = "564 375"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Info2
+    bypassIndex = 0
+    inPlaceIndex = -1
+  }
+}
+module OffscreenRenderer {
+  internal  {
+    frame = "6347 -4630 136 56"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "225 334 291 389"
+        sizeHint = "268 389"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "50 362 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OffscreenRenderer
+    transparencyType = BLEND
+    imageType = RGB
+    bufferType = AUTO
+    stencilBuffer = FALSE
+    size = "821 758"
+    pixelScale = 1
+    bgColor = "0 0 0"
+    enableMultiSampling = FALSE
+    multiSampling = 16
+  }
+}
+module SoView2D {
+  internal  {
+    frame = "6723 -4390 88 56"
+    moduleGroupName = Overlay
+    windows  {
+      window _default {
+        geometry = "792 458 439 501"
+        sizeHint = "439 501"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2D
+    viewerId = viewer
+    startSlice = 0
+    sliceStep = 1
+    numSlices = 1
+    numXSlices = 1
+    maxSlice = 0
+    keepSlicesInView = FALSE
+    slab = 1
+    lowerLeft = "0 0"
+    upperRight = "1 1"
+    margin = "0 0"
+    spacing = "0 0"
+    plane = "0 0 1 0.5"
+    sliceZoom = 1
+    sliceZoomSynchronized = 1
+    zoomCenter = "0.5 0.5"
+    minSliceZoomKeyboard = 1
+    sliceOrigin = "0 0"
+    viewingCenter = "0 0 0"
+    enableViewingCenter = FALSE
+    unzoomOnImageChange = FALSE
+    drawImageData = TRUE
+    timePoint = 0
+    maxTimePoint = 0
+    snapToCenter = FALSE
+    standardKeys = TRUE
+    standardKeysNumbers = TRUE
+    standardKeysNeedValidPosition = FALSE
+    passHandledFlagToInventor = FALSE
+    reverseExtensionDrawingOrder = FALSE
+    blendMode = BLEND_REPLACE
+    filterMode = FILTER_NEAREST
+    cacheMode = SLICE_CACHING_OFF
+    sliceAlignX = SLICE_ALIGNX_CENTER
+    sliceAlignY = SLICE_ALIGNY_CENTER
+    useShaders = TRUE
+    applyLut = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    zoomMode = VIEW2D_AUTO_ZOOM
+    zoomModeParameter = 1
+    invertKeyPanningDirections = FALSE
+    invertKeySlicingDirection = FALSE
+    overrideAspectRatio = FALSE
+    overrideAspectRatioValue = 1
+    alphaFactor = 1
+    baseColor = "1 1 1"
+    backgroundAlphaFactor = 0
+    backgroundColor = "0 0 0"
+    cineCenterT = 0
+    cineIntervalT = 0
+    cineCenterZ = 0
+    cineIntervalZ = 0
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    cineFullRangeZ = TRUE
+    cineFullRangeT = TRUE
+    cineAlwaysReset = TRUE
+    status = "Nothing active"
+    deletingEnabled = TRUE
+    handle2DEvents = TRUE
+    handle3DEvents = TRUE
+    useManagedInteraction = FALSE
+    devicePixelSize = 1
+    enableZBuffer = TRUE
+    enableZWrite = TRUE
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "6301 -3624 112 64"
+    moduleGroupName = SaveLeafMasklImage
+    windows  {
+      window _default {
+        geometry = "1279 418 401 502"
+        sizeHint = "401 500"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1403 385 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SaveLeafMask
+    taskVerboseLogging = FALSE
+    filename = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/_DSC7849_Blatt 74_193a_croppedOriginal_phenoVein/_DSC7849_Blatt 74_193a_croppedOriginal_WITHOUTCOR_LeafMask.png"
+    format = PNG
+    comment = ""
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/_DSC7849_Blatt 74_193a_croppedOriginal.tif"
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDerivedImageType = "OTHER\\MEVISLAB"
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = None
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "5957 -3631 112 64"
+    moduleGroupName = Skeleton
+    windows  {
+      window _default {
+        geometry = "1279 418 401 502"
+        sizeHint = "401 500"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "890 387 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SaveSkeleton
+    taskVerboseLogging = FALSE
+    filename = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/_DSC7849_Blatt 74_193a_croppedOriginal_phenoVein/_DSC7849_Blatt 74_193a_croppedOriginal_WITHOUTCOR_skeleton.png"
+    format = PNG
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = "D:/50_Projekte/20130320 phenoVein/Carola/Areoles/_DSC7849_Blatt 74_193a_croppedOriginal.tif"
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDerivedImageType = "OTHER\\MEVISLAB"
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = None
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Best
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+connections  {
+  Arithmetic21.input0 = SegmentedAreoles.output0
+  Arithmetic21.input1 = minAreaSize.output0
+  minAreaSize.input0 = SegmentedAreoles.output3
+  numberOfSkeletonPieces.input0 = Arithmetic2.output0
+  Arithmetic2.input0 = MinMaxScan0.output0
+  Arithmetic2.input1 = SkeletonBranchingPoints.output0
+  FileInformation.path = SaveMaskedOriginal.sourceName
+  ImageSave1.input0 = ImagePropertyConvert3.output0
+  Scale3.input0 = MinMaxScan3.output0
+  View2D1.inImage = Scale3.output0
+  ImagePropertyConvert3.input0 = Scale3.output0
+  ImagePropertyConvert2.input0 = SwapFlipDimensions.output0
+  Replicate.input0 = LUTToMLImage1.output0
+  Histogram_objectSizes.input0 = Arithmetic21.output0
+  AerioleSizes.input0 = SegmentedAreoles.output0
+  ImagePropertyConvert1.input0 = Scale.output0
+  ImagePropertyConvert.input0 = Scale1.output0
+  SaveMaskedOriginal.input0 = MinMaxScan2.output0
+  ComposeVector41.x = PixelSizes.sizeX
+  ComposeVector41.y = PixelSizes.sizeY
+  SoView2DOverlay17.image = OffscreenRenderer1.output0
+  MergeLists.inList1 = XMarkerListContainer.outXMarkerList
+  MergeLists.inList2 = XMarkerListContainer1.outXMarkerList
+  XMarkerListContainer1.name = StringUtils3.result
+  StringUtils3.string2 = StringUtils4.result
+  StringUtils2.string2 = StringUtils1.result
+  StringUtils1.string1 = SoLUTEditor_colorbar.newRangeMax
+  StringUtils1.string2 = SoLUTEditor_colorbar.newRangeMax
+  SubImage.input0 = ImagePropertyConvert2.output0
+  SoGroup11.children = "SoView2DMarkerEditor4.self SoView2D2.self"
+  XMarkerListContainer.name = StringUtils2.result
+  SoView2DMarkerEditor4.inXMarkerList = MergeLists.outList
+  SoView2D2.image = SubImage.output0
+  OffscreenRenderer2.sceneGraph = SoGroup11.self
+  SaveAreoleSizesColorbar.input0 = OffscreenRenderer2.output0
+  SwapFlipDimensions.input0 = Resample3D.output0
+  ImagePropertyConvert10.input0 = Replicate.output0
+  Resample3D.input0 = LUTToMLImage1.output0
+  SoView2DMarkerEditor1.inXMarkerList = SkeletonEndPoints.outputXMarkerList
+  SoView2DMarkerEditor.inXMarkerList = SkeletonBranchingPoints.outMarkerList
+  View2D_areoleSizesColorbar.inImage = ImagePropertyConvert10.output0
+  SoView2D1.image = Arithmetic13.output0
+  OffscreenRenderer1.sceneGraph = SoGroup8.self
+  OffscreenRenderer1.size = ComposeVector41.v
+  SoGroup8.children = "SoLUTEditor_colorbar.outInventorLUT SoView2D1.self"
+  LUTToMLImage1.inLUT = SoLUTEditor_colorbar.outLUT
+  LUTToMLImage1.maxIndex = SoLUTEditor_colorbar.newRangeMax
+  SoLUTEditor_colorbar.applyNewRange = SoLUTEditor_colorbar.newRangeMax
+  SkeletonBranchingPoints.input0 = MinMaxScan0.output0
+  TotalLeafArea.input0 = MinMaxScan1.output0
+  Arithmetic13.input0 = SegmentedAreoles.output3
+  Arithmetic13.constant = Calculator.resultScalar1
+  Calculator.d1 = PixelSizes.voxelSizeX
+  Calculator.d2 = PixelSizes.voxelSizeY
+  PixelSizes.input0 = MinMaxScan0.output0
+  invert.input0 = MinMaxScan0.output0
+  SegmentedAreoles.input0 = invert.output0
+  SegmentedAreoles.input1 = MinMaxScan1.output0
+  SkeletonTotalLength.input0 = MinMaxScan0.output0
+  SkeletonEndPoints.input0 = MinMaxScan0.output0
+  View2D_areoleSizes.inImage = Arithmetic13.output0
+  View2D_areoleSizes.inInvPreLUT = SoView2DOverlay17.self
+  View2D_skeleton.inImage = Scale1.output0
+  View2D_overlay.inImage = OffscreenRenderer.output0
+  SaveAreoleSizes.input0 = OffscreenRenderer1.output0
+  View2D_mask.inImage = Scale.output0
+  Scale1.input0 = MinMaxScan0.output0
+  Scale.input0 = MinMaxScan1.output0
+  SaveSkelOverlay.input0 = OffscreenRenderer.output0
+  SoView2DOverlay15.image = MinMaxScan0.output0
+  SoView2DOverlay5.image = BitMorphology6.output0
+  BitMorphology6.input0 = MinMaxScan0.output0
+  SoGroup.children = "SoView2DOverlay5.self SoView2DOverlay15.self SoView2DMarkerEditor1.self SoView2DMarkerEditor.self SoView2D.self"
+  ComposeVector.x = Info2.sizeX
+  ComposeVector.y = Info2.sizeY
+  Info2.input0 = MinMaxScan2.output0
+  OffscreenRenderer.sceneGraph = SoGroup.self
+  OffscreenRenderer.size = ComposeVector.v
+  SoView2D.image = MinMaxScan2.output0
+  SaveLeafMask.input0 = ImagePropertyConvert1.output0
+  SaveSkeleton.input0 = ImagePropertyConvert.output0
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 175
+        objectName = Overlay
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 224
+        objectName = Skeleton
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 239
+        objectName = AerioleSizes
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 313
+        objectName = AerioleSizesColorbar
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 412
+        objectName = TraitExtraction
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 425
+        objectName = SaveOriginalImage
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 495
+        objectName = SaveVeinBoundaryImage
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 513
+        objectName = SaveLeafMasklImage
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}

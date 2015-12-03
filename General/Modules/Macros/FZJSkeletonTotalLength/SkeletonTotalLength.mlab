@@ -1,0 +1,275 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module IntervalThreshold {
+  internal  {
+    frame = "5521 -3387 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1160 326 403 380"
+        sizeHint = "403 380"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0
+    threshWidth = 0
+    threshMin = 0
+    threshMax = 0
+    lowerUserValue = 0
+    innerUserValue = 0
+    upperUserValue = 1
+    changeMinMax = TRUE
+    changedMin = 0
+    changedMax = 1
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "5509 -3491 152 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "797 321 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = TRUE
+    datatype = double
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = TRUE
+    minGreyvalue = 0
+    changeMaxGreyvalue = TRUE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module Comment {
+  internal  {
+    frame = "5325 -3623 152 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-851 892 812 272"
+        sizeHint = "256 208"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "-613 516 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelFormatExample
+    comment = "(*,0,0,0,0,0):    0.00384575812419957,     0.00271936164842477,   0.00384575812419957  
+(*,1,0,0,0,0):    0.00271936164842477,    0,    0.00271936164842477  
+(*,2,0,0,0,0):    0.00384575812419957,     0.00271936164842477,   0.00384575812419957"
+  }
+}
+module Bypass {
+  internal  {
+    frame = "5549 -3291 72 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1002 484 116 20"
+        sizeHint = "100 20"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Bypass
+    noBypass = TRUE
+  }
+}
+module Comment {
+  internal  {
+    frame = "5357 -3543 88 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1012 557 972 272"
+        sizeHint = "256 208"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "-613 516 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Kernel
+    comment = "(*,0,0,0,0,0):    0.0038457581242,     0.00271936164842,   0.0038457581242
+(*,1,0,0,0,0):    0.00271936164842,    0,    0.00271936164842
+(*,2,0,0,0,0):    0.0038457581242,     0.00271936164842,   0.0038457581242"
+  }
+}
+module Info {
+  internal  {
+    frame = "5373 -3451 56 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "200 686 564 375"
+        sizeHint = "564 375"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Info
+    bypassIndex = -1
+    inPlaceIndex = -1
+  }
+}
+module Convolution {
+  internal  {
+    frame = "5537 -3627 96 56"
+    moduleGroupName = ExtractTraits
+    windows  {
+      window _default {
+        geometry = "409 803 764 179"
+        sizeHint = "293 179"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "364 441 1400 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    0.0038457581242,     0.00271936164842,   0.0038457581242
+(*,1,0,0,0,0):    0.00271936164842,    0,    0.00271936164842
+(*,2,0,0,0,0):    0.0038457581242,     0.00271936164842,   0.0038457581242"
+    kernelInfo = "9 elems, 3x3x1x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.003846
+(1,0,0,0,0,0):0.002719
+(2,0,0,0,0,0):0.003846
+(0,1,0,0,0,0):0.002719
+(1,1,0,0,0,0):0.000000
+(2,1,0,0,0,0):0.002719
+(0,2,0,0,0,0):0.003846
+(1,2,0,0,0,0):0.002719
+(2,2,0,0,0,0):0.003846
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+connections  {
+  IntervalThreshold.input0 = Bypass.output0
+  ImagePropertyConvert.input0 = IntervalThreshold.output0
+  Kernel.comment = Convolution.externalKernel
+  Convolution.input0 = ImagePropertyConvert.output0
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 17
+        objectName = ""
+        parentUniqueId = 0
+        frame = "5333 -3678 361 200"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = ""
+        titleText = "Final Length Calculation takes place in python"
+        isCollapsed = True
+        titleFrame = "5338 -3673 351 22"
+      }
+    }
+  }
+}

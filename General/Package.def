@@ -1,0 +1,8 @@
+
+Package {
+  packageGroup = "phenoVein"
+  packageName  = "General"
+
+  owner = "Forschungszentrum Jülich GmbH"
+  description = "Contains all phenoVein modules"
+}

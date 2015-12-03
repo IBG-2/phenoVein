@@ -1,0 +1,407 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module PythonImage {
+  internal  {
+    frame = "7121 -2865 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "756 599 423 60"
+        sizeHint = "423 60"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PythonImage1
+  }
+}
+module PythonImage {
+  internal  {
+    frame = "7125 -2625 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "756 599 423 60"
+        sizeHint = "423 60"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PythonImage
+  }
+}
+module Bypass {
+  internal  {
+    frame = "7141 -2273 72 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "151 612 116 20"
+        sizeHint = "100 20"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Bypass
+    noBypass = TRUE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "7113 -2473 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "222 430 403 380"
+        sizeHint = "403 380"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0
+    threshWidth = 0
+    threshMin = 0
+    threshMax = 0
+    lowerUserValue = 0
+    innerUserValue = 0
+    upperUserValue = 1
+    changeMinMax = TRUE
+    changedMin = 0
+    changedMax = 1
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "6933 -2787 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1427 180 407 796"
+        sizeHint = "407 796"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor1
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 1
+    numElements = 9
+    elementSum = 5
+    status = "#Elems=9, Sum=5.000000, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    0.000000,  1.000000,  0.000000
+(*,1,0,0,0,0):    1.000000,  1.000000,  1.000000
+(*,2,0,0,0,0):    0.000000,  1.000000,  0.000000
+"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "7125 -2785 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "749 769 293 179"
+        sizeHint = "293 179"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    0.000000,  1.000000,  0.000000
+(*,1,0,0,0,0):    1.000000,  1.000000,  1.000000
+(*,2,0,0,0,0):    0.000000,  1.000000,  0.000000
+"
+    kernelInfo = "9 elems, 3x3x1x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.000000
+(1,0,0,0,0,0):1.000000
+(2,0,0,0,0,0):0.000000
+(0,1,0,0,0,0):1.000000
+(1,1,0,0,0,0):1.000000
+(2,1,0,0,0,0):1.000000
+(0,2,0,0,0,0):0.000000
+(1,2,0,0,0,0):1.000000
+(2,2,0,0,0,0):0.000000
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "7117 -3025 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "826 563 283 132"
+        sizeHint = "283 132"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskToMarkers
+    lowerThreshold = 0
+    setType = User
+    type = 0
+    updateMode = AutoUpdate
+    vectorMode = Zero
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "7097 -3146 160 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "970 124 620 679"
+        sizeHint = "605 679"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor
+    drawingOn = TRUE
+    editingOn = FALSE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 0 1"
+    selectionTolerance = 5
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = FALSE
+    snapToSlice = FALSE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = FALSE
+    alphaFactor = 1
+    minimumAlpha = 0
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 7
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = FALSE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = FALSE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = 0
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = FALSE
+    applySelect = FALSE
+    id = -1
+    name = ""
+    newName = ""
+    overflowMode = None
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "0 0 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module Convolution {
+  internal  {
+    frame = "7129 -2545 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "668 880 293 179"
+        sizeHint = "293 179"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution
+    borderHandling = PadSrcFill
+    fillValue = 0
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    1.000000,  1.000000,  1.000000
+(*,1,0,0,0,0):    1.000000,  1.000000,  1.000000
+(*,2,0,0,0,0):    1.000000,  1.000000,  1.000000
+"
+    kernelInfo = "9 elems, 3x3x1x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):1.000000
+(1,0,0,0,0,0):1.000000
+(2,0,0,0,0,0):1.000000
+(0,1,0,0,0,0):1.000000
+(1,1,0,0,0,0):1.000000
+(2,1,0,0,0,0):1.000000
+(0,2,0,0,0,0):1.000000
+(1,2,0,0,0,0):1.000000
+(2,2,0,0,0,0):1.000000
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "6933 -2555 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1427 180 407 796"
+        sizeHint = "407 796"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor2
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 1
+    numElements = 9
+    elementSum = 9
+    status = "#Elems=9, Sum=9.000000, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    1.000000,  1.000000,  1.000000
+(*,1,0,0,0,0):    1.000000,  1.000000,  1.000000
+(*,2,0,0,0,0):    1.000000,  1.000000,  1.000000
+"
+  }
+}
+connections  {
+  IntervalThreshold.input0 = Bypass.output0
+  Convolution1.input0 = PythonImage.output0
+  Convolution1.externalKernel = KernelEditor1.kernel
+  MaskToMarkers.input0 = PythonImage1.output0
+  SoView2DMarkerEditor.inXMarkerList = MaskToMarkers.outputXMarkerList
+  Convolution.input0 = IntervalThreshold.output0
+  Convolution.externalKernel = KernelEditor2.kernel
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 60
+        objectName = ""
+        parentUniqueId = 0
+        frame = "7287 -2585 159 146"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = "Pad Src Fill with 0
+Otherwise there might wrong branching points recognized at the border "
+        titleText = "Border Handling"
+        isCollapsed = False
+        titleFrame = "7292 -2580 149 22"
+      }
+    }
+  }
+}

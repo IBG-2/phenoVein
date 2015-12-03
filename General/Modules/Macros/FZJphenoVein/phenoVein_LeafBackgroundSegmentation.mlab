@@ -1,0 +1,958 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module NotificationCounter {
+  internal  {
+    frame = "5 -411 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-928 387 585 163"
+        sizeHint = "585 163"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = NotificationCounter
+    mode = Image
+    inExternalFieldName = ""
+    countValidNotificationsExtra = TRUE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "-595 -799 120 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "141 358 433 593"
+        sizeHint = "433 593"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = TotalLeafArea
+    innerMin = 0.5
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = TRUE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module BoolArithmetic {
+  internal  {
+    frame = "-463 77 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-935 509 188 228"
+        sizeHint = "188 228"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = BoolArithmetic
+    inputBool1 = TRUE
+    inputBool2 = FALSE
+    operation = Negation
+  }
+}
+module Bypass {
+  internal  {
+    frame = "-307 77 72 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-714 763 116 20"
+        sizeHint = "100 20"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Bypass
+    noBypass = FALSE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "-343 -347 160 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1109 286 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert1
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 0.0012255
+    a01 = 0
+    a02 = 0
+    a03 = 124.12134
+    a10 = 0
+    a11 = 0.0012255
+    a12 = 0
+    a13 = 88.984673
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "0.00122550000889964 0 0 124.121336338855
+0 0.00122550000889964 0 88.9846688213758
+0 0 1 0
+0 0 0 1"
+    changeDatatype = TRUE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = TRUE
+    minGreyvalue = 0
+    changeMaxGreyvalue = TRUE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 0.0012255
+    voxelSizeY = 0.0012255
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "-175 -715 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "860 597 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic2
+    function = Multiply
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module SoToggle {
+  internal  {
+    frame = "221 -155 88 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1116 622 164 25"
+        sizeHint = "56 25"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoToggle
+    whichChild = -3
+    on = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "-111 573 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-651 610 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "-671 339 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan1
+    updateMode = AutoClear
+    typeSelect = "Proposed Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module Switch {
+  internal  {
+    frame = "-631 -575 176 64"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "-718 419 200 64"
+        sizeHint = "200 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = segmentFromBackground
+    currentInput = 1
+    numberOfInputs = 2
+  }
+}
+module ConstantImage {
+  internal  {
+    frame = "-563 365 120 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "377 553 217 238"
+        sizeHint = "217 238"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1315 430 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConstantImage
+    sizeX = 932
+    sizeY = 850
+    sizeZ = 1
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = "unsigned int8"
+    fillValue = 1
+    autoApply = TRUE
+  }
+}
+module Info {
+  internal  {
+    frame = "-691 277 56 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "453 387 564 375"
+        sizeHint = "564 375"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Info
+    bypassIndex = 0
+    inPlaceIndex = -1
+  }
+}
+module RegionGrowingMacro {
+  internal  {
+    frame = "-344 -66 152 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "65 495 1141 574"
+        sizeHint = "1141 574"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RegionGrowingMacro
+    isInit = TRUE
+    autoUpdateMode = AutoUpdate
+    autoThreshold = FALSE
+    basicNeighborhoodType = BNBH_2D_4_XY
+    extendedNeighborhoodType = ENBH_2D_4_XZ
+    intervalSize = 7.06
+    lowerThreshold = 0
+    unitLabel = ""
+    upperThreshold = 6000
+    useExtendedNBH = FALSE
+    stretchOutputOverTime = FALSE
+    cCoord = 0
+    uCoord = 0
+    unitType = UnitTypeGrayValue
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    autoUpdateUnitType = TRUE
+    showPartialResults = FALSE
+    posFillValue = 1
+    negFillValue = 0
+    invertResult = TRUE
+    showOuterBoundariesOnly = FALSE
+    incrementalUpdateMode = Smart
+    internalAccuracy = Auto
+    markerPersistence = FALSE
+    markerString = "[(123.865 90.5226 0.5) #1]"
+    deleteMarkerOnClick = TRUE
+    markerOverflowMode = None
+    maxMarkers = 0
+    baseColor = "1 0.420675009489059 0"
+    blendMode = BLEND_BLEND
+    overlayAlpha = 0.5
+  }
+}
+module View2D {
+  internal  {
+    frame = "205 -267 120 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "-1024 303 800 647"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "841 364 268 530"
+        sizeHint = "253 530"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 20400
+    lutWidth = 36944
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "-104 78 168 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "1271 420 620 679"
+        sizeHint = "605 679"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "535 433 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = BackgroundMarker
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 0 0.215686276555061"
+    selectionTolerance = 8
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = PRESSED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = TRUE
+    addOnClick = TRUE
+    alphaFactor = 1
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 6
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = 0
+    persistent = FALSE
+    listStringEnable = TRUE
+    ownsList = TRUE
+    applySelect = FALSE
+    id = 1
+    name = ""
+    newName = ""
+    overflowMode = None
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "123.865028381348 90.5225830078125 0.5"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "269 77 136 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "957 554 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.39999986
+    baseColor = "1 0 0.0156862754374743"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "189 -67 152 56"
+    moduleGroupName = LeafBackgroundSegmentation
+  }
+  fields  {
+    instanceName = SoGroup
+  }
+}
+module RegionGrowingMacro {
+  internal  {
+    frame = "-343 -211 160 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "125 344 1141 574"
+        sizeHint = "1141 574"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RegionGrowingMacro1
+    isInit = TRUE
+    autoUpdateMode = AutoUpdate
+    autoThreshold = FALSE
+    basicNeighborhoodType = BNBH_2D_4_XY
+    extendedNeighborhoodType = ENBH_2D_4_XZ
+    intervalSize = 7.06
+    lowerThreshold = 0.9
+    unitLabel = ""
+    upperThreshold = 1
+    useExtendedNBH = FALSE
+    stretchOutputOverTime = FALSE
+    cCoord = 0
+    uCoord = 0
+    unitType = UnitTypeGrayValue
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    autoUpdateUnitType = TRUE
+    showPartialResults = FALSE
+    posFillValue = 1
+    negFillValue = 0
+    invertResult = FALSE
+    showOuterBoundariesOnly = FALSE
+    incrementalUpdateMode = Smart
+    internalAccuracy = Auto
+    markerPersistence = FALSE
+    markerString = "[(125.81 92.5018 0.5) #1]"
+    deleteMarkerOnClick = TRUE
+    markerOverflowMode = None
+    maxMarkers = 0
+    baseColor = "1 0.420675009489059 0"
+    blendMode = BLEND_BLEND
+    overlayAlpha = 0.5
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "79 77 168 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "1271 420 620 679"
+        sizeHint = "605 679"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ObjectMarker
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "0 1 1"
+    selectionTolerance = 8
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = PRESSED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = TRUE
+    addOnClick = TRUE
+    alphaFactor = 1
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 7
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = 0
+    persistent = FALSE
+    listStringEnable = TRUE
+    ownsList = TRUE
+    applySelect = FALSE
+    id = 1
+    name = ""
+    newName = ""
+    overflowMode = None
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "125.810066223145 92.501838684082 0.5"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "421 77 136 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "1416 555 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay1
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.39999986
+    baseColor = "0 1 1"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "289 173 96 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "493 587 240 64"
+        sizeHint = "238 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic1
+    function = Invert
+    constant = 1
+  }
+}
+module FastMorphology {
+  internal  {
+    frame = "-323 -443 120 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "556 654 338 392"
+        sizeHint = "338 392"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FastMorphology
+    morphologicOperation = Closing
+    xSize = 3
+    ySize = 3
+    zSize = 1
+    cSize = 0
+    tSize = 0
+    uSize = 0
+    useInputMaxValue = FALSE
+    userSetMaxValue = 1
+    autoUpdate = TRUE
+    useGreyScaleMorphology = FALSE
+    boundaryHandling = "Propagate boundary values"
+    boundaryFillValue = 0
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "-583 277 160 56"
+    moduleGroupName = LeafBackgroundSegmentation
+    windows  {
+      window _default {
+        geometry = "1109 286 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert9
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 0.005703914
+    a01 = 0
+    a02 = 0
+    a03 = 123.27467
+    a10 = 0
+    a11 = 0.005703914
+    a12 = 0
+    a13 = 90.000671
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "0.00570391393531269 0 0 123.274669651687
+0 0.00570391393531269 0 90.0006688459776
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = TRUE
+    minGreyvalue = 0
+    changeMaxGreyvalue = TRUE
+    maxGreyvalue = 1
+    changeWorldMatrix = TRUE
+    voxelSizeX = 0.005703914
+    voxelSizeY = 0.005703914
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+connections  {
+  TotalLeafArea.input0 = segmentFromBackground.output0
+  BoolArithmetic.inputBool1 = segmentFromBackground.currentInput
+  Bypass.input0 = MinMaxScan1.output0
+  Bypass.noBypass = BoolArithmetic.outputBool
+  ImagePropertyConvert1.input0 = RegionGrowingMacro1.outMask
+  Arithmetic2.input0 = segmentFromBackground.output0
+  Arithmetic2.input1 = MinMaxScan1.output0
+  SoToggle.on = segmentFromBackground.currentInput
+  SoToggle.children = SoGroup.self
+  segmentFromBackground.input0 = ImagePropertyConvert9.output0
+  segmentFromBackground.input1 = FastMorphology.output0
+  ConstantImage.sizeX = Info.sizeX
+  ConstantImage.sizeY = Info.sizeY
+  Info.input0 = MinMaxScan1.output0
+  RegionGrowingMacro.inImage = Bypass.output0
+  RegionGrowingMacro.inMarkers = BackgroundMarker.outXMarkerList
+  View2D.inImage = MinMaxScan1.output0
+  View2D.inInvPreLUT = SoToggle.self
+  SoView2DOverlay.image = Arithmetic1.output0
+  SoGroup.children = "BackgroundMarker.self ObjectMarker.self SoView2DOverlay.self SoView2DOverlay1.self"
+  RegionGrowingMacro1.inImage = RegionGrowingMacro.outMask
+  RegionGrowingMacro1.inMarkers = ObjectMarker.outXMarkerList
+  SoView2DOverlay1.image = segmentFromBackground.output0
+  Arithmetic1.input0 = RegionGrowingMacro.outMask
+  FastMorphology.input0 = ImagePropertyConvert1.output0
+  ImagePropertyConvert9.input0 = ConstantImage.output0
+  ImagePropertyConvert9.worldMatrix = Info.worldMatrix
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 72
+        objectName = ""
+        parentUniqueId = 0
+        frame = "-522 -250 162 115"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = "seems to be faster than ConnectedComponents
+"
+        titleText = RegionGrowing1
+        isCollapsed = False
+        titleFrame = "-517 -245 152 22"
+      }
+    }
+  }
+}

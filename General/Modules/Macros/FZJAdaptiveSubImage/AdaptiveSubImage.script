@@ -1,0 +1,130 @@
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+//----------------------------------------------------------------------------------
+//! Macro module AdaptiveSubImage
+/*!
+// \file    AdaptiveSubImage.script
+// \author  Jonas Buehler
+// \date    2014-10-23
+//
+// 
+*/
+//----------------------------------------------------------------------------------
+
+
+
+Interface {
+  Inputs {
+    Field input0 {
+      internalName = SubImage0.input0
+    }
+    Field input1 {
+      internalName = SubImage1.input0
+    }
+    Field input2 {
+      internalName = SubImage2.input0
+    }
+    Field input3 {
+      internalName = SubImage3.input0
+    }
+    Field input4 {
+      internalName = SubImage4.input0
+    }
+    Field input5 {
+      internalName = SubImage5.input0
+    }
+    Field input6 {
+      internalName = SubImage6.input0
+    }
+    Field input7 {
+      internalName = SubImage7.input0
+    }
+    Field input8 {
+      internalName = SubImage8.input0
+    }
+    Field input9 {
+      internalName = SubImage9.input0
+    }
+  }
+  Outputs {
+    Field output0 {
+      internalName = SubImage0.output0
+    }
+    Field output1 {
+      internalName = SubImage1.output0
+    }
+    Field output2 {
+      internalName = SubImage2.output0
+    }
+    Field output3 {
+      internalName = SubImage3.output0
+    }
+    Field output4 {
+      internalName = SubImage4.output0
+    }
+    Field output5 {
+      internalName = SubImage5.output0
+    }
+    Field output6 {
+      internalName = SubImage6.output0
+    }
+    Field output7 {
+      internalName = SubImage7.output0
+    }
+    Field output8 {
+      internalName = SubImage8.output0
+    }
+    Field output9 {
+      internalName = SubImage9.output0
+    }
+  }
+  Parameters {
+    Field update       {type = Trigger}
+    Field autoUpdate   {type = Bool}
+    Field paddingSize  {type = Integer}
+    Field x1           {type = Integer}
+    Field x2           {type = Integer}
+    Field y1           {type = Integer}
+    Field y2           {type = Integer}
+    Field z1           {type = Integer}
+    Field z2           {type = Integer}
+    Field 2DOnly       {type = Bool value = True}
+  }
+}
+
+Commands {
+  source = $(LOCAL)/AdaptiveSubImage.py
+  
+  //FieldListener input0      {command = input0Changed}
+  FieldListener input0      {command = valueChanged}
+  FieldListener autoUpdate  {command = valueChanged}
+  FieldListener paddingSize {command = valueChanged}
+  FieldListener 2DOnly      {command = valueChanged}
+  FieldListener update      {command = update}
+}

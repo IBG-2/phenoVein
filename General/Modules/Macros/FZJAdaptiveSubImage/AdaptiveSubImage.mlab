@@ -1,0 +1,446 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module SubImage {
+  internal  {
+    frame = "-536 -682 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-543 251 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage9
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 575
+    sx = 676
+    modifyX = TRUE
+    y = 686
+    sy = 719
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = FALSE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-638 -682 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-543 251 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage8
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 575
+    sx = 676
+    modifyX = TRUE
+    y = 686
+    sy = 719
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = FALSE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-740 -682 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-543 251 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage7
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 575
+    sx = 676
+    modifyX = TRUE
+    y = 686
+    sy = 719
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = FALSE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-842 -682 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-543 251 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage6
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 575
+    sx = 676
+    modifyX = TRUE
+    y = 686
+    sy = 719
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = FALSE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-944 -682 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-543 251 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage5
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 575
+    sx = 676
+    modifyX = TRUE
+    y = 686
+    sy = 719
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = FALSE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-1046 -682 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-543 251 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage4
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 575
+    sx = 676
+    modifyX = TRUE
+    y = 686
+    sy = 719
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = FALSE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-1148 -682 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-543 251 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage3
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 575
+    sx = 676
+    modifyX = TRUE
+    y = 686
+    sy = 719
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = FALSE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-1250 -682 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-543 251 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage2
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 575
+    sx = 676
+    modifyX = TRUE
+    y = 686
+    sy = 719
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = FALSE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-1352 -682 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-543 251 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage1
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 575
+    sx = 676
+    modifyX = TRUE
+    y = 686
+    sy = 719
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = FALSE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-1454 -682 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-543 251 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage0
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = FALSE
+    enableBoxClamping = FALSE
+    x = 575
+    sx = 676
+    modifyX = TRUE
+    y = 686
+    sy = 719
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = FALSE
+  }
+}
+connections = ""
+networkModel = ""

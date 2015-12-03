@@ -1,0 +1,1391 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module FieldBypass {
+  internal  {
+    frame = "1813 -2347 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "744 645 184 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass5
+    inputString0 = "0 0"
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = "0 0"
+    noBypass = FALSE
+    onlyIfChanged = TRUE
+  }
+}
+module FieldBypass {
+  internal  {
+    frame = "1813 -2291 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "747 226 184 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass4
+    inputString0 = 1
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = 1
+    noBypass = FALSE
+    onlyIfChanged = TRUE
+  }
+}
+module FieldBypass {
+  internal  {
+    frame = "1565 -2291 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "539 225 184 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass3
+    inputString0 = 1
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = 1
+    noBypass = FALSE
+    onlyIfChanged = TRUE
+  }
+}
+module FieldBypass {
+  internal  {
+    frame = "1565 -2347 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "539 644 184 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass2
+    inputString0 = "0 0"
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = "0 0"
+    noBypass = FALSE
+    onlyIfChanged = TRUE
+  }
+}
+module FieldBypass {
+  internal  {
+    frame = "437 -2043 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1012 707 184 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass1
+    inputString0 = 0
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = 15033.944
+    noBypass = TRUE
+    onlyIfChanged = TRUE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "273 -3171 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1256 628 403 380"
+        sizeHint = "403 380"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "-815 194 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = removeSmallObjects
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 75
+    threshWidth = 150
+    threshMin = 0
+    threshMax = 150
+    lowerUserValue = 0
+    innerUserValue = 0
+    upperUserValue = 1
+    changeMinMax = TRUE
+    changedMin = 0
+    changedMax = 1000000
+  }
+}
+module SkeletonizationMacro {
+  internal  {
+    frame = "253 -2571 152 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-896 394 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonizationMacro
+    cavityVolume = 250
+    autoUpdateMode = Off
+  }
+}
+module SkeletonTotalLength {
+  internal  {
+    frame = "1881 -3659 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "717 269 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonTotalLength
+    totalSkeletonLength = 332.133075016008
+    autoUpdate = FALSE
+    isUpToDate = FALSE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "1297 -3499 160 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "805 314 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert3
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = TRUE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = TRUE
+    minGreyvalue = 0
+    changeMaxGreyvalue = TRUE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "264 -3274 160 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "805 314 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert1
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = TRUE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = TRUE
+    minGreyvalue = 0
+    changeMaxGreyvalue = TRUE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "893 -1801 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "986 500 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan2
+    updateMode = AutoClear
+    typeSelect = "Input Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "361 -1787 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "526 501 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan1
+    updateMode = AutoClear
+    typeSelect = "Proposed Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "201 -1787 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "66 502 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan0
+    updateMode = AutoClear
+    typeSelect = "Proposed Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module phenoVein_WeightedImageSum {
+  internal  {
+    frame = "233 -1907 208 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_WeightedImageSum
+    switchFactor = 1
+  }
+}
+module phenoVein_BackgroundMask {
+  internal  {
+    frame = "881 -1890 192 56"
+    moduleGroupName = ""
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "1401 372 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_BackgroundMask
+    bypass = TRUE
+    noBypass = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "1045 -3659 136 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "1167 228 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay2
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "0 0 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "921 -3995 96 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _viewer {
+        geometry = "767 429 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoGroup1
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "893 -3659 136 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "714 228 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay1
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "0 1 0.968627452850342"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "1053 -2355 120 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "1059 218 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "-572 383 352 604"
+        sizeHint = "256 586"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "6 194 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D1
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module SoBypass {
+  internal  {
+    frame = "1045 -3899 88 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "-534 894 239 94"
+        sizeHint = "239 94"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoBypass
+    bypass = TRUE
+    noBypass = FALSE
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "985 -3827 208 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _viewer {
+        geometry = "767 429 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoGroup
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "280 -2052 128 64"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "-1448 723 403 380"
+        sizeHint = "403 380"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "-1014 190 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CurrentThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 5469.13061523438
+    threshWidth = 1061.73876953125
+    threshMin = 4938.26123046875
+    threshMax = 6000
+    lowerUserValue = 0
+    innerUserValue = 0
+    upperUserValue = 1
+    changeMinMax = TRUE
+    changedMin = 0
+    changedMax = 65535
+  }
+}
+module View2D {
+  internal  {
+    frame = "909 -4091 120 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _automatic {
+        geometry = "1335 196 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "-952 30 944 1162"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "841 364 268 530"
+        sizeHint = "253 530"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D2
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module SoKeyGrabber {
+  internal  {
+    frame = "1233 -3891 112 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "1036 794 369 246"
+        sizeHint = "369 246"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoKeyGrabber
+    on = TRUE
+    shiftPressed = FALSE
+    ctrlPressed = FALSE
+    altPressed = FALSE
+    isAutoRepeat = FALSE
+    lastKey = PAD_5
+    key0 = ANY
+    key1 = ANY
+    key2 = ANY
+    key3 = ANY
+    key4 = ANY
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "264 -3070 160 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "-991 671 602 416"
+        sizeHint = "471 416"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    outputLargestClusterOnEachSlice = FALSE
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0
+    maxClusterSize = -1
+    clusterSizeInterpretation = Voxels
+    invertClusterSelection = FALSE
+    invertLargestCluster = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_2D_8_XY
+    useMask = TRUE
+  }
+}
+module FastMorphology {
+  internal  {
+    frame = "897 -3579 128 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "556 654 338 392"
+        sizeHint = "338 392"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FastMorphology1
+    morphologicOperation = Dilation
+    xSize = 3
+    ySize = 3
+    zSize = 1
+    cSize = 0
+    tSize = 0
+    uSize = 0
+    useInputMaxValue = FALSE
+    userSetMaxValue = 1
+    autoUpdate = TRUE
+    useGreyScaleMorphology = FALSE
+    boundaryHandling = "Propagate boundary values"
+    boundaryFillValue = 0
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "1321 -3423 112 64"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "1078 613 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = deletedObjects
+    function = Subtract
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module FastMorphology {
+  internal  {
+    frame = "1225 -3571 128 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "556 654 338 392"
+        sizeHint = "338 392"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FastMorphology2
+    morphologicOperation = Dilation
+    xSize = 3
+    ySize = 3
+    zSize = 1
+    cSize = 0
+    tSize = 0
+    uSize = 0
+    useInputMaxValue = FALSE
+    userSetMaxValue = 1
+    autoUpdate = TRUE
+    useGreyScaleMorphology = FALSE
+    boundaryHandling = "Propagate boundary values"
+    boundaryFillValue = 0
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "1221 -3659 136 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "291 690 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay3
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "1 1 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "1389 -3659 136 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "745 689 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay4
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "0 0 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "1041 -2251 144 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "578 563 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay0
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_REPLACE
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 1
+    baseColor = "1 1 1"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoMouseGrabber {
+  internal  {
+    frame = "1185 -2251 128 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "94 420 477 499"
+        sizeHint = "477 499"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoMouseGrabber
+    on = TRUE
+    normalized = FALSE
+    clamp = TRUE
+    button1 = RELEASED
+    button2 = PRESSED
+    button3 = RELEASED
+    button1Pressed = FALSE
+    button2Pressed = FALSE
+    button3Pressed = FALSE
+    shift = RELEASED
+    ctrl = RELEASED
+    alt = RELEASED
+    shiftPressed = FALSE
+    ctrlPressed = FALSE
+    altPressed = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    absX = 971
+    absY = 346
+    x = 0.67500001
+    y = 0.20250025
+    xmin = 0
+    xmax = 1
+    ymin = 0
+    ymax = 1
+    cursorPresent = FALSE
+    maskValid = FALSE
+    setEventHandled = FALSE
+    setWheelEventHandled = FALSE
+    flipX = FALSE
+    flipY = FALSE
+    swapXY = FALSE
+    sensitivity = 1
+    wheelOverflow = FALSE
+    wheel = 0
+    wheelStep = 1
+    wheelMin = 0
+    wheelMax = 100
+  }
+}
+module Negation {
+  internal  {
+    frame = "1217 -2187 80 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "-537 845 476 180"
+        sizeHint = "476 180"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Negation
+    inToggle = FALSE
+    outToggle = TRUE
+    outToggleInt = 1
+    inInta = 1
+    outInta = 0
+    inIntb = -1
+    outIntb = 1
+    inIntc = -1
+    outIntc = 0
+    inIntd = 0
+    outIntd = 0
+    inFloat = 1
+    outFloat = -1
+  }
+}
+module SkeletonEndPoints {
+  internal  {
+    frame = "1557 -3659 136 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "1411 431 414 176"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonEndPoints
+    autoUpdate = FALSE
+    isUpToDate = FALSE
+  }
+}
+module SkeletonBranchingPoints {
+  internal  {
+    frame = "1709 -3659 168 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "1104 340 368 187"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonBranchingPoints
+    autoUpdate = FALSE
+    isUpToDate = FALSE
+  }
+}
+module FieldBypass {
+  internal  {
+    frame = "5 -2051 104 56"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "1284 112 241 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass
+    inputString0 = 6000
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = 6000
+    noBypass = TRUE
+    onlyIfChanged = FALSE
+  }
+}
+module Negation {
+  internal  {
+    frame = "-15 -1919 144 64"
+    moduleGroupName = Skeletonization
+    windows  {
+      window _default {
+        geometry = "453 681 476 180"
+        sizeHint = "476 180"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AutoSaveThreshold
+    inToggle = FALSE
+    outToggle = TRUE
+    outToggleInt = 1
+    inInta = 0
+    outInta = 1
+    inIntb = -1
+    outIntb = 1
+    inIntc = -1
+    outIntc = 0
+    inIntd = 1
+    outIntd = -1
+    inFloat = 1
+    outFloat = -1
+  }
+}
+module FloatField {
+  internal  {
+    frame = "-3 -1991 120 64"
+    moduleGroupName = Skeletonization
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "717 329 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SavedThreshold
+    FloatField = 6000
+  }
+}
+connections  {
+  FieldBypass5.inputString0 = View2D2.sliceOrigin
+  FieldBypass4.inputString0 = View2D2.sliceZoom
+  FieldBypass3.inputString0 = View2D1.sliceZoom
+  FieldBypass2.inputString0 = View2D1.sliceOrigin
+  FieldBypass1.inputString0 = View2D1.lutCenter
+  FieldBypass1.noBypass = Negation.outToggle
+  removeSmallObjects.input0 = ConnectedComponents.output3
+  SkeletonizationMacro.input0 = CurrentThreshold.output0
+  SkeletonTotalLength.input0 = ImagePropertyConvert1.output0
+  ImagePropertyConvert3.input0 = deletedObjects.output0
+  ImagePropertyConvert1.input0 = removeSmallObjects.output0
+  phenoVein_WeightedImageSum.input0 = MinMaxScan0.output0
+  phenoVein_WeightedImageSum.input1 = MinMaxScan1.output0
+  phenoVein_BackgroundMask.input0 = MinMaxScan2.output0
+  phenoVein_BackgroundMask.noBypass = MinMaxScan2.trueMinValue
+  SoView2DOverlay2.image = ImagePropertyConvert1.output0
+  SoView2DOverlay2.alphaFactor = SoView2DOverlay1.alphaFactor
+  SoGroup1.children = "phenoVein_BackgroundMask.nodeOut0 SoBypass.self"
+  SoView2DOverlay1.image = FastMorphology1.output0
+  View2D1.inImage = MinMaxScan0.output0
+  View2D1.inInvPreLUT = SoView2DOverlay0.self
+  View2D1.inInvPostLUT = SoMouseGrabber.self
+  View2D1.inInvPostViewer = SoKeyGrabber.self
+  View2D1.sliceZoom = FieldBypass4.outputString
+  View2D1.sliceOrigin = FieldBypass5.outputString
+  View2D1.lutCenter = CurrentThreshold.threshCenter
+  SoBypass.child = SoGroup.self
+  SoBypass.noBypass = SoKeyGrabber.altPressed
+  SoGroup.children = "SoView2DOverlay1.self SoView2DOverlay2.self SoView2DOverlay3.self SoView2DOverlay4.self SkeletonEndPoints.SoView2DMarkerEditor SkeletonBranchingPoints.SoView2DMarkerEditor"
+  CurrentThreshold.input0 = phenoVein_WeightedImageSum.output0
+  CurrentThreshold.threshMax = FieldBypass1.outputString
+  View2D2.inImage = MinMaxScan1.output0
+  View2D2.inInvPreLUT = SoGroup1.self
+  View2D2.inInvPostViewer = SoKeyGrabber.self
+  View2D2.sliceZoom = FieldBypass3.outputString
+  View2D2.sliceOrigin = FieldBypass2.outputString
+  ConnectedComponents.input0 = SkeletonizationMacro.output0
+  ConnectedComponents.input1 = MinMaxScan2.output0
+  FastMorphology1.input0 = ImagePropertyConvert1.output0
+  deletedObjects.input0 = SkeletonizationMacro.output0
+  deletedObjects.input1 = ImagePropertyConvert1.output0
+  FastMorphology2.input0 = ImagePropertyConvert3.output0
+  SoView2DOverlay3.image = FastMorphology2.output0
+  SoView2DOverlay4.image = ImagePropertyConvert3.output0
+  SoView2DOverlay4.alphaFactor = SoView2DOverlay3.alphaFactor
+  SoView2DOverlay0.image = CurrentThreshold.output0
+  Negation.inToggle = SoMouseGrabber.button3Pressed
+  SkeletonEndPoints.input0 = ImagePropertyConvert1.output0
+  SkeletonBranchingPoints.input0 = ImagePropertyConvert1.output0
+  FieldBypass.inputString0 = CurrentThreshold.threshMax
+  FieldBypass.outputString = SavedThreshold.FloatField
+  FieldBypass.noBypass = AutoSaveThreshold.outToggle
+  SavedThreshold.FloatField = FieldBypass.outputString
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 117
+        objectName = ""
+        parentUniqueId = 0
+        frame = "437 -1895 200 200"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = ""
+        titleText = "not used yet"
+        isCollapsed = True
+        titleFrame = "442 -1890 112 22"
+      }
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 118
+        objectName = ""
+        parentUniqueId = 0
+        frame = "421 -3020 200 200"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = "maybe faster"
+        titleText = "Can mask be left out?"
+        isCollapsed = False
+        titleFrame = "426 -3015 190 22"
+      }
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 119
+        objectName = ""
+        parentUniqueId = 0
+        frame = "419 -3063 266 200"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = ""
+        titleText = "CC also can filter objects by size"
+        isCollapsed = True
+        titleFrame = "424 -3058 256 22"
+      }
+    }
+  }
+}

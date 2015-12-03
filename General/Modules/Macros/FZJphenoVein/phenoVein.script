@@ -1,0 +1,838 @@
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+//----------------------------------------------------------------------------------
+//! Macro module phenoVein
+/*!
+// \file    phenoVein.script
+// \author  Jonas Buehler
+// \date    2014-03-10
+//
+// This is the phenoVein application module. 
+// COPYRIGHT: Forschungszentrum Jülich GmbH, Germany
+*/
+//----------------------------------------------------------------------------------
+
+
+
+
+Interface {
+  Inputs {
+    Field input0 {internalName = phenoVein_LoadImage.input0 comment = "Leaf image"}
+  }
+  Outputs {}
+  Parameters {
+    
+    Field currentVersionNumber    {internalName = phenoVein_WriteResultsToFiles.currentVersionNumber editable = False }
+    
+    // General settings
+    Field settingsFilename        {internalName = SettingsManagerCurrentSession.filename}
+    Field loadExistingSettings    {type = Trigger}
+    Field analysisName            {internalName = phenoVein_CreateOutfilename.analysisName}
+
+    // phenoVein_LoadImage and scaling
+    Field imageFilename           {internalName = phenoVein_LoadImage.imageFilename}
+    Field vectorLengthMM          {internalName = phenoVein_LoadImage.vectorLengthMM}
+    Field scalingVector           {internalName = phenoVein_LoadImage.scalingVector}
+    Field pixelSizeXY             {internalName = phenoVein_LoadImage.pixelSizeXY}
+    Field colorChannel            {internalName = phenoVein_LoadImage.colorChannel}
+    Field invertImage             {internalName = phenoVein_LoadImage.invertImage}
+    Field showOriginalImage       {internalName = phenoVein_LoadImage.ShowOriginalImage.currentInput}
+    Field selectRegionOfInterest  {internalName = phenoVein_LoadImage.selectRegionOfInterest}
+    Field startWorldPos           {internalName = phenoVein_LoadImage.startWorldPos}
+    Field endWorldPos             {internalName = phenoVein_LoadImage.endWorldPos}
+    
+    // leaf background segmentation
+    Field createLeafMask          {internalName = phenoVein_LeafBackgroundSegmentation.createLeafMask}
+    Field RG_BG_lowerThreshold    {internalName = phenoVein_LeafBackgroundSegmentation.RG_BG_lowerThreshold}
+    Field RG_BG_upperThreshold    {internalName = phenoVein_LeafBackgroundSegmentation.RG_BG_upperThreshold}
+    Field BG_MarkerList           {internalName = phenoVein_LeafBackgroundSegmentation.BG_MarkerList}
+    Field Leaf_MarkerList         {internalName = phenoVein_LeafBackgroundSegmentation.Leaf_MarkerList}
+    Field RG_BG_autoUpdate        {internalName = phenoVein_LeafBackgroundSegmentation.autoUpdate}
+    
+    // vesselness filtering
+    Field frangiLowerSigma        {internalName = phenoVein_FrangiFiltering.startSigma}
+    Field frangiUpperSigma        {internalName = phenoVein_FrangiFiltering.endSigma}
+    Field frangiNumberOfSteps     {internalName = phenoVein_FrangiFiltering.nbrOfScales}
+    Field frangiClosingKernelSize {internalName = phenoVein_FrangiFiltering.closingKernelSize min = 1}
+    Field frangiBoundaryErosion   {internalName = phenoVein_FrangiFiltering.boundaryErosion}
+    Field frangiUpdate            {internalName = phenoVein_FrangiFiltering.frangiUpdate}
+    Field frangiAutoUpdate        {internalName = phenoVein_FrangiFiltering.frangiAutoUpdate}
+
+    // skeletonization
+    Field skel_savedThreshold      {internalName = phenoVein_Skeletonization.savedThreshold    }
+    Field skel_currentThreshold    {internalName = phenoVein_Skeletonization.currentThreshold  }
+    Field skel_saveThreshold       {internalName = phenoVein_Skeletonization.saveThreshold}
+    Field skel_loadThreshold       {internalName = phenoVein_Skeletonization.loadThreshold}
+    Field skel_autoSaveThreshold   {internalName = phenoVein_Skeletonization.autoSaveThreshold value = False }
+    Field skel_filteredImageWeight {internalName = phenoVein_Skeletonization.filteredImageWeight min = 0 max = 1}
+    Field skel_minAreaSize         {internalName = phenoVein_Skeletonization.minAreaSize}
+    Field skel_updateMode          {internalName = phenoVein_Skeletonization.skeletonUpdateMode}
+    Field skel_update              {internalName = phenoVein_Skeletonization.skeletonUpdate}
+    Field RSO_minObjectSize        {internalName = phenoVein_Skeletonization.minObjectSize}
+
+    // Manual Correction
+    Field MC_removeCSOFilename     {internalName = phenoVein_ManualCorrection.removeCSOFilename}
+    Field MC_addCSOFilename        {internalName = phenoVein_ManualCorrection.addCSOFilename}
+    Field MC_addProcessorSwitch    {internalName = phenoVein_ManualCorrection.useLiveWire}
+    Field MC_creationMode          {internalName = phenoVein_ManualCorrection.creationMode}
+    Field MC_costImage             {internalName = phenoVein_ManualCorrection.costImage}
+    Field MC_removeAllAddedVeins   {internalName = phenoVein_ManualCorrection.removeAllAddedVeins}
+    Field MC_clearAllVeins         {internalName = phenoVein_ManualCorrection.clearAllVeins}
+    Field MC_deleteRemoveMarker    {internalName = phenoVein_ManualCorrection.deleteRemoveMarker}
+    Field MC_deleteRemoveAreas     {internalName = phenoVein_ManualCorrection.deleteRemoveAreas}
+    
+    Field ReSkel_autoUpdate       {internalName = phenoVein_ReSkeletonization.autoUpdate}
+    Field ReSkel_update           {internalName = phenoVein_ReSkeletonization.update}
+    Field RSIV_minEndingVeineSize {internalName = phenoVein_ReSkeletonization.minEndingVeineSize}
+    Field ReSkel_minAreoleSize    {internalName = phenoVein_ReSkeletonization.minAreaSize}
+    
+    Field VW_chooseVeinManually   {internalName = phenoVein_VeinWidth.chooseVeinManually }
+    Field VW_maxVeinThickness     {internalName = phenoVein_VeinWidth.maxVeinThickness}
+    Field VW_startValueSquare     {internalName = phenoVein_VeinWidth.startValueSquare}
+    Field VW_startValueSigma      {internalName = phenoVein_VeinWidth.startValueSigma}
+    
+    Field WTF_outFilename         {internalName = phenoVein_CreateOutfilename.outFilename}
+    Field WTF_getAutoFilename     {internalName = phenoVein_CreateOutfilename.getAutoFilename}
+    Field WTF_colorbarMaximum     {internalName = phenoVein_WriteResultsToFiles.colorbarMaximum} 
+    Field WTF_pyResultStr         {internalName = phenoVein_WriteResultsToFiles.pyResultStr }
+    
+    Field transparencyActiveSkel {type = Float min = 0 max = 1 value = 0.4}
+    Field transparencyDeleteSkel {type = Float min = 0 max = 1 value = 0.35}
+  }
+} 
+
+
+
+Commands  {
+  source = $(LOCAL)/phenoVein.py
+  
+  //initCommand = initPhenoVein
+  
+  //FieldListener imageFilename                  {command = deleteAllManualCorrections} // this causes errors when loading an existing pvi file
+  FieldListener transparencyActiveSkel         {command = setTransparancyValuesActiveSkel}
+  FieldListener transparencyDeleteSkel         {command = setTransparancyValuesDeleteSkel}
+}
+
+
+
+Window MainWindow {
+
+  maximized = True
+  title     = "phenoVein"
+  
+  wakeupCommand = initPhenoVein
+  
+  TabView {
+     
+    
+    TabViewItem "01 Load+Scale Image" {
+      expandY = True
+      Horizontal {
+        expandY = True
+        Vertical {
+          expandY = True
+          expandX = True
+
+          Field imageFilename {title = "Image filename" browseButton = Yes}
+          Horizontal {
+            Field settingsFilename {
+              title                 = ".pvi Settings File"
+              browseButton          = yes
+              browseMode            = open
+              browseFilter          = "\*.pvi"
+              browseSelectedCommand = loadExistingSettings
+              tooltip               = "Load phenoVein setting file (.pvi) to continue an already existing analysis session"
+            }
+            Button loadExistingSettings {title = Load command = loadExistingSettings}
+            Separator {direction = Vertical}
+            Separator {direction = Vertical}
+            Separator {direction = Vertical}
+            Button SettingsManagerGeneralParameters.load {title = "Load Default Settings" tooltip = "Load default settings for all tabs in phenoVein"}
+          }
+          //Button LoadExistingSettings {title = Load alignX = Right}
+          Viewer phenoVein_LoadImage.View2D.self {type = SoRenderArea }
+        }
+        Vertical {
+          minimumWidth = 241
+          alignY       = Top
+          expandX      = No
+          Box "Color channel" {
+            Label {title = "Choose a color channel:" textWrap = WordBreak}
+            ButtonBar phenoVein_LoadImage.colorChannel {
+              show      = All
+              direction = Horizontal
+              strips    = 2
+              items {
+                item 1 {title = "R"}
+                item 2 {title = "G"}
+                item 3 {title = "B"}
+                item 4 {title = "Y"}
+                item 5 {title = "U"}
+                item 6 {title = "V"}
+                item 7 {title = "H"}
+                item 8 {title = "S"}
+                item 9 {title = "V"}
+                // item 0 {title = "original image"}
+              }
+            }
+            CheckBox invertImage {}
+            Label {title = "Veins have to appear as bright structures compared to areoles!" textWrap = WordBreak}
+          }
+
+          Box "Pixel Size" {
+            expandX = MinimumExpanding
+            Field pixelSizeXY {title = "pixel size [mm]" step = 0.001 expandX = True}
+            Separator {direction = Horizontal}
+            Button phenoVein_LoadImage.getPixelSizeFromImage {title = "Get pixel size from image" }
+            Separator {direction = Horizontal}
+            Field vectorLengthMM {step = 1 title = "Object length [mm]" expandX = True}
+            Button phenoVein_LoadImage.getPixelSizeFromVector  {title = "Get pixel size from vector" }
+            Label {title = "Use Strg + Left Mouse to draw the measuring vector" textWrap = WordBreak}
+          }
+          Box ROI {
+            CheckBox selectRegionOfInterest {title = "Select Region of Interest (ROI)"}
+            Label {title = "Use Shift + Left Mouse to set ROI" textWrap = WordBreak}
+          }
+          Box Visualization {
+            expandX = MinimumExpanding
+            Table  {
+              Row  { Label { title = "Brightness:"    } Label { title = "Right Mouse + Up/Down"   } }
+              Row  { Label { title = "Contrast:"      } Label { title = "Right Mouse + Left/Right" } }
+              Row  { Label { title = "Zoom:"          } Label { title = "Strg + Middle Mouse"   } }
+              Row  { Label { title = "Translation:"   } Label { title = "Shift + Middle Mouse"   } }
+              Row  { Label { title = "Original image:"} Label { title = "Alt"   } }
+              Row  { Label { title = "Reset viewer:"  } Label { title = "5 on Numpad"   } }
+            }
+            Horizontal {
+              alignX = Left
+              Button phenoVein_LoadImage.View2DExtensions.lutSetDefault    {title = "Reset contrast"}
+              Button phenoVein_LoadImage.resetViewer                       {title = "Unzoom"}
+            }
+            CheckBox showOriginalImage {title = "Show original"}
+          }
+          Box Help {
+            Button {title = "Help" command = showHelpWindow_Tab01 tooltip = "Help on this tab" }
+            Label {title = "*<a href="http://www.phenovein.de"> <span style="color:#B0B0E4"> www.phenovein.de </span> </a>*" textAlignment = Left textFormat = Rich allowLinks = True tooltip = "www.phenovein.de"}
+            Label {title = "*<a href="$(LOCAL)/../../../../License.txt"> <span style="color:#B0B0E4"> License.txt </span> </a>*" textAlignment = Left textFormat = Rich allowLinks = True }
+            Label {title = "© 2015 Forschungszentrum Jülich GmbH" textWrap = WordBreak textAlignment = Left }
+          }
+        }
+      }
+    } // eo TabViewItem "01 Image Scaling"
+
+
+    TabViewItem "02 Leaf Segmentation" {
+      tabSelectedCommand = updateTab_LeafBackgroundSegmentation
+      expandY            = True
+
+      Horizontal {
+        expandY = True
+
+        Vertical {
+          expandY = True
+          Viewer phenoVein_LeafBackgroundSegmentation.View2D.self {type = SoRenderArea}
+        }
+
+        Vertical {
+          minimumWidth = 241
+          expandX      = False
+          alignY       = Top
+
+          Box "Create Mask" {
+            CheckBox createLeafMask { alignY = Top}
+            Field RG_BG_autoUpdate {dependsOn = createLeafMask}
+            Button phenoVein_LeafBackgroundSegmentation.update {dependsOn = createLeafMask}
+          }
+
+          Box "Background Threshold" {
+            dependsOn = createLeafMask
+            Field RG_BG_lowerThreshold {title = "Lower threshold" step = 50 stepstep = 100}
+            Field RG_BG_upperThreshold {title = "Upper threshold" step = 50 stepstep = 100}
+          }
+
+          Box Marker {
+            dependsOn = createLeafMask
+            Label {title = "Click for leaf segmentation"}
+            Table  {
+              Row  { Label { title = "Strg + Left mouse"   } Label { title = "- Background (red)"   } }
+              Row  { Label { title = "Shift + Left mouse"  } Label { title = "- Leaf (cyan)"        } }
+            }
+            Label {title = "(Click again to delete a marker)" textWrap = WordBreak}
+            Button phenoVein_LeafBackgroundSegmentation.BG_MarkerDeleteAll   {title = "Delete Background Marker"            }
+            Button phenoVein_LeafBackgroundSegmentation.Leaf_MarkerDeleteAll {title = "Delete Leaf Marker"                  }
+          }
+
+
+          Box "Preliminary Results" {
+            Horizontal {
+              alignX = Left
+              Field phenoVein_LeafBackgroundSegmentation.TotalLeafArea {title = "Segmented Leaf Area: " format = "%6.3f" }
+              Label "mm²" {}
+            }
+          }
+
+          Box Visualization {
+            Horizontal {
+              alignX = Left
+              Button phenoVein_LeafBackgroundSegmentation.View2D.resetLUT    {title = "Reset contrast"}
+              Button phenoVein_LeafBackgroundSegmentation.View2D.unzoom      {title = "Unzoom"}
+            }
+          }
+        }
+      }
+    } // eo TabViewItem "02 Leaf Segmentation"
+
+
+
+
+    TabViewItem "03 Vesselness Filtering" {
+      //////////////////////////////////////
+      // Replace every Frangi by Vesselness //
+      //////////////////////////////////////
+      tabSelectedCommand = updateTab_FrangiFiltering
+      expandY            = True
+      Horizontal {
+        expandY = True
+
+        Vertical {
+          expandY = True
+          Viewer phenoVein_FrangiFiltering.View2D1.self {type = SoRenderArea}
+          Viewer phenoVein_FrangiFiltering.View2D2.self {type = SoRenderArea}
+        }
+
+        Vertical {
+          minimumWidth = 241
+          expandX      = False
+          alignY       = Top
+          Box Options {
+            Field frangiLowerSigma        {title = "Lower Sigma" step = 0.5}
+            Field frangiUpperSigma        {title = "Upper Sigma" step = 0.5}
+            Field frangiNumberOfSteps     {title = "No Steps" step = 1}
+            Field frangiClosingKernelSize {title = "Gap Closing Kernel" step = 2 }
+            field frangiBoundaryErosion   {title = "Boundary Erosion"}
+          }
+
+          Box Calculation {
+            Field frangiAutoUpdate        {title = "Auto update"}
+            Button frangiUpdate           {title = update}
+          }
+
+          Box Visualization {
+            Horizontal {
+              alignX = Left
+              Button phenoVein_FrangiFiltering.resetLUTs          {title = "Reset contrast"}
+              Button phenoVein_FrangiFiltering.View2D2.unzoom     {title = "Unzoom" } // zooming is connected to View2D anyway
+            }
+          }
+          Box Help {
+            Button {title = "Help" command = showHelpWindow_Tab03 tooltip = "Help on this tab"}
+          }
+        }
+      }
+    } // eo TabViewItem "03 Frangi Filtering"
+
+
+
+    TabViewItem "04 Skeletonization" {
+      tabSelectedCommand = updateTab_Skeletonization
+      expandY            = True
+      Horizontal {
+        expandY = True
+
+        Vertical {
+          expandY = True
+          Viewer phenoVein_Skeletonization.View2D1.self   {type = SoRenderArea}
+          Viewer phenoVein_Skeletonization.View2D2.self   {type = SoRenderArea}
+        }
+        Vertical {
+          expandX      = False
+          alignY       = Top
+          minimumWidth = 241
+
+          Box "Threshold" {
+            Field skel_savedThreshold         {title = "Saved threshold" edit = False expandX = Yes}
+            Field skel_currentThreshold       {title = "Current threshold" expandX = Yes}
+            //Slider currentFrangiThreshold      {tracking = False} // For unknown reason this slider makes calculation VERY SLOW
+            Field skel_autoSaveThreshold      {title = "Auto save threshold"}
+            Horizontal {
+              Button skel_loadThreshold       {title = "Load threshold"}
+              Button skel_saveThreshold       {title = "Save threshold"}
+            }
+          }
+
+          //Box "Filter Mix" {
+          //  enabled = False
+          //  Field skel_filteredImageWeight {title = "Filter Weight" step = 0.1 tooltip = "Weight of filtered image compared to original image"}
+          //}
+
+          Box Skeletonization {
+            Field skel_minAreaSize                {title = "Minimum areole area"}
+            Field skel_updateMode                 {title = "Update mode"}
+            Button skel_update                    {title = "Update skeleton"}
+            Button                                {title = "Update skeleton and save threshold" command = skel_updateAndSaveThreshold}
+          }
+
+          Box "Clean Up" {
+            Horizontal {
+              alignX = Left
+              Field  RSO_minObjectSize           {title = "Min Object Size" step = 10 }
+              Label {title = "pixel"}
+            }
+          }
+
+          Box Visualization {
+            Field phenoVein_Skeletonization.showSkeleton {title = "show skeleton"}
+            Field transparencyActiveSkel {title = "Alpha active Skeleton" step = 0.05 stepstep = 0.1 }
+            Field transparencyDeleteSkel {title = "Alpha delete Skeleton" step = 0.05 stepstep = 0.1 }
+            Horizontal {
+              alignX = Left
+              Button phenoVein_Skeletonization.resetLUTs      {title = "reset LUT"}
+              Button phenoVein_Skeletonization.View2D2.unzoom {title = "Unzoom"}
+            }
+            Box  {
+              Label { title = "Hit Alt-key to hide skeleton"   }
+            }
+          }
+
+          Box "Preliminary Results" {
+            Horizontal {
+              alignX = Left
+              Button phenoVein_Skeletonization.calcSkelEndPoints {title = "Skeleton endpoints"       minimumWidth = 120  }
+              Separator {direction = Vertical}
+              Label "(" {}
+              Label { titleField = phenoVein_Skeletonization.numberSkelEndPoints }
+              Label ")" {}
+            }
+            Horizontal {
+              alignX = Left
+              Button phenoVein_Skeletonization.calcSkelBranchingPoints {title = "Branching points"  minimumWidth = 120   }
+              Separator {direction = Vertical}
+              Label "(" {}
+              Label { titleField = phenoVein_Skeletonization.numberSkelBranchingPoints }
+              Label ")" {}
+            }
+            Horizontal {
+              alignX = Left
+              Button phenoVein_Skeletonization.calcSkelLength {title = "Skeleton Length"  minimumWidth = 120   }
+              Separator {direction = Vertical}
+              Label {name = labelSkelLength title = "( 0.00 mm )"}
+              FieldListener phenoVein_Skeletonization.skelLength {
+                command = "*py: ctx.control("labelSkelLength").setTitle(  "( {:.2f} mm )".format(ctx.field("phenoVein_Skeletonization.skelLength").value)  ) *"
+              }
+            }
+            Separator {direction = Horizontal}
+            Field analysisName {title = "Session"}
+            Button {
+              title   = "Quick Save" 
+              tooltip = "Save all results including the re-skeletonization using the auto-filename option (no vein width estimation)"
+              command = "QuickSaveInSkeletonization"
+            }
+
+          }
+          Box Instructions {
+            Label {title = "Hold right mouse button and move Up and Down to adjust vesselness threshold" textWrap = WordBreak}
+          }
+        }
+      }
+    } // eo TabViewItem "04 Skeletonization"
+
+
+
+
+    TabViewItem "05 Manual Correction" {
+      tabSelectedCommand = updateTab_ManualCorrection
+      expandY            = True
+      Horizontal {
+        expandY = True
+
+        Vertical {
+          expandY = True
+          Viewer phenoVein_ManualCorrection.View2D.self {type = SoRenderArea}
+        }
+        Vertical {
+          expandX      = False
+          alignY       = Top
+          minimumWidth = 241
+
+          Box "Remove Veins" {
+            CheckBox MC_clearAllVeins {title = "Clear all veins"}
+            Button MC_deleteRemoveMarker {title = "Delete all remove marker" }
+            Button MC_deleteRemoveAreas  {title = "Delete all remove areas"  }
+          }
+
+          Box "Add Veins" {
+            ButtonBar MC_addProcessorSwitch{
+              show = Radio
+              items {
+                item 0 {title = "Free Hand"}
+                item 1 {title = "Live Wire"}
+              }
+            }
+            Horizontal {
+              Vertical {
+                dependsOn = !MC_addProcessorSwitch
+                //visibleOn = !MC_addProcessorSwitch
+                Label {title = "Free hand mode:"}
+                ButtonBar MC_creationMode {
+                  //title = "Type"
+                  show  = One
+                  items {
+                    item "CreationModeOpenPolyline" {title = "Polyline"}
+                    item "CreationModeOpenSpline"   {title = "Spline"}
+                    item "CreationModeOpenFreehand" {title = "Freehand"}
+                  }
+                }
+              }
+              Vertical {
+                dependsOn = MC_addProcessorSwitch
+                //visibleOn = MC_addProcessorSwitch
+                Label {title = "Cost image:"}
+                ButtonBar MC_costImage {
+                  show  = One
+                  items {
+                    item 0 {title = "Skeleton"}
+                    item 1 {title = "Vesselness"}
+                  }
+                }
+              }
+            }
+            Separator {direction = Horizontal}
+            Button MC_removeAllAddedVeins     {title = "Delete all added Veins" }
+          }
+
+          Box Visualization {
+            Field transparencyActiveSkel          {title = "Alpha active Skeleton" step = 0.05 stepstep = 0.1 }
+            Field transparencyDeleteSkel          {title = "Alpha delete Skeleton" step = 0.05 stepstep = 0.1 }
+            Horizontal {
+              alignX = Left
+              Button phenoVein_ManualCorrection.resetLUT          { title = "reset LUT"}
+              Button phenoVein_ManualCorrection.resetViewer       { title = "reset Viewer"}
+            }
+          }
+          Box "Preliminary Results" {
+            Horizontal {
+              alignX = Left
+              Button phenoVein_ManualCorrection.calcSkelEndPoints {title = "Skeleton endpoints"       minimumWidth = 120  }
+              Separator {direction = Vertical}
+              Label "(" {}
+              Label { titleField = phenoVein_ManualCorrection.numberSkelEndPoints }
+              Label ")" {}
+            }
+            Horizontal {
+              alignX = Left
+              Button phenoVein_ManualCorrection.calcSkelBranchingPoints {title = "Branching points"  minimumWidth = 120   }
+              Separator {direction = Vertical}
+              Label "(" {}
+              Label { titleField = phenoVein_ManualCorrection.numberSkelBranchingPoints }
+              Label ")" {}
+            }
+            Horizontal {
+              alignX = Left
+              Button phenoVein_ManualCorrection.calcSkelLength {title = "Skeleton Length"  minimumWidth = 120   }
+              Separator {direction = Vertical}
+              Label {name = labelMCLength title = "( 0.00 mm )"}
+              FieldListener phenoVein_ManualCorrection.skelLength {
+                command = "*py: ctx.control("labelMCLength").setTitle(  "( {:.2f} mm )".format(ctx.field("phenoVein_ManualCorrection.skelLength").value)  ) *"
+              }
+            }
+            Separator {direction = Horizontal}
+            Field analysisName {title = "Session"}
+            Button {
+              title   = "Quick Save" 
+              tooltip = "Save all results including the re-skeletonization using the auto-filename option (no vein width estimation)"
+              command = "QuickSaveInManualCorrection"
+            }
+          }
+          Box Instructions {
+            Table  {
+              Row  { Label { title = "Shift + Left Mouse"   } Label { title = "- Add veins (double"   } }
+              Row  { Label { title = ""                     } Label { title = "  click to finish)"    } }
+              Row  { Label { title = "Shift + Del"          } Label { title = "- Delete active wire"  } }
+              Row  { Label { title = "Strg + Left Mouse"    } Label { title = "- Draw removal area"   } }
+              Row  { Label { title = "Strg + Right Mouse"   } Label { title = "- Remove single vein"  } }
+            }
+            Box  {
+              Label { title = "Hit Alt-key to hide skeleton"   }
+            }
+          }
+        }
+      }
+      Label  {titleField = WTF_pyResultStr}
+    } // eo TabViewItem "05 Manual Correction"
+
+
+    TabViewItem "06 Re-Skeletonization" {
+      tabSelectedCommand = updateTab_ReSkeletonization
+      expandY            = True
+      Horizontal {
+        expandY = True
+        Vertical {
+          expandY = True
+          Viewer phenoVein_ReSkeletonization.View2D.self  {type = SoRenderArea}
+        }
+        Vertical {
+          expandX      = False
+          alignY       = Top
+          minimumWidth = 241
+          //Box Options {
+          //Field ReSkel_autoUpdate                {title = "Auto update"}
+          //Button ReSkel_update                   {title = "Update" }
+          //}
+          Box "Parameters" {
+            Grid {
+              Field RSIV_minEndingVeineSize          {x = 0 y = 0   title = "Min ending vein size"}
+              Label                                  {x = 1 y = 0   title = "px"}
+              Field ReSkel_minAreoleSize             {x = 0 y = 1   title = "Min Area size"}
+              Label                                  {x = 1 y = 1   title = "px"}              
+            }
+          }
+          Box Visualization {
+            Field transparencyActiveSkel {title = "Alpha active Skeleton" step = 0.05 stepstep = 0.1 }
+            Field transparencyDeleteSkel {title = "Alpha delete Skeleton" step = 0.05 stepstep = 0.1 }
+            Horizontal {
+              alignX = Left
+              Button phenoVein_ReSkeletonization.resetLUT          { title = "reset LUT"}
+              Button phenoVein_ReSkeletonization.resetViewer       { title = "reset Viewer"}
+            }
+          }
+          Box "Preliminary Results" {
+            Horizontal {
+              alignX = Left
+              Button phenoVein_ReSkeletonization.calcSkelEndPoints {title = "Skeleton endpoints"       minimumWidth = 120  }
+              Separator {direction = Vertical}
+              Label "(" {}
+              Label { titleField = phenoVein_ReSkeletonization.numberSkelEndPoints }
+              Label ")" {}
+            }
+            Horizontal {
+              alignX = Left
+              Button phenoVein_ReSkeletonization.calcSkelBranchingPoints {title = "Branching points"  minimumWidth = 120   }
+              Separator {direction = Vertical}
+              Label "(" {}
+              Label { titleField = phenoVein_ReSkeletonization.numberSkelBranchingPoints }
+              Label ")" {}
+            }
+            Horizontal {
+              alignX = Left
+              Button phenoVein_ReSkeletonization.calcSkelLength {title = "Skeleton Length"  minimumWidth = 120   }
+              Separator {direction = Vertical}
+              Label {name = labelRSLength title = "( 0.00 mm )"}
+              FieldListener phenoVein_ReSkeletonization.skelLength {
+                command = "*py: ctx.control("labelRSLength").setTitle(  "( {:.2f} mm )".format(ctx.field("phenoVein_ReSkeletonization.skelLength").value)  ) *"
+              }
+            }
+          }
+          Box "Instructions" {
+            Label { title = "Manual corrections might contain non-skeleton elements which are removed here in this step. Additionally, small ending vein pieces can be removed." textWrap = WordBreak}
+            Label { title = "Hit Alt-key to hide skeleton"   }
+          }
+        }
+      }
+    } // eo TabViewItem "06 Re-Skeletonization"
+
+
+
+    TabViewItem "07 [Vein Analysis]" {
+      tabSelectedCommand = updateTab_VeinWidth
+      expandY            = True
+      Horizontal {
+        expandY = True
+        Vertical {
+          expandY = True
+          Viewer phenoVein_VeinWidth.View2D.self  {type = SoRenderArea}
+        }
+        Vertical {
+          alignY       = Top
+          minimumWidth = 241
+          maximumWidth = 241
+          Box Options {
+            CheckBox VW_chooseVeinManually {title = "Select single vein by hand" }
+            Label { title = "   (Strg + Left Mouse)" }
+            CheckBox phenoVein_VeinWidth.showFittingPlot   {title = "Show fitting plot"}
+            CheckBox phenoVein_VeinWidth.renderVein        {title = "Render vein Boundaries"}
+            Field VW_maxVeinThickness     {title = "Max vein thickness" step = 0.01}
+            Field VW_startValueSquare     {title = "Start Value Square" step = 0.005}
+            Field VW_startValueSigma      {title = "Start Value Sigma"  step = 0.005}
+          }
+          Box "Vein Analysis" {
+            Field phenoVein_VeinWidth.numberOfVeinSegments { title = "Number of vein pieces" edit = False}
+            Field phenoVein_VeinWidth.currentVein          { title = "Current vein number" step = 1}
+            Button phenoVein_VeinWidth.calcCurrentVein     { title = "Measure current vein"}
+            Table  {
+              Row  { Field phenoVein_VeinWidth.veinLength  { title = "Current vein length:" format = "%.4f"}    Label "mm" {} }
+              Row  { Field phenoVein_VeinWidth.veinWidth   { title = "Current vein thickness:" format = "%.4f"} Label "mm" {} }
+            }
+            Separator {direction = Horizontal}
+            Horizontal {
+              Button phenoVein_VeinWidth.calcAllVeins        { title = "Measure all veins"}
+              Button phenoVein_VeinWidth.stopCalculation     { title = "Stop calculation"}
+            }
+            ProgressBar phenoVein_VeinWidth.status {}
+            TextView phenoVein_VeinWidth.veinLengthAndWidth {
+              title       = "Length and Width (csv)"
+              edit        = False
+              visibleRows = 5
+              wrap        = off
+              fieldDragging = Off
+            }
+            Button phenoVein_VeinWidth.copyResultsToClipboard {title = "Copy to Clipboard"}
+          }
+          Box Visualization {
+            Field transparencyActiveSkel                   { title = "Alpha Skeleton" step = 0.05 stepstep = 0.1 }
+            Button phenoVein_VeinWidth.clearVeins          { title = "Clear Vein Rendering"}
+            Horizontal {
+              alignX = Left
+              Button phenoVein_VeinWidth.resetLUT          { title = "reset LUT"}
+              Button phenoVein_VeinWidth.resetViewer       { title = "reset Viewer"}
+            }
+            Label { title = "Hit Alt-key to hide skeleton"   }
+          }
+        }
+      }
+    } // eo TabViewItem "07 Vein Width"
+
+
+    
+
+    TabViewItem "08 Write Results To File" {
+      tabSelectedCommand = updateTab_WriteResultsToFile
+
+      expandY = True
+      expandX = True
+      Horizontal {
+        expandY = True
+        expandX = True
+
+        Vertical {
+          expandY = True
+          expandX = True
+          Grid {
+            expandY = True
+            spacing = 2
+            margin  = 2
+            Viewer phenoVein_WriteResultsToFiles.View2D_overlay.self       {type = SoRenderArea x = 1 y = 1}
+            Viewer phenoVein_WriteResultsToFiles.View2D_skeleton.self      {type = SoRenderArea x = 1 y = 2}
+            Viewer phenoVein_VeinWidth.View2D.self                         {type = SoRenderArea x = 2 y = 1}
+            Viewer phenoVein_WriteResultsToFiles.View2D_areoleSizes.self   {type = SoRenderArea x = 2 y = 2}
+          }
+        }
+
+
+        Vertical {
+          alignY       = Top
+          expandX      = No
+          minimumWidth = 241
+
+          Box "Name of current analysis" {
+            Field analysisName {title = "Session"}
+            tooltip = "Set a specific name for this analysis run. E.g. LeafTip or CompleteLeaf. As this is part of the output filename this name may not contain white spaces or special characters!"
+          }
+          Box "Write to File" {
+            Button WTF_getAutoFilename {title = "Get Autofilename"}
+            Horizontal {
+              Field  WTF_outFilename     {title = "" browseButton = Yes browseFilter = "*.*" browseMode = save fieldDragging = False minimumWidth = 220}
+              FieldListener WTF_outFilename {command = "*py: ctx.field("WTF_pyResultStr").setValue("Output filename: " + ctx.field("WTF_outFilename").value)*"}
+            }
+            Button {title = "Save"                                 command = WTF_Save }
+            Button {title = "Autofilename + Save"                  command = WTF_Autofilename_Save tooltip = "In case the vein analysis has been done partially or completely, these results are saved as well"}
+            Button {title = "Vein analysis + Autofilename + Save"  command = WTF_VeinAnalysis_Autofilename_Save}
+            Horizontal {
+              ProgressBar phenoVein_VeinWidth.status {expandX = Expanding}
+              Button phenoVein_VeinWidth.stopCalculation     { title = "Stop Calculation"}
+            }
+          }
+          Box "Color Table" {
+            Horizontal {
+              Field WTF_colorbarMaximum {title = "Maximum" step = 0.5 stepstep = 1 format = "%3.3f"}
+              //Label {title = "mm²"}
+              Button phenoVein_WriteResultsToFiles.updateAreoleImage {title = "Update" }
+            }
+            Horizontal {
+              //Button phenoVein_WriteResultsToFiles.updateAreoleImage {title = "Update" }
+              Viewer phenoVein_WriteResultsToFiles.View2D_areoleSizesColorbar.self  {
+                type          = SoRenderArea
+                expandY       = False
+                expandX       = True
+                maximumHeight = 30
+                //maximumWidth  = 150
+//                alignY        = Bottom
+              }
+            }
+            Horizontal {
+              Vertical {
+                alignX = Left
+                Label {title = "0 mm²"}
+              }
+              Vertical {
+                alignX = Right
+                Horizontal {
+                  Label {titleField = WTF_colorbarMaximum}
+                  Label {title = "mm²"}
+                }
+              }
+            }
+          }
+          Box "About phenoVein" {
+            //Label {title = "If you enjoyed phenoVein please<br>support our work by citing our<br>phenoVein paper." textWrap = WordBreak  textAlignment = Center }
+            Image {image = $(LOCAL)/Logo/phenoVeinLogo.png alignX = Center scaleFactor = 0.25}
+            Label {title = "*<a href="http://www.phenovein.de"> <span style="color:#B0B0E4"> www.phenovein.de </span> </a>*" textAlignment = Center textFormat = Rich allowLinks = True tooltip = "www.phenovein.de"}
+            Label {title = "© Forschungszentrum Jülich GmbH" textWrap = WordBreak textAlignment = Center }
+            Label {title = "IBG-2: Plant Sciences" textWrap = WordBreak textAlignment = Center }
+            Label {title = "Germany 2015" textWrap = WordBreak textAlignment = Center}
+            Label {title = "Jonas Bühler<br>Daniel Pflugfelder<br>Siegfried Jahnke" textAlignment = Center }
+            Horizontal {
+              alignX = Center
+              Label {title = "*Version:*" }
+              Label {titleField = phenoVein_WriteResultsToFiles.currentVersionNumber}
+            }
+            Label {title = "*For license conditions see <a href="$(LOCAL)/../../../../License.txt"> <span style="color:#B0B0E4"> License.txt </span> </a>*" textAlignment = Center textFormat = Rich allowLinks = True }
+            //Button {title = "About" command = showPhenoVeinAboutDialog}
+          }
+        }
+      }
+
+      Horizontal {
+        expandY       = False
+        Box Messages {
+          Horizontal {
+            expandX       = MinimumExpanding
+            Label {titleField = WTF_pyResultStr textWrap = WordBreak alignY = Top expandX = Yes}
+            Separator {direction = Vertical}
+            Button SettingsManagerGeneralParameters.save {title = "Make Current Settings to Default" tooltip = "Find general settings in phenoVeinInit.pvi"}
+            //Button WTF_cleanUpAndRestart     {title = "Clean up and start over" expandX = No }
+          }
+        }
+      }
+      
+    } // eo TabViewItem "08 Skeletonization"
+ 
+  } //eo TabView
+   
+} // eo Window
+ 

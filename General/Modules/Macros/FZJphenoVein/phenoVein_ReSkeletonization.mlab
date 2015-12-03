@@ -1,0 +1,916 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module IntervalThreshold {
+  internal  {
+    frame = "4002 -3233 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-514 379 403 380"
+        sizeHint = "403 380"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0
+    threshWidth = 0
+    threshMin = 0
+    threshMax = 0
+    lowerUserValue = 0
+    innerUserValue = 0
+    upperUserValue = 1
+    changeMinMax = TRUE
+    changedMin = 0
+    changedMax = 1
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "3982 -3123 168 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "513 438 579 480"
+        sizeHint = "448 480"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents1
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = SimilarIntensities
+    similarityToleranceIntensities = 1
+    similarityToleranceVectors = 0.98
+    outputLargestClusterOnEachSlice = FALSE
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = TRUE
+    objectValue = 1
+    minClusterSize = 0
+    maxClusterSize = 25
+    clusterSizeInterpretation = Voxels
+    invertClusterSelection = FALSE
+    invertLargestCluster = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_2D_8_XY
+    useMask = FALSE
+  }
+}
+module SkeletonizationMacro {
+  internal  {
+    frame = "3761 -4035 160 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "681 145 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonizationMacro1
+    cavityVolume = 1
+    autoUpdateMode = AutoUpdate
+  }
+}
+module SkeletonizationMacro {
+  internal  {
+    frame = "3781 -2555 152 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "968 261 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonizationMacro
+    cavityVolume = 1
+    autoUpdateMode = AutoUpdate
+  }
+}
+module SkeletonTotalLength {
+  internal  {
+    frame = "4097 -4275 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "171 377 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonTotalLength
+    totalSkeletonLength = 0
+    autoUpdate = FALSE
+    isUpToDate = FALSE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "3801 -2411 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-592 820 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan0
+    updateMode = AutoClear
+    typeSelect = "Input Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "4881 -2403 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "184 597 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan2
+    updateMode = AutoClear
+    typeSelect = UInt8
+    preferUnsigned = TRUE
+  }
+}
+module FastMorphology {
+  internal  {
+    frame = "4973 -4190 128 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "556 654 338 392"
+        sizeHint = "338 392"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FastMorphology7
+    morphologicOperation = Dilation
+    xSize = 3
+    ySize = 3
+    zSize = 1
+    cSize = 0
+    tSize = 0
+    uSize = 0
+    useInputMaxValue = FALSE
+    userSetMaxValue = 1
+    autoUpdate = TRUE
+    useGreyScaleMorphology = FALSE
+    boundaryHandling = "Propagate boundary values"
+    boundaryFillValue = 0
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "4969 -4270 136 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "270 258 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay3
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "1 1 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "5121 -4270 136 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "724 257 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay4
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "0 0 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module FastMorphology {
+  internal  {
+    frame = "4618 -4181 136 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "556 654 338 392"
+        sizeHint = "338 392"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FastMorphology10
+    morphologicOperation = Dilation
+    xSize = 3
+    ySize = 3
+    zSize = 1
+    cSize = 0
+    tSize = 0
+    uSize = 0
+    useInputMaxValue = FALSE
+    userSetMaxValue = 1
+    autoUpdate = TRUE
+    useGreyScaleMorphology = FALSE
+    boundaryHandling = "Propagate boundary values"
+    boundaryFillValue = 0
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "4833 -4627 96 56"
+    moduleGroupName = Re_Skeletonize
+  }
+  fields  {
+    instanceName = SoGroup2
+  }
+}
+module SoKeyGrabber {
+  internal  {
+    frame = "4965 -4531 120 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "825 719 369 246"
+        sizeHint = "369 246"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoKeyGrabber2
+    on = TRUE
+    shiftPressed = FALSE
+    ctrlPressed = FALSE
+    altPressed = FALSE
+    isAutoRepeat = FALSE
+    lastKey = PAD_5
+    key0 = ANY
+    key1 = ANY
+    key2 = ANY
+    key3 = ANY
+    key4 = ANY
+  }
+}
+module SoBypass {
+  internal  {
+    frame = "4833 -4531 96 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "1004 241 239 94"
+        sizeHint = "239 94"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoBypass2
+    bypass = TRUE
+    noBypass = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "4821 -4731 120 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "-632 200 1904 1162"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1146 322 704 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "841 364 268 530"
+        sizeHint = "253 530"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "4769 -4278 136 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "722 694 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay2
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "0 0 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "4777 -4451 208 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _viewer {
+        geometry = "647 354 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoGroup3
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "4613 -4278 144 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "269 695 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay1
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "0 1 0.968627452850342"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "3801 -3871 96 64"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "860 597 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Subtract
+    function = Subtract
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "3985 -3331 160 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "1347 340 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert7
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = TRUE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = TRUE
+    minGreyvalue = 0
+    changeMaxGreyvalue = TRUE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "3997 -3011 120 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "2009 76 571 583"
+        sizeHint = "571 583"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RegionGrowing
+    autoUpdateMode = AutoUpdate
+    lowerThreshold = 0.5
+    upperThreshold = 1
+    autoThreshold = FALSE
+    basicNeighborhoodType = BNBH_2D_4_XY
+    extendedNeighborhoodType = ENBH_2D_8_XY
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.100000001490116
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Smart
+    useExtendedNBH = TRUE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeGrayValue
+    internalAccuracy = Auto
+    autoUpdateUnitType = FALSE
+    stretchOutputOverTime = FALSE
+    unitLabel = ""
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = 1
+    negFillValue = 0
+    invertResult = FALSE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    intervalSize = 5
+  }
+}
+module SkeletonEndPoints {
+  internal  {
+    frame = "4449 -4275 144 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "1203 378 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonEndPoints2
+    autoUpdate = FALSE
+    isUpToDate = FALSE
+  }
+}
+module SkeletonBranchingPoints {
+  internal  {
+    frame = "3978 -2785 176 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "1063 324 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonBranchingPoints1
+    autoUpdate = TRUE
+    isUpToDate = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "3966 -2903 200 64"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "860 597 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Veines_withoutBranchingPoints
+    function = Subtract
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module SkeletonEndPoints {
+  internal  {
+    frame = "4177 -2787 144 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "1115 336 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonEndPoints1
+    autoUpdate = TRUE
+    isUpToDate = FALSE
+  }
+}
+module SkeletonBranchingPoints {
+  internal  {
+    frame = "4265 -4275 176 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "688 377 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonBranchingPoints2
+    autoUpdate = FALSE
+    isUpToDate = FALSE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "5057 -2403 112 56"
+    moduleGroupName = Re_Skeletonize
+    windows  {
+      window _default {
+        geometry = "747 502 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan1
+    updateMode = AutoClear
+    typeSelect = "Proposed Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module phenoVein_BackgroundMask {
+  internal  {
+    frame = "4841 -2507 192 56"
+    moduleGroupName = Re_Skeletonize
+    localMacro = 1
+    windows  {
+      window _default {
+        geometry = "717 334 500 595"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = phenoVein_BackgroundMask
+    bypass = TRUE
+    noBypass = FALSE
+  }
+}
+connections  {
+  IntervalThreshold.input0 = ConnectedComponents1.output3
+  ConnectedComponents1.input0 = RegionGrowing.output0
+  ConnectedComponents1.inputMarkers = SkeletonEndPoints1.outputXMarkerList
+  SkeletonizationMacro1.input0 = Subtract.output0
+  SkeletonizationMacro.input0 = MinMaxScan0.output0
+  SkeletonTotalLength.input0 = SkeletonizationMacro1.output0
+  FastMorphology7.input0 = ImagePropertyConvert7.output0
+  SoView2DOverlay3.image = FastMorphology7.output0
+  SoView2DOverlay4.image = ImagePropertyConvert7.output0
+  SoView2DOverlay4.alphaFactor = SoView2DOverlay3.alphaFactor
+  FastMorphology10.input0 = SkeletonizationMacro1.output0
+  SoGroup2.children = "SoBypass2.self phenoVein_BackgroundMask.nodeOut0"
+  SoBypass2.child = SoGroup3.self
+  SoBypass2.noBypass = SoKeyGrabber2.altPressed
+  View2D.inImage = MinMaxScan1.output0
+  View2D.inInvPreLUT = SoGroup2.self
+  View2D.inInvPostViewer = SoKeyGrabber2.self
+  SoView2DOverlay2.image = SkeletonizationMacro1.output0
+  SoView2DOverlay2.alphaFactor = SoView2DOverlay1.alphaFactor
+  SoGroup3.children = "SkeletonBranchingPoints2.SoView2DMarkerEditor SkeletonEndPoints2.SoView2DMarkerEditor SoView2DOverlay1.self SoView2DOverlay2.self SoView2DOverlay3.self SoView2DOverlay4.self"
+  SoView2DOverlay1.image = FastMorphology10.output0
+  Subtract.input0 = SkeletonizationMacro.output0
+  Subtract.input1 = ImagePropertyConvert7.output0
+  ImagePropertyConvert7.input0 = IntervalThreshold.output0
+  RegionGrowing.input0 = Veines_withoutBranchingPoints.output0
+  RegionGrowing.inMarkerList = SkeletonEndPoints1.outputXMarkerList
+  SkeletonEndPoints2.input0 = SkeletonizationMacro1.output0
+  SkeletonBranchingPoints1.input0 = SkeletonizationMacro.output0
+  Veines_withoutBranchingPoints.input0 = SkeletonizationMacro.output0
+  Veines_withoutBranchingPoints.input1 = SkeletonBranchingPoints1.output0
+  SkeletonEndPoints1.input0 = SkeletonizationMacro.output0
+  SkeletonBranchingPoints2.input0 = SkeletonizationMacro1.output0
+  phenoVein_BackgroundMask.input0 = MinMaxScan2.output0
+  phenoVein_BackgroundMask.noBypass = MinMaxScan2.trueMinValue
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 103
+        objectName = ""
+        parentUniqueId = 0
+        frame = "3904 -3974 320 129"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = ""
+        titleText = "notification counter shows 6 counts here"
+        isCollapsed = False
+        titleFrame = "3909 -3969 310 22"
+      }
+    }
+  }
+}

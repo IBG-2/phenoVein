@@ -1,0 +1,286 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module ImageSave {
+  internal  {
+    frame = "4448 -1340 96 56"
+    moduleGroupName = CreateOutfilename
+    windows  {
+      window _default {
+        geometry = "1186 571 393 366"
+        sizeHint = "393 366"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageSave
+    taskVerboseLogging = FALSE
+    filename = ""
+    format = DICOMTIFF
+    comment = MeVisLab
+    allowOverwrite = FALSE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = .result1
+    dicomNameUsed = FALSE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDerivedImageType = "OTHER\\MEVISLAB"
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = None
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module StringUtils {
+  internal  {
+    frame = "4044 -1388 88 56"
+    moduleGroupName = CreateOutfilename
+    windows  {
+      window _default {
+        geometry = "-1014 323 902 347"
+        sizeHint = "370 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StringUtils
+    operationType = Concatenate
+    string1 = _phenoVein
+    string2 = /
+    string3 = _SessionName
+    string4 = ""
+    string5 = ""
+    string6 = ""
+    stringPrefix = [
+    stringPostfix = /
+    toggle1 = TRUE
+    toggle2 = TRUE
+    toggle3 = TRUE
+    toggle4 = FALSE
+    toggle5 = FALSE
+    toggle6 = FALSE
+    togglePrefix = FALSE
+    togglePostfix = FALSE
+    separator = ""
+    selectSeparator = 3
+    toggleIgnoreCase = FALSE
+    inPos1 = 0
+    inPos2 = 0
+  }
+}
+module FileInformation {
+  internal  {
+    frame = "4320 -1340 112 56"
+    moduleGroupName = CreateOutfilename
+    windows  {
+      window _default {
+        geometry = "1282 557 547 371"
+        sizeHint = "260 371"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FileInformation
+    path = ""
+    dirname = ""
+    filename = ""
+    basename = ""
+    extension = ""
+    type = ""
+    size = 0
+    createDate = ""
+    exists = FALSE
+    isDirectory = FALSE
+    isReadable = FALSE
+    isWritable = FALSE
+  }
+}
+module FieldBypass {
+  internal  {
+    frame = "3924 -1392 104 64"
+    moduleGroupName = CreateOutfilename
+    windows  {
+      window _default {
+        geometry = "92 543 717 331"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = outFilename
+    inputString0 = _phenoVein/_SessionName
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = ""
+    noBypass = TRUE
+    onlyIfChanged = FALSE
+  }
+}
+module StringUtils {
+  internal  {
+    frame = "4174 -1392 128 64"
+    moduleGroupName = CreateOutfilename
+    windows  {
+      window _default {
+        geometry = "-979 799 902 347"
+        sizeHint = "370 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SuggestDirName
+    operationType = Concatenate
+    string1 = ""
+    string2 = ""
+    string3 = _phenoVein
+    string4 = ""
+    string5 = ""
+    string6 = ""
+    stringPrefix = [
+    stringPostfix = /
+    toggle1 = TRUE
+    toggle2 = TRUE
+    toggle3 = TRUE
+    toggle4 = FALSE
+    toggle5 = FALSE
+    toggle6 = FALSE
+    togglePrefix = FALSE
+    togglePostfix = FALSE
+    separator = ""
+    selectSeparator = 0
+    toggleIgnoreCase = FALSE
+    inPos1 = 0
+    inPos2 = 0
+  }
+}
+module StringUtils {
+  internal  {
+    frame = "4169 -1207 128 64"
+    moduleGroupName = CreateOutfilename
+    windows  {
+      window _default {
+        geometry = "-1898 801 902 347"
+        sizeHint = "370 331"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SuggestFileName
+    operationType = Concatenate
+    string1 = ""
+    string2 = _
+    string3 = SessionName
+    string4 = ""
+    string5 = ""
+    string6 = ""
+    stringPrefix = [
+    stringPostfix = /
+    toggle1 = TRUE
+    toggle2 = TRUE
+    toggle3 = TRUE
+    toggle4 = FALSE
+    toggle5 = FALSE
+    toggle6 = FALSE
+    togglePrefix = FALSE
+    togglePostfix = FALSE
+    separator = ""
+    selectSeparator = 0
+    toggleIgnoreCase = FALSE
+    inPos1 = 0
+    inPos2 = 0
+  }
+}
+connections  {
+  StringUtils.string1 = SuggestDirName.result
+  StringUtils.string3 = SuggestFileName.result
+  FileInformation.path = ImageSave.sourceName
+  outFilename.inputString0 = StringUtils.result
+  SuggestDirName.string1 = FileInformation.dirname
+  SuggestDirName.string2 = FileInformation.basename
+  SuggestFileName.string1 = FileInformation.basename
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 22
+        objectName = ""
+        parentUniqueId = 0
+        frame = "4135 -1274 200 200"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = "this module contains the analysisName field (string3)"
+        titleText = analysisName
+        isCollapsed = False
+        titleFrame = "4140 -1269 190 22"
+      }
+    }
+  }
+}

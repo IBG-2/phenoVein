@@ -1,0 +1,1591 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module View2D {
+  internal  {
+    frame = "-467 -211 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "0 0 0 0"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D2
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 4.2087793
+    sliceZoomSynced = 4.2087793
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "1334.21704101562 935.927490234375"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module BoolArithmetic {
+  internal  {
+    frame = "1073 -11 112 56"
+    moduleGroupName = SelectionMarker
+    windows  {
+      window _default {
+        geometry = "-411 361 188 228"
+        sizeHint = "188 228"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = BoolArithmetic
+    inputBool1 = FALSE
+    inputBool2 = FALSE
+    operation = Identity
+  }
+}
+module FieldBypass {
+  internal  {
+    frame = "1357 141 104 56"
+    moduleGroupName = SelectionMarker
+    windows  {
+      window _default {
+        geometry = "-1325 160 289 355"
+        sizeHint = "184 331"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FieldBypass
+    inputString0 = "0 0 0 0 0 0"
+    inputString1 = ""
+    inputString2 = ""
+    inputString3 = ""
+    inputString4 = ""
+    inputNumber = 0
+    outputString = "0 0 0 0 0 0"
+    noBypass = FALSE
+    onlyIfChanged = TRUE
+  }
+}
+module XMarkerListContainer {
+  internal  {
+    frame = "1165 101 152 56"
+    moduleGroupName = SelectionMarker
+    windows  {
+      window _default {
+        geometry = "2111 387 513 497"
+        sizeHint = "500 497"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = XMarkerListContainer
+    listString = "[(0 0 0) #1]"
+    numItems = 1
+    index = 0
+    persistent = TRUE
+    listStringEnable = FALSE
+    applySelect = FALSE
+    id = 1
+    name = ""
+    newName = ""
+    overflowMode = None
+    maxSize = 0
+    useInsertTemplate = FALSE
+    posXYZ = "0 0 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module XMarkerAtIndex {
+  internal  {
+    frame = "1181 189 120 56"
+    moduleGroupName = SelectionMarker
+    windows  {
+      window _default {
+        geometry = "-1720 274 290 326"
+        sizeHint = "290 326"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = XMarkerAtIndex
+    index = 0
+    autoUpdate = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "5 -779 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "747 502 456 255"
+        sizeHint = "449 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan
+    updateMode = AutoUpdate
+    typeSelect = "Proposed Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "1397 -603 152 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "805 314 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = TRUE
+    minGreyvalue = 0
+    changeMaxGreyvalue = TRUE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module Arithmetic0 {
+  internal  {
+    frame = "-223 -927 128 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1148 622 459 241"
+        sizeHint = "446 241"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = multiply_by_factor
+    debugLevel = 0
+    arg1 = "0.100000001490116 0 0"
+    arg1X = 0.100000001490116
+    arg1XAsVec = FALSE
+    operation = Multiply
+    arg2 = "4 0 0"
+    arg2X = 4
+    arg2XAsVec = FALSE
+    resultsAsPercent = FALSE
+    formatString = ""
+  }
+}
+module Bypass {
+  internal  {
+    frame = "1357 -315 72 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "917 619 116 20"
+        sizeHint = "100 20"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Bypass
+    noBypass = FALSE
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "944 -199 120 56"
+    moduleGroupName = SelectionMarker
+    windows  {
+      window _default {
+        geometry = "826 563 283 132"
+        sizeHint = "283 132"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskToMarkers
+    lowerThreshold = 0
+    setType = User
+    type = 0
+    updateMode = AutoUpdate
+    vectorMode = Zero
+  }
+}
+module FastMorphology {
+  internal  {
+    frame = "940 -111 128 56"
+    moduleGroupName = SelectionMarker
+    windows  {
+      window _default {
+        geometry = "-546 351 338 392"
+        sizeHint = "338 392"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FastMorphology2
+    morphologicOperation = Dilation
+    xSize = 7
+    ySize = 7
+    zSize = 1
+    cSize = 0
+    tSize = 0
+    uSize = 0
+    useInputMaxValue = FALSE
+    userSetMaxValue = 1
+    autoUpdate = TRUE
+    useGreyScaleMorphology = FALSE
+    boundaryHandling = "Propagate boundary values"
+    boundaryFillValue = 0
+  }
+}
+module MarkerToMask {
+  internal  {
+    frame = "948 -15 112 56"
+    moduleGroupName = SelectionMarker
+    windows  {
+      window _default {
+        geometry = "-1249 574 265 168"
+        sizeHint = "265 168"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MarkerToMask
+    maskValue = 1
+    incrementalStartValue = 1
+    backgroundValue = 0
+    autoUpdate = TRUE
+    writeMode = MaskValue
+    outputType = uint8
+  }
+}
+module BitMorphology {
+  internal  {
+    frame = "289 35 112 56"
+    moduleGroupName = RemoveBranchingRegion
+    windows  {
+      window _default {
+        geometry = "-474 136 339 466"
+        sizeHint = "339 466"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = BranchingPointSurroundingSize
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    kernelX = 17
+    kernelY = 17
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    numKernelElements = 225
+    filterMode = BitDilation
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "233 -1295 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-512 639 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = multiply0
+    function = Multiply
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "297 -65 96 64"
+    moduleGroupName = RemoveBranchingRegion
+    windows  {
+      window _default {
+        geometry = "848 597 240 64"
+        sizeHint = "238 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = invert2
+    function = Invert
+    constant = 0
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "1145 293 160 56"
+    moduleGroupName = SelectionMarker
+    windows  {
+      window _default {
+        geometry = "-873 346 620 679"
+        sizeHint = "605 679"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "-868 312 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 0 0.0156862754374743"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = PRESSED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 1
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 7
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = 0
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = TRUE
+    applySelect = FALSE
+    id = -1
+    name = ""
+    newName = ""
+    overflowMode = RemoveLast
+    maxSize = 1
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "0 0 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module Switch {
+  internal  {
+    frame = "-191 -255 144 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-668 542 200 64"
+        sizeHint = "200 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = chooseVeinManually
+    currentInput = 0
+    numberOfInputs = 2
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1561 -587 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-685 317 403 380"
+        sizeHint = "403 380"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 2
+    threshWidth = 0
+    threshMin = 2
+    threshMax = 2
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 1
+    changeMinMax = TRUE
+    changedMin = 0
+    changedMax = 2
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "1557 -683 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1485 590 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay4
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "1 0 0.0156862754374743"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module FastMorphology {
+  internal  {
+    frame = "169 -243 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "8 766 338 392"
+        sizeHint = "338 392"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FastMorphology1
+    morphologicOperation = Erosion
+    xSize = 2
+    ySize = 2
+    zSize = 1
+    cSize = 0
+    tSize = 0
+    uSize = 0
+    useInputMaxValue = FALSE
+    userSetMaxValue = 1
+    autoUpdate = TRUE
+    useGreyScaleMorphology = FALSE
+    boundaryHandling = "Propagate boundary values"
+    boundaryFillValue = 0
+  }
+}
+module FastMorphology {
+  internal  {
+    frame = "1293 -435 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1329 250 338 392"
+        sizeHint = "338 392"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FastMorphology
+    morphologicOperation = Dilation
+    xSize = 1
+    ySize = 1
+    zSize = 1
+    cSize = 0
+    tSize = 0
+    uSize = 0
+    useInputMaxValue = FALSE
+    userSetMaxValue = 1
+    autoUpdate = TRUE
+    useGreyScaleMorphology = FALSE
+    boundaryHandling = "Propagate boundary values"
+    boundaryFillValue = 0
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "1421 -515 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "860 597 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic24
+    function = Subtract
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "1413 -683 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1032 592 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay3
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "0 1 0.0313725508749485"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "145 -1183 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-366 940 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Multiply1
+    function = Multiply
+    constant = 1
+    autoReplicate = FALSE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "1073 420 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "286 499 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan3
+    updateMode = AutoClear
+    typeSelect = "Input Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module veinThickness {
+  internal  {
+    frame = "353 -1459 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-667 622 543 279"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "-772 918 401 249"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = veinThickness
+    startSquare = 0.01
+    startSigma = 0.01
+    fittedVeinThickness = -1
+    fittedVeinWidthChiSqr = 2.07862217087435
+    maxVeinThickness = 0.1
+    showFittingPlot = TRUE
+    renderVein = TRUE
+  }
+}
+module SkeletonTotalLength {
+  internal  {
+    frame = "-431 -1459 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-793 619 494 243"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonTotalLength
+    totalSkeletonLength = 2.61262094181319
+    autoUpdate = FALSE
+    isUpToDate = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "97 -927 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-564 334 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Equal
+    function = Equal
+    constant = 1
+    autoReplicate = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "33 -1055 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-366 940 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Multiply2
+    function = Multiply
+    constant = 1
+    autoReplicate = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "-47 -927 128 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-704 131 403 380"
+        sizeHint = "403 380"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = maxDistance
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = TRUE
+    threshCenter = 0
+    threshWidth = 0.400000005960464
+    threshMin = -0.200000002980232
+    threshMax = 0.200000002980232
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = 0
+    changedMax = 200
+  }
+}
+module EuclideanDTF {
+  internal  {
+    frame = "9 -703 112 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "120 679 487 347"
+        sizeHint = "418 347"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = local_DTF
+    outputMode = DistanceOnly
+    dtfPrecision = FloatPrecision
+    distanceScaling = 1
+    applyTime = OnRequest
+    dimension = 2D
+    minValue = 1
+    maxValue = 1
+    cacheSizeKB = -1
+    selectedAlgorithm = UseSingleMemoryBlock
+    autoUpdateMode = AutoUpdate
+    autoUpdateTime = OnOutputRequest
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "-267 -159 136 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1806 523 403 380"
+        sizeHint = "403 380"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = selectedSingleVein
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = TRUE
+    threshCenter = 0
+    threshWidth = 0
+    threshMin = 0
+    threshMax = 0
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = 1
+    changedMax = 0
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "-199 -59 160 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-488 174 448 480"
+        sizeHint = "448 480"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1237 381 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    outputLargestClusterOnEachSlice = FALSE
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 1
+    minClusterSize = 0
+    maxClusterSize = -1
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    invertLargestCluster = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_2D_8_XY
+    useMask = FALSE
+  }
+}
+module SkeletonBranchingPoints {
+  internal  {
+    frame = "-203 301 168 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "648 30 624 330"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SkeletonBranchingPoints
+    autoUpdate = FALSE
+    isUpToDate = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "-167 41 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "860 597 217 64"
+        sizeHint = "215 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Multiply
+    function = Multiply
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "-167 161 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "848 597 240 64"
+        sizeHint = "238 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = invert1
+    function = Invert
+    constant = 0
+  }
+}
+module EuclideanDTF {
+  internal  {
+    frame = "41 -247 112 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "2761 514 487 347"
+        sizeHint = "418 347"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = global_DTF
+    outputMode = DistanceOnly
+    dtfPrecision = FloatPrecision
+    distanceScaling = 1
+    applyTime = OnRequest
+    dimension = 2D
+    minValue = 1
+    maxValue = 1
+    cacheSizeKB = -1
+    selectedAlgorithm = AutoSelectFastest
+    autoUpdateMode = AutoUpdate
+    autoUpdateTime = OnOutputRequest
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "785 420 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1208 502 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan2
+    updateMode = AutoClear
+    typeSelect = "Input Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "1101 -683 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "355 193 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay1
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "0 1 0.968627452850342"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "1233 -787 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _viewer {
+        geometry = "647 354 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoGroup3
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "1253 -683 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "494 677 436 386"
+        sizeHint = "436 386"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay2
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.40000001
+    baseColor = "0 0 0"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoBypass {
+  internal  {
+    frame = "1233 -867 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1004 241 239 94"
+        sizeHint = "239 94"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoBypass2
+    bypass = TRUE
+    noBypass = FALSE
+  }
+}
+module SoKeyGrabber {
+  internal  {
+    frame = "1365 -867 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-446 642 369 246"
+        sizeHint = "369 246"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoKeyGrabber2
+    on = TRUE
+    shiftPressed = FALSE
+    ctrlPressed = FALSE
+    altPressed = FALSE
+    isAutoRepeat = FALSE
+    lastKey = PAD_5
+    key0 = ANY
+    key1 = ANY
+    key2 = ANY
+    key3 = ANY
+    key4 = ANY
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "1237 -963 88 56"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = SoGroup2
+  }
+}
+module FastMorphology {
+  internal  {
+    frame = "1101 -587 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "556 654 338 392"
+        sizeHint = "338 392"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FastMorphology10
+    morphologicOperation = Dilation
+    xSize = 3
+    ySize = 3
+    zSize = 1
+    cSize = 0
+    tSize = 0
+    uSize = 0
+    useInputMaxValue = FALSE
+    userSetMaxValue = 1
+    autoUpdate = TRUE
+    useGreyScaleMorphology = FALSE
+    boundaryHandling = "Propagate boundary values"
+    boundaryFillValue = 0
+  }
+}
+module View2D {
+  internal  {
+    frame = "1117 -1117 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "49 385 624 330"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1146 322 704 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "841 364 268 530"
+        sizeHint = "253 530"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_NEAREST
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "497 420 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "747 501 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan1
+    updateMode = AutoClear
+    typeSelect = "Input Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "203 420 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "286 499 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan0
+    updateMode = AutoClear
+    typeSelect = "Input Data Type"
+    preferUnsigned = TRUE
+  }
+}
+connections  {
+  View2D2.inImage = ConnectedComponents.output0
+  BoolArithmetic.inputBool1 = SoKeyGrabber2.ctrlPressed
+  FieldBypass.inputString0 = XMarkerAtIndex.position6D
+  FieldBypass.noBypass = SoKeyGrabber2.ctrlPressed
+  XMarkerListContainer.posXYZ = FieldBypass.outputString
+  MinMaxScan.input0 = local_DTF.output0
+  ImagePropertyConvert.input0 = Arithmetic24.output0
+  multiply_by_factor.arg1X = veinThickness.maxVeinThickness
+  Bypass.input0 = veinThickness.output0
+  MaskToMarkers.input0 = FastMorphology2.output0
+  FastMorphology2.input0 = MarkerToMask.output0
+  MarkerToMask.input0 = MinMaxScan0.output0
+  MarkerToMask.inputXMarkerList = SoView2DMarkerEditor.outXMarkerList
+  MarkerToMask.autoUpdate = BoolArithmetic.negatedOutputBool
+  BranchingPointSurroundingSize.input0 = SkeletonBranchingPoints.output0
+  BranchingPointSurroundingSize.kernelY = BranchingPointSurroundingSize.kernelX
+  multiply0.input0 = Multiply1.output0
+  multiply0.input1 = invert2.output0
+  invert2.input0 = BranchingPointSurroundingSize.output0
+  chooseVeinManually.input0 = selectedSingleVein.output0
+  chooseVeinManually.input1 = ConnectedComponents.output1
+  IntervalThreshold.input0 = Bypass.output0
+  SoView2DOverlay4.image = IntervalThreshold.output0
+  SoView2DOverlay4.alphaFactor = SoView2DOverlay1.alphaFactor
+  FastMorphology1.input0 = MinMaxScan1.output0
+  FastMorphology.input0 = Bypass.output0
+  Arithmetic24.input0 = FastMorphology.output0
+  Arithmetic24.input1 = Bypass.output0
+  SoView2DOverlay3.image = ImagePropertyConvert.output0
+  SoView2DOverlay3.alphaFactor = SoView2DOverlay1.alphaFactor
+  Multiply1.input0 = Multiply2.output0
+  Multiply1.input1 = FastMorphology1.output0
+  veinThickness.input0 = multiply0.output0
+  veinThickness.input1 = MinMaxScan.output0
+  veinThickness.input2 = MinMaxScan2.output0
+  SkeletonTotalLength.input0 = chooseVeinManually.output0
+  Equal.input0 = MinMaxScan.output0
+  Equal.input1 = global_DTF.output0
+  Multiply2.input0 = maxDistance.output0
+  Multiply2.input1 = Equal.output0
+  maxDistance.input0 = MinMaxScan.output0
+  maxDistance.threshWidth = multiply_by_factor.resultX
+  local_DTF.input0 = chooseVeinManually.output0
+  selectedSingleVein.input0 = ConnectedComponents.output0
+  selectedSingleVein.changedMax = ConnectedComponents.numberOfClusters
+  ConnectedComponents.input0 = Multiply.output0
+  SkeletonBranchingPoints.input0 = MinMaxScan0.output0
+  Multiply.input0 = MinMaxScan0.output0
+  Multiply.input1 = invert1.output0
+  invert1.input0 = SkeletonBranchingPoints.output0
+  global_DTF.input0 = MinMaxScan0.output0
+  SoView2DOverlay1.image = FastMorphology10.output0
+  SoGroup3.children = "SoView2DMarkerEditor.self SoView2DOverlay1.self SoView2DOverlay2.self SoView2DOverlay3.self SoView2DOverlay4.self"
+  SoView2DOverlay2.image = MinMaxScan0.output0
+  SoView2DOverlay2.alphaFactor = SoView2DOverlay1.alphaFactor
+  SoBypass2.child = SoGroup3.self
+  SoBypass2.noBypass = SoKeyGrabber2.altPressed
+  SoGroup2.children = "SoBypass2.self SoKeyGrabber2.self"
+  FastMorphology10.input0 = chooseVeinManually.output0
+  View2D.inImage = MinMaxScan3.output0
+  View2D.inInvPreLUT = SoGroup2.self
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 137
+        objectName = ""
+        parentUniqueId = 0
+        frame = "-105 266 276 200"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = ""
+        titleText = "branching point calculation is slow"
+        isCollapsed = True
+        titleFrame = "-100 271 266 22"
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 197
+        objectName = RemoveBranchingRegion
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 273
+        objectName = SelectionMarker
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 192
+        objectName = ""
+        parentUniqueId = 0
+        frame = "855 -235 324 200"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = ""
+        titleText = "creates meaningless notification updates"
+        isCollapsed = True
+        titleFrame = "860 -230 314 22"
+      }
+    }
+  }
+}

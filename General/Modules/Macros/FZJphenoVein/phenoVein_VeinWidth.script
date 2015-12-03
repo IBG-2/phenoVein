@@ -1,0 +1,99 @@
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Interface  {
+  Inputs {
+    Field input0 {internalName = MinMaxScan0.input0 comment = "Skeleton Image"}
+    Field input1 {internalName = MinMaxScan1.input0 comment = "Leaf mask"}
+    Field input2 {internalName = MinMaxScan2.input0 comment = "B&W Image"}
+    Field input3 {internalName = MinMaxScan3.input0 comment = "Original Image"}
+  }
+  Outputs {
+    Field output0 {internalName = veinThickness.output0 comment = "vein boundary mask"}
+  }
+  Parameters {
+    
+    Field transparencyActiveSkel        {internalName = SoView2DOverlay1.alphaFactor}
+    Field updateInputs                  {type = Trigger}
+    Field branchingPointSurroundingSize {internalName = BranchingPointSurroundingSize.kernelX}
+    Field numberOfVeinSegments          {internalName = ConnectedComponents.numberOfClusters}
+    Field maxVeinThickness              {internalName = veinThickness.maxVeinThickness}
+    Field startValueSquare              {internalName = veinThickness.startSquare}
+    Field startValueSigma               {internalName = veinThickness.startSigma}
+    Field currentVein                   {internalName = selectedSingleVein.threshCenter type = Int min = 1 max = numberOfVeinSegments}
+    Field calcCurrentVein               {type = Trigger}
+    Field veinLength                    {internalName = SkeletonTotalLength.totalSkeletonLength}
+    Field veinWidth                     {internalName = veinThickness.fittedVeinThickness}
+    Field veinWidthChiSqr               {internalName = veinThickness.fittedVeinWidthChiSqr}
+    Field calcAllVeins                  {type = Trigger}
+    Field stopCalculation               {type = Trigger}
+    Field calculationStopped            {type = Bool}
+    Field status                        {type = Float value = 0}
+
+    Field showFittingPlot               {internalName = veinThickness.showFittingPlot}
+    Field renderVein                    {internalName = veinThickness.renderVein}
+    Field clearVeins                    {internalName = veinThickness.clear}
+    
+    Field chooseVeinManually            {internalName = chooseVeinManually.currentInput type = Bool  min = 0 max = 1 }
+    
+    Field veinLengthAndWidth            {type = String value = ""}
+    Field copyResultsToClipboard        {type = Trigger}
+    
+    Field resetLUT                      {internalName = View2D.resetLUT}
+    Field resetViewer                   {internalName = View2D.unzoom}
+  }
+}
+
+
+Description {
+  Field veinWidth { editable = False}
+}
+
+Commands {
+  source = $(LOCAL)/phenoVein_VeinWidth.py
+
+//  FieldListener SoView2DMarkerEditor.outXMarkerList {command = "*py: ctx.field("ConnectedComponents.update").touch() *"}
+  FieldListener ConnectedComponents.inputMarkers {command = "*py: ctx.field("ConnectedComponents.update").touch() *"}
+  FieldListener updateInputs       { command = updateInputs}
+  FieldListener calcAllVeins       { command = calcAllVeinLengthAndWidth}
+  FieldListener calcCurrentVein    { command = calcCurrentVeinLengthAndWidth}
+  FieldListener stopCalculation    { command = "*py: ctx.field("calculationStopped").setValue(True) *"}
+  FieldListener copyResultsToClipboard {command = copyResultsToClipboard}
+  
+  // delete saved data when input changes
+  // not sure if necessary...
+  //FieldListener MinMaxScan0.input0 {command = reset}
+  //FieldListener MinMaxScan1.input0 {command = reset}
+  //FieldListener MinMaxScan2.input0 {command = reset}
+  //FieldListener MinMaxScan3.input0 {command = reset}
+  
+}
+
+
+
+

@@ -1,0 +1,1804 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module DicomTagModify {
+  internal  {
+    frame = "-56 3754 160 64"
+    moduleGroupName = LoadImage
+    windows  {
+      window _default {
+        geometry = "409 633 351 266"
+        sizeHint = "351 266"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "199 648 209 445"
+        sizeHint = "209 445"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = setFilenameAsPatientID
+    tagName0 = ""
+    tagValue0 = ""
+    removeTag0 = FALSE
+    tagVR0 = PN
+    stdTagVR0 = TRUE
+    tagName1 = ""
+    tagValue1 = ""
+    removeTag1 = FALSE
+    tagVR1 = DA
+    stdTagVR1 = TRUE
+    tagName2 = PatientID
+    tagValue2 = ""
+    removeTag2 = FALSE
+    tagVR2 = LO
+    stdTagVR2 = TRUE
+    tagName3 = ""
+    tagValue3 = ""
+    removeTag3 = FALSE
+    tagVR3 = CS
+    stdTagVR3 = TRUE
+    tagName4 = ""
+    tagValue4 = ""
+    removeTag4 = FALSE
+    tagVR4 = AS
+    stdTagVR4 = TRUE
+    tagName5 = ""
+    tagValue5 = ""
+    removeTag5 = FALSE
+    tagVR5 = LT
+    stdTagVR5 = TRUE
+    discardSource = None
+    sourcePresent = FALSE
+    useTagsString = FALSE
+    modifyTagsString = ""
+    removeTagsString = ""
+    synchronizeTagsString = ""
+    trimSpaces = TRUE
+    autoApply = TRUE
+  }
+}
+module Scale {
+  internal  {
+    frame = "-251 2149 72 56"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "1415 366 233 337"
+        sizeHint = "233 337"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale1
+    inputMin = 257
+    inputMax = 54741
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = UInt16
+    outputMin = 0
+    outputMax = 65535
+  }
+}
+module DecomposeVector3 {
+  internal  {
+    frame = "89 1673 144 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "779 580 316 60"
+        sizeHint = "316 60"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = DecomposeVector_2
+    v = "5391.7373046875 3562.91284179688 -1"
+  }
+}
+module DecomposeVector3 {
+  internal  {
+    frame = "89 1609 144 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "779 481 316 60"
+        sizeHint = "316 60"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = DecomposeVector_1
+    v = "3233.39501953125 1841.18151855469 -1"
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "-379 1961 152 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "805 314 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Set_VS_to_1
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = TRUE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = FALSE
+  }
+}
+module Switch {
+  internal  {
+    frame = "-371 2049 136 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "867 597 200 64"
+        sizeHint = "200 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ShowOriginalImage
+    currentInput = 0
+    numberOfInputs = 2
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "-770 1235 152 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "406 438 328 631"
+        sizeHint = "328 631"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1031 324 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = setPageSize
+    changeDimensionInfo = FALSE
+    cDimInfo = GREEN
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 0.001
+    a01 = 0
+    a02 = 0
+    a03 = 18.076334
+    a10 = 0
+    a11 = 0.001
+    a12 = 0
+    a13 = 29.294666
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "0.0010000000751878 0 0 18.0763333333333
+0 0.0010000000751878 0 29.2946666666667
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int16"
+    changePageSize = TRUE
+    pageSizeX = 64
+    pageSizeY = 64
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 65535
+    changeWorldMatrix = FALSE
+    voxelSizeX = 0.001
+    voxelSizeY = 0.001
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module View2D {
+  internal  {
+    frame = "-29 1007 120 56"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "356 425 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window Settings {
+        geometry = "527 471 278 586"
+        sizeHint = "256 586"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = FALSE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.5"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 32767.5
+    lutWidth = 65535
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+    hiResRendering = FALSE
+  }
+}
+module SoGroup {
+  internal  {
+    frame = "-17 1103 128 56"
+    moduleGroupName = Scale_and_ROI
+  }
+  fields  {
+    instanceName = SoGroup
+  }
+}
+module View2DExtensions {
+  internal  {
+    frame = "123 1223 136 56"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "99 229 591 649"
+        sizeHint = "576 649"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2DExtensions
+    slicerOn = TRUE
+    zoomOn = TRUE
+    panOn = TRUE
+    autoCenterOn = TRUE
+    position = "-3.9842700958252 -7.72900009155273 32.6810989379883"
+    positionMode = Off
+    lutAlphaSync = TRUE
+    lutGrayCenter = 0.5
+    lutGrayWidth = 1
+    lutAlphaCenter = 0.5
+    lutAlphaWidth = 1
+    lutIsRelative = TRUE
+    lutSetDefaultOnce = FALSE
+    useRelativeLUTIfNoInputImage = TRUE
+    lutColorFactor = "1 1 1"
+    lutAlphaFactor = 1
+    annoCoords = Voxel
+    annoCTValue = ToHounsfield
+    valueHighPrecision = TRUE
+    annotationOn = TRUE
+    annotFontSize = ANNO_SIZE_AUTO
+    annotShowOrientation = ANNO_ORIENTATION_SIZE_WEIGHTED
+    annotVerticalRuler = FALSE
+    annotHorizontalRuler = FALSE
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationMode = ANNO_MODE_AUTO
+    annotShowAnnot = ANNO_SHOW_DETAILED
+    annotUserTopLeft = "$(PatientsName)
+$(PatientID) $(PatientsSex)
+$(PatientsBirthDate)
+($(input00)): $(input01)"
+    annotUserTopRight = "$(InstitutionName)
+$(ManufacturersModelName)
+$(Modality)"
+    annotUserBottomLeft = "slice:  $(slice)
+Timepoint: $(timepoint)
+$(sizex),$(sizey),$(sizez),$(sizec),$(sizet)
+$(voxelx),$(voxely),$(voxelz)
+$(SeriesDescription)"
+    annotUserBottomRight = "User Mode
+Scan: $(AcquisitionDate)
+LUT C/W: $(numInput03) / $(numInput04)"
+    annotShortTopLeft = "$(PatientsName)
+($(input00)):
+ $(input01) GV"
+    annotShortTopRight = $(Modality)
+    annotShortBottomLeft = "Slice: $(slice)"
+    annotShortBottomRight = "LUT C/W: $(numInput03) / $(numInput04)"
+    annotMRTopLeft = "$(PatientsName)
+$(PatientsBirthDate)  $(PatientsSex)
+$(PatientID)
+($(input00)):
+$(input01) GV"
+    annotMRTopRight = "$(InstitutionName)
+$(ManufacturersModelName)
+$(Modality)"
+    annotMRBottomLeft = "Slice: $(slice)
+Timepoint: $(timepoint)
+$(sizex),$(sizey),$(sizez),$(sizec),$(sizet)
+$(voxelx),$(voxely),$(voxelz)
+$(SeriesDescription)
+$(ImageComments)"
+    annotMRBottomRight = "MR Mode
+Scan: $(AcquisitionDate)
+LUT C/W: $(numInput03) / $(numInput04)"
+    annotCTTopLeft = "$(PatientsName)
+$(PatientsBirthDate)  $(PatientsSex)
+$(PatientID)
+($(input00)): 
+$(numInput02) $(input09)"
+    annotCTTopRight = "$(InstitutionName)
+$(ManufacturersModelName)
+$(Modality) "
+    annotCTBottomLeft = "Slice: $(slice)
+Timepoint: $(timepoint)
+$(sizex),$(sizey),$(sizez),$(sizec),$(sizet)
+$(voxelx),$(voxely),$(voxelz)
+$(SeriesDescription)
+$(ImageComments)"
+    annotCTBottomRight = "CT Mode
+Scan: $(AcquisitionDate)
+LUT C/W: $(numInput07) / $(numInput08)"
+    annoInput03 = 0.5
+    annoInput04 = 1
+    annoInput05 = 0.5
+    annoInput06 = 1
+    annoInput07 = 0.5
+    annoInput08 = 1
+    annoInput09 = HU
+    maxPrecision = 4
+    annoMouseOn = TRUE
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    borderWidth = 1
+    borderEvaluateFocus = FALSE
+    borderFocusColor = "1 1 1"
+    borderFocusWidth = 2
+    mouseGrabberMode = FALSE
+    lutOn = TRUE
+    lutMouseOn = TRUE
+    lutMouseButton1 = IGNORED
+    lutMouseButton2 = IGNORED
+    lutMouseButton3 = PRESSED
+    lutMouseShift = RELEASED
+    lutMouseCtrl = RELEASED
+    lutMouseAlt = RELEASED
+    positionMouseButton1 = PRESSED
+    positionMouseButton2 = RELEASED
+    positionMouseButton3 = RELEASED
+    positionMouseShift = PRESSED
+    positionMouseCtrl = RELEASED
+    positionMouseAlt = IGNORED
+    positionColor = "0.886206984519958 0.875320017337799 0.560474991798401"
+    positionDrawingOn = FALSE
+    slicerMouseButton1 = IGNORED
+    slicerMouseButton2 = PRESSED
+    slicerMouseButton3 = IGNORED
+    slicerMouseShift = RELEASED
+    slicerMouseCtrl = RELEASED
+    slicerMouseAlt = RELEASED
+    zoomMouseButton1 = IGNORED
+    zoomMouseButton2 = PRESSED
+    zoomMouseButton3 = IGNORED
+    zoomMouseShift = RELEASED
+    zoomMouseCtrl = PRESSED
+    zoomMouseAlt = IGNORED
+    panMouseButton1 = IGNORED
+    panMouseButton2 = PRESSED
+    panMouseButton3 = IGNORED
+    panMouseShift = PRESSED
+    panMouseCtrl = RELEASED
+    panMouseAlt = IGNORED
+    autoCenterMouseButton1 = IGNORED
+    autoCenterMouseButton2 = PRESSED
+    autoCenterMouseButton3 = IGNORED
+    autoCenterMouseShift = PRESSED
+    autoCenterMouseCtrl = PRESSED
+    autoCenterMouseAlt = IGNORED
+  }
+}
+module SoMouseGrabber {
+  internal  {
+    frame = "-193 1223 128 56"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "-749 52 466 499"
+        sizeHint = "466 499"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoMouseGrabber
+    on = TRUE
+    normalized = FALSE
+    clamp = TRUE
+    button1 = RELEASED
+    button2 = PRESSED
+    button3 = RELEASED
+    button1Pressed = FALSE
+    button2Pressed = FALSE
+    button3Pressed = FALSE
+    shift = RELEASED
+    ctrl = RELEASED
+    alt = RELEASED
+    shiftPressed = FALSE
+    ctrlPressed = FALSE
+    altPressed = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    absX = 1024
+    absY = 603
+    x = 0.99000001
+    y = 0.77250028
+    xmin = 0
+    xmax = 1
+    ymin = 0
+    ymax = 1
+    cursorPresent = FALSE
+    maskValid = FALSE
+    setEventHandled = FALSE
+    setWheelEventHandled = FALSE
+    flipX = FALSE
+    flipY = FALSE
+    swapXY = FALSE
+    sensitivity = 1
+    wheelOverflow = FALSE
+    wheel = 0
+    wheelStep = 1
+    wheelMin = 0
+    wheelMax = 100
+  }
+}
+module SubImage {
+  internal  {
+    frame = "54 3083 88 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "1346 252 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = HSV_H
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = FALSE
+    x = 0
+    sx = 31
+    modifyX = FALSE
+    y = 0
+    sy = 31
+    modifyY = FALSE
+    z = 0
+    sz = 31
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = TRUE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module ColorModelConverter {
+  internal  {
+    frame = "158 3211 152 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "882 577 262 427"
+        sizeHint = "262 427"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RGB2HSV
+    directionSelect = "RGB to HSV"
+    automaticConvert = FALSE
+    info = "Manual convert selection"
+  }
+}
+module SubImage {
+  internal  {
+    frame = "350 3083 88 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "1346 252 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = HSV_V
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = FALSE
+    x = 0
+    sx = 31
+    modifyX = FALSE
+    y = 0
+    sy = 31
+    modifyY = FALSE
+    z = 0
+    sz = 31
+    modifyZ = FALSE
+    c = 2
+    sc = 2
+    modifyC = TRUE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "206 3083 88 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "1346 252 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = HSV_S
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = FALSE
+    x = 0
+    sx = 31
+    modifyX = FALSE
+    y = 0
+    sy = 31
+    modifyY = FALSE
+    z = 0
+    sz = 31
+    modifyZ = FALSE
+    c = 1
+    sc = 1
+    modifyC = TRUE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-1121 3083 88 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "1346 252 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = R
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = FALSE
+    x = 0
+    sx = 31
+    modifyX = FALSE
+    y = 0
+    sy = 31
+    modifyY = FALSE
+    z = 0
+    sz = 31
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = TRUE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-825 3083 88 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "1346 252 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = B
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = FALSE
+    x = 0
+    sx = 31
+    modifyX = FALSE
+    y = 0
+    sy = 31
+    modifyY = FALSE
+    z = 0
+    sz = 31
+    modifyZ = FALSE
+    c = 2
+    sc = 2
+    modifyC = TRUE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-969 3083 88 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "1346 252 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = G
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = FALSE
+    x = 0
+    sx = 31
+    modifyX = FALSE
+    y = 0
+    sy = 31
+    modifyY = FALSE
+    z = 0
+    sz = 31
+    modifyZ = FALSE
+    c = 1
+    sc = 1
+    modifyC = TRUE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module Scale {
+  internal  {
+    frame = "-702 2731 64 56"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "851 461 233 337"
+        sizeHint = "233 337"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale
+    inputMin = 1285
+    inputMax = 51657
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = UInt16
+    outputMin = 0
+    outputMax = 65535
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "805 753 248 64"
+    moduleGroupName = setScale
+    windows  {
+      window _default {
+        geometry = "457 258 398 631"
+        sizeHint = "398 631"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1031 324 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert_setVoxelSize_2
+    changeDimensionInfo = FALSE
+    cDimInfo = "RED / GREEN / BLUE"
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 0.0058619739
+    a01 = 0
+    a02 = 0
+    a03 = 273.72733
+    a10 = 0
+    a11 = 0.0058619739
+    a12 = 0
+    a13 = 155.87134
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "0.00586197381050779 0 0 273.727339961473
+0 0.00586197381050779 0 155.871337107662
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 64
+    pageSizeY = 64
+    pageSizeZ = 1
+    pageSizeC = 3
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 255
+    changeWorldMatrix = TRUE
+    voxelSizeX = 0.0058619739
+    voxelSizeY = 0.0058619739
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module Switch {
+  internal  {
+    frame = "566 1392 80 56"
+    moduleGroupName = CroppedOriginalImage
+    windows  {
+      window _default {
+        geometry = "-990 612 200 64"
+        sizeHint = "200 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Switch1
+    currentInput = 1
+    numberOfInputs = 2
+  }
+}
+module SubImage {
+  internal  {
+    frame = "670 1608 96 56"
+    moduleGroupName = CroppedOriginalImage
+    windows  {
+      window _default {
+        geometry = "2003 424 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1998 504 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SubImage1
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = TRUE
+    x = 3233.39501953125
+    sx = 5391.7373046875
+    modifyX = TRUE
+    y = 1841.18151855469
+    sy = 3562.91284179688
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "84 3558 104 56"
+    moduleGroupName = LoadImage
+    windows  {
+      window _default {
+        geometry = "747 502 443 255"
+        sizeHint = "441 255"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan
+    updateMode = AutoUpdate
+    typeSelect = "Input Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "219 2482 112 64"
+    moduleGroupName = InvertImage
+    windows  {
+      window _default {
+        geometry = "848 597 240 64"
+        sizeHint = "238 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = invert_bg_leaf
+    function = Invert
+    constant = 0
+  }
+}
+module Switch {
+  internal  {
+    frame = "83 2394 96 64"
+    moduleGroupName = InvertImage
+    windows  {
+      window _default {
+        geometry = "866 698 200 64"
+        sizeHint = "200 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = InvertImage
+    currentInput = 1
+    numberOfInputs = 2
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "-111 1961 160 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "1999 45 620 679"
+        sizeHint = "605 679"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 819 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ScalingVector
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "0 1 0.0666666701436043"
+    selectionTolerance = 2
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = PRESSED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 1
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 5
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_VECTOR
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 3
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_VECTOR
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = 0
+    persistent = FALSE
+    listStringEnable = TRUE
+    ownsList = TRUE
+    applySelect = FALSE
+    id = 5
+    name = ""
+    newName = ""
+    overflowMode = RemoveLast
+    maxSize = 1
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "4038.5 3899.5 0.5"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "-4 -3753 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "533 753 248 64"
+    moduleGroupName = setScale
+    windows  {
+      window _default {
+        geometry = "66 438 324 631"
+        sizeHint = "324 631"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1031 324 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert_setVoxelSize_1
+    changeDimensionInfo = FALSE
+    cDimInfo = GREEN
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 0.0058619739
+    a01 = 0
+    a02 = 0
+    a03 = 273.72733
+    a10 = 0
+    a11 = 0.0058619739
+    a12 = 0
+    a13 = 155.87134
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "0.00586197381050779 0 0 273.727339961473
+0 0.00586197381050779 0 155.871337107662
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int16"
+    changePageSize = FALSE
+    pageSizeX = 64
+    pageSizeY = 64
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 65535
+    changeWorldMatrix = TRUE
+    voxelSizeX = 0.0058619739
+    voxelSizeY = 0.0058619739
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-403 3083 88 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "1346 252 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = YUV_U
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = FALSE
+    x = 0
+    sx = 31
+    modifyX = FALSE
+    y = 0
+    sy = 31
+    modifyY = FALSE
+    z = 0
+    sz = 31
+    modifyZ = FALSE
+    c = 1
+    sc = 1
+    modifyC = TRUE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-260 3083 88 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "1346 252 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = YUV_V
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = FALSE
+    x = 0
+    sx = 31
+    modifyX = FALSE
+    y = 0
+    sy = 31
+    modifyY = FALSE
+    z = 0
+    sz = 31
+    modifyZ = FALSE
+    c = 2
+    sc = 2
+    modifyC = TRUE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module ColorModelConverter {
+  internal  {
+    frame = "-434 3207 152 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "882 577 262 427"
+        sizeHint = "262 427"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RGB2YUV
+    directionSelect = "RGB to YUV"
+    automaticConvert = FALSE
+    info = "Manual convert selection"
+  }
+}
+module Switch {
+  internal  {
+    frame = "-798 2831 256 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "-915 704 302 64"
+        sizeHint = "200 64"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 415"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ColorChannel
+    currentInput = 2
+    numberOfInputs = 10
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-555 3083 88 64"
+    moduleGroupName = Colorchannel
+    windows  {
+      window _default {
+        geometry = "1346 252 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = YUV_Y
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = FALSE
+    x = 0
+    sx = 31
+    modifyX = FALSE
+    y = 0
+    sy = 31
+    modifyY = FALSE
+    z = 0
+    sz = 31
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = TRUE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module XMarkerListConvert {
+  internal  {
+    frame = "-103 1853 144 56"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "1983 163 282 50"
+        sizeHint = "282 50"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = XMarkerListConvert
+    conversionModeField = "World to voxel coords"
+    isConvertVectorComponents = TRUE
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "-32 3862 96 56"
+    moduleGroupName = LoadImage
+    windows  {
+      window _default {
+        geometry = "1225 669 311 357"
+        sizeHint = "311 357"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "110 444 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageLoad
+    filename = ""
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module XMarkerAtIndex {
+  internal  {
+    frame = "-91 1757 120 56"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "1984 571 290 326"
+        sizeHint = "290 326"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = XMarkerAtIndex
+    index = 0
+    autoUpdate = TRUE
+  }
+}
+module Arithmetic0 {
+  internal  {
+    frame = "81 1841 144 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "1984 268 459 241"
+        sizeHint = "446 241"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = VectorLength_inPixel
+    debugLevel = 0
+    arg1 = "0 0 0"
+    arg1X = 0
+    arg1XAsVec = FALSE
+    operation = Length
+    arg2 = "0 0 0"
+    arg2X = 0
+    arg2XAsVec = FALSE
+    resultsAsPercent = FALSE
+    formatString = ""
+  }
+}
+module Arithmetic0 {
+  internal  {
+    frame = "81 1761 144 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "-679 595 459 241"
+        sizeHint = "446 241"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PixelSizeFromVector
+    debugLevel = 0
+    arg1 = "22 -51 0"
+    arg1X = 22
+    arg1XAsVec = FALSE
+    operation = Divide
+    arg2 = "0 0 0"
+    arg2X = 0
+    arg2XAsVec = FALSE
+    resultsAsPercent = FALSE
+    formatString = ""
+  }
+}
+module Switch {
+  internal  {
+    frame = "88 3634 96 64"
+    moduleGroupName = LoadImage
+    windows  {
+      window _default {
+        geometry = "867 597 200 64"
+        sizeHint = "200 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = InputImage
+    currentInput = 0
+    numberOfInputs = 2
+  }
+}
+module SubImage {
+  internal  {
+    frame = "-738 1683 88 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "2416 426 395 533"
+        sizeHint = "395 533"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1998 504 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = sub
+    boxInput = "0 0 0 0 0 0 -1 -1 -1 -1 -1 -1"
+    autoApplyBox = FALSE
+    correctForNegativeSubImageExtents = TRUE
+    enableBoxClamping = TRUE
+    x = 3233.39501953125
+    sx = 5391.7373046875
+    modifyX = TRUE
+    y = 1841.18151855469
+    sy = 3562.91284179688
+    modifyY = TRUE
+    z = 0
+    sz = 0
+    modifyZ = FALSE
+    c = 0
+    sc = 0
+    modifyC = FALSE
+    t = 0
+    st = 0
+    modifyT = FALSE
+    u = 0
+    su = 0
+    modifyU = FALSE
+    fillValue = 0
+    mode = VoxelStartEnd
+    autoApply = TRUE
+  }
+}
+module SoView2DRectangle {
+  internal  {
+    frame = "-33 1219 144 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "82 548 411 504"
+        sizeHint = "411 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = rect
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 0.979525029659271 0.38740399479866"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = RELEASED
+    button3 = RELEASED
+    shift = PRESSED
+    control = RELEASED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = FALSE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = TRUE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = CROSS_CURSOR
+    startWorldPos = "3233.39501953125 1841.18151855469 -1"
+    endWorldPos = "5391.7373046875 3562.91284179688 -1"
+    blendInside = 0.14
+    blendOnto = 0.14
+    blendOutside = 0
+    lineBlendInside = 0.80000001
+    lineBlendOnto = 1
+    lineBlendOutside = 0.34999999
+    resetToImage = FALSE
+    selectOutside = TRUE
+    allowDrag = TRUE
+    cooperative = FALSE
+    shadeExterior = 0
+  }
+}
+module Switch {
+  internal  {
+    frame = "-777 1451 160 64"
+    moduleGroupName = Scale_and_ROI
+    windows  {
+      window _default {
+        geometry = "-1206 609 200 64"
+        sizeHint = "200 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SelectRegionOfInterest
+    currentInput = 1
+    numberOfInputs = 2
+  }
+}
+connections  {
+  setFilenameAsPatientID.input0 = ImageLoad.output0
+  setFilenameAsPatientID.tagValue2 = ImageLoad.filename
+  Scale1.input0 = MinMaxScan.output0
+  DecomposeVector_2.v = rect.endWorldPos
+  DecomposeVector_1.v = rect.startWorldPos
+  Set_VS_to_1.input0 = ShowOriginalImage.output0
+  ShowOriginalImage.input0 = InvertImage.output0
+  ShowOriginalImage.input1 = Scale1.output0
+  ShowOriginalImage.currentInput = SoMouseGrabber.altPressed
+  setPageSize.input0 = SelectRegionOfInterest.output0
+  View2D.inImage = Set_VS_to_1.output0
+  View2D.inInvPreLUT = ScalingVector.self
+  View2D.inInvPostLUT = SoGroup.self
+  SoGroup.children = "SoMouseGrabber.self rect.self View2DExtensions.outNode"
+  View2DExtensions.inLUT = Set_VS_to_1.output0
+  HSV_H.input0 = RGB2HSV.output0
+  HSV_H.sc = HSV_H.c
+  RGB2HSV.input0 = MinMaxScan.output0
+  HSV_V.input0 = RGB2HSV.output0
+  HSV_V.sc = HSV_V.c
+  HSV_S.input0 = RGB2HSV.output0
+  HSV_S.sc = HSV_S.c
+  R.input0 = MinMaxScan.output0
+  R.sc = R.c
+  B.input0 = MinMaxScan.output0
+  B.sc = B.c
+  G.input0 = MinMaxScan.output0
+  G.sc = G.c
+  Scale.input0 = ColorChannel.output0
+  ImagePropertyConvert_setVoxelSize_2.input0 = Switch1.output0
+  ImagePropertyConvert_setVoxelSize_2.worldMatrix = ImagePropertyConvert_setVoxelSize_1.worldMatrix
+  Switch1.input0 = MinMaxScan.output0
+  Switch1.input1 = SubImage1.output0
+  Switch1.currentInput = SelectRegionOfInterest.currentInput
+  SubImage1.input0 = MinMaxScan.output0
+  SubImage1.x = DecomposeVector_1.x
+  SubImage1.sx = DecomposeVector_2.x
+  SubImage1.y = DecomposeVector_1.y
+  SubImage1.sy = DecomposeVector_2.y
+  MinMaxScan.input0 = InputImage.output0
+  invert_bg_leaf.input0 = Scale.output0
+  InvertImage.input0 = Scale.output0
+  InvertImage.input1 = invert_bg_leaf.output0
+  ImagePropertyConvert_setVoxelSize_1.input0 = setPageSize.output0
+  YUV_U.input0 = RGB2YUV.output0
+  YUV_U.sc = YUV_U.c
+  YUV_V.input0 = RGB2YUV.output0
+  YUV_V.sc = YUV_V.c
+  RGB2YUV.input0 = MinMaxScan.output0
+  ColorChannel.input0 = MinMaxScan.output0
+  ColorChannel.input1 = R.output0
+  ColorChannel.input2 = G.output0
+  ColorChannel.input3 = B.output0
+  ColorChannel.input4 = YUV_Y.output0
+  ColorChannel.input5 = YUV_U.output0
+  ColorChannel.input6 = YUV_V.output0
+  ColorChannel.input7 = HSV_H.output0
+  ColorChannel.input8 = HSV_S.output0
+  ColorChannel.input9 = HSV_V.output0
+  YUV_Y.input0 = RGB2YUV.output0
+  YUV_Y.sc = YUV_Y.c
+  XMarkerListConvert.input0 = Set_VS_to_1.output0
+  XMarkerListConvert.inputXMarkerList = ScalingVector.outXMarkerList
+  XMarkerAtIndex.inputXMarkerList = XMarkerListConvert.outputXMarkerList
+  VectorLength_inPixel.arg1 = XMarkerAtIndex.vector
+  PixelSizeFromVector.arg2X = VectorLength_inPixel.resultX
+  InputImage.input0 = setFilenameAsPatientID.output0
+  sub.input0 = InvertImage.output0
+  sub.x = DecomposeVector_1.x
+  sub.sx = DecomposeVector_2.x
+  sub.y = DecomposeVector_1.y
+  sub.sy = DecomposeVector_2.y
+  rect.drawingOn = rect.editingOn
+  rect.editingOn = SelectRegionOfInterest.currentInput
+  rect.blendOnto = rect.blendInside
+  SelectRegionOfInterest.input0 = InvertImage.output0
+  SelectRegionOfInterest.input1 = sub.output0
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 132
+        objectName = LoadImage
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 148
+        objectName = Colorchannel
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 188
+        objectName = InvertImage
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 207
+        objectName = Scale_and_ROI
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNoteItem {
+        uniqueId = 416
+        objectName = ""
+        parentUniqueId = 207
+        frame = "-763 1205 235 109"
+        backgroundColor  {
+          r = 252
+          g = 242
+          b = 2
+          a = 255
+        }
+        text = "PageSize to 64 x 64"
+        titleText = "set PageSize"
+        isCollapsed = True
+        titleFrame = "-758 1210 119 22"
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 336
+        objectName = CroppedOriginalImage
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 412
+        objectName = setScale
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}

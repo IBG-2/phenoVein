@@ -1,0 +1,500 @@
+// MDL v1 utf8
+
+// Copyright (c) 2015, Forschungszentrum Jülich GmbH
+// All rights reserved.
+// Contributors: Jonas Bühler, Daniel Pflugfelder, Siegfried Jahnke
+// Address: Institute of Bio- and Geosciences, Plant Sciences (IBG-2), Forschungszentrum Jülich GmbH, 52428 Jülich, Germany
+// 
+// Redistribution and use in source and binary forms, with or without modification,
+// are permitted provided that the following conditions are met:
+//  1. Redistributions of source code must retain the above copyright notice, this
+//     list of conditions and the following disclaimer.
+//  2. Redistributions in binary form must reproduce the above copyright notice,
+//     this list of conditions and the following disclaimer in the documentation
+//     and/or other materials provided with the distribution.
+//  3. Neither the name of the copyright holder nor the names of its contributors
+//     may be used to endorse or promote products derived from this software without
+//     specific prior written permission.
+// 
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+// IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+// INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+// BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+// LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+// OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+// OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+network  {
+  watchlist = ""
+}
+module BaseBypass {
+  internal  {
+    frame = "6037 -3115 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "848 582 239 94"
+        sizeHint = "239 94"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "226 331 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = BaseBypass
+    bypass = FALSE
+    noBypass = TRUE
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "5757 -2331 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "747 502 443 255"
+        sizeHint = "441 255"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan
+    updateMode = AutoUpdate
+    typeSelect = Double
+    preferUnsigned = TRUE
+  }
+}
+module Histogram {
+  internal  {
+    frame = "6209 -2800 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1378 75 399 354"
+        sizeHint = "399 354"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Histogram3
+    useMask = TRUE
+    xRange = "Dynamic Min/Max"
+    maskMode = Weights
+    curveType = Line
+    curveStyle = 0
+    curveTitle = ""
+    updateMode = AutoClear
+    useStepFunction = FALSE
+    useBinSizeOneRepresentation = TRUE
+    useBackgroundValue = TRUE
+    backgroundValue = 0
+    binSize = 1
+    maxBinCount = 25000000
+  }
+}
+module Histogram {
+  internal  {
+    frame = "6049 -2800 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "963 74 399 354"
+        sizeHint = "399 354"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Histogram2
+    useMask = TRUE
+    xRange = "Dynamic Min/Max"
+    maskMode = Weights
+    curveType = Line
+    curveStyle = 0
+    curveTitle = ""
+    updateMode = AutoClear
+    useStepFunction = FALSE
+    useBinSizeOneRepresentation = TRUE
+    useBackgroundValue = TRUE
+    backgroundValue = 0
+    binSize = 1
+    maxBinCount = 25000000
+  }
+}
+module TestPattern {
+  internal  {
+    frame = "5889 -2696 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "195 143 281 422"
+        sizeHint = "281 422"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = XRamp
+    sizeX = 1972
+    sizeY = 1193
+    sizeZ = 1
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = float
+    fillValue = 1
+    autoApply = FALSE
+    pattern = XRamp
+    voxelSize = "1 1 1"
+    gradient = "0 0 0"
+    eigenValues = "1 0 -1"
+    offDiagonalElements = "0 0 0"
+    fillValue2 = 1972
+    pageSizeX = 1972
+    pageSizeY = 1193
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+  }
+}
+module Histogram {
+  internal  {
+    frame = "5889 -2800 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "547 74 399 354"
+        sizeHint = "399 354"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Histogram1
+    useMask = TRUE
+    xRange = "Dynamic Min/Max"
+    maskMode = Weights
+    curveType = Line
+    curveStyle = 0
+    curveTitle = ""
+    updateMode = AutoClear
+    useStepFunction = FALSE
+    useBinSizeOneRepresentation = TRUE
+    useBackgroundValue = TRUE
+    backgroundValue = 0
+    binSize = 1
+    maxBinCount = 25000000
+  }
+}
+module Histogram {
+  internal  {
+    frame = "5457 -2823 160 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "129 73 399 354"
+        sizeHint = "399 354"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = Histogram_objectSizes
+    useMask = TRUE
+    xRange = "Dynamic Min/Max"
+    maskMode = Weights
+    curveType = Line
+    curveStyle = 0
+    curveTitle = ""
+    updateMode = AutoClear
+    useStepFunction = FALSE
+    useBinSizeOneRepresentation = TRUE
+    useBackgroundValue = TRUE
+    backgroundValue = 0
+    binSize = 1
+    maxBinCount = 25000000
+  }
+}
+module XMarkerListContainer {
+  internal  {
+    frame = "6001 -2963 176 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "717 381 513 497"
+        sizeHint = "500 497"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = cchistMarkerListContainer
+    listString = ""
+    numItems = 0
+    index = 0
+    persistent = FALSE
+    listStringEnable = FALSE
+    applySelect = FALSE
+    id = -1
+    name = ""
+    newName = ""
+    overflowMode = None
+    maxSize = 0
+    useInsertTemplate = FALSE
+    posXYZ = "0 0 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module SoDiagram2D {
+  internal  {
+    frame = "5505 -2899 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "696 353 543 552"
+        sizeHint = "543 552"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoDiagram2D
+    minX = 0
+    maxX = 2
+    minY = 0
+    maxY = 1
+    scaleX = 1
+    scaleY = 1
+    autoRangeX = TRUE
+    autoRangeY = TRUE
+    axisColor = "1 1 1"
+    axisRotation = AXIS_ROTATION_LEFT_BOTTOM
+    titleFontHeight = 14
+    drawDiagramTitle = FALSE
+    diagramTitleString = ""
+    drawGrid = FALSE
+    gridColor = "0.349999994039536 0.349999994039536 0.349999994039536"
+    drawLegend = FALSE
+    legendPlacement = LEGEND_UPPER_RIGHT
+    legendFontHeight = 12
+    autoLimitLegendFontHeight = FALSE
+    zoomAnimationEase = 0.5
+    zoomAnimationEpsilon = 0.0099999998
+    useZoomRestrictions = FALSE
+    minZoomFactor = 0.1
+    maxZoomFactor = 10
+    drawChildrenExtensions = TRUE
+    forwardEventsToChildrenExtensions = TRUE
+    changeLineOpacityForHighlightedCurves = FALSE
+    curveLineOpacityHighlighted = 1
+    changeAreaOpacityForHighlightedCurves = FALSE
+    curveAreaOpacityHighlighted = 1
+    changeLineOpacityForNotHighlightedCurves = FALSE
+    curveLineOpacityNotHighlighted = 0.30000001
+    changeAreaOpacityForNotHighlightedCurves = FALSE
+    curveAreaOpacityNotHighlighted = 0.30000001
+    changeLineStyleForHighlightedCurves = FALSE
+    curveLineStyleHighlighted = 1
+    changeLineStyleForNotHighlightedCurves = FALSE
+    curveLineStyleNotHighlighted = 1
+    curveIndexHighlighted = ""
+    borderH = 36
+    borderV = 27
+    autoBorderH = TRUE
+    autoBorderV = TRUE
+    drawAxisX = TRUE
+    drawAxisY = TRUE
+    drawTicksX = TRUE
+    drawTicksY = TRUE
+    drawLabelsX = TRUE
+    drawLabelsY = TRUE
+    drawAxisTitleX = FALSE
+    drawAxisTitleY = FALSE
+    axisTitleStringX = "X [dn]"
+    axisTitleStringY = "Y [dn]"
+    axisTitleFontHeightX = 12
+    axisTitleFontHeightY = 12
+    axisLabelFontHeightX = 12
+    axisLabelFontHeightY = 12
+    curveColor = "1 1 1"
+    lineStyle = LINE_STYLE_SOLID
+    markerType = MARKER_TYPE_NONE
+    markerSize = 10
+    lineWidth = 1
+    antiAlias = TRUE
+    areaOpacity = 0.5
+    lineOpacity = 1
+    stylePaletteMode = STYLE_PALETTE_INDEX
+  }
+}
+module SoRenderArea {
+  internal  {
+    frame = "5505 -2995 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _viewer {
+        geometry = "371 121 925 794"
+        sizeHint = "400 400"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = SoRenderArea
+    renderCaching = AUTO
+    boundingBoxCaching = AUTO
+    renderCulling = AUTO
+    pickCulling = AUTO
+    border = FALSE
+    background = "0 0 0"
+    transparency = BLEND
+    antialiasing = FALSE
+    antialiasingNumPasses = 1
+    hiResRendering = FALSE
+    useSampleBuffers = FALSE
+    numSamples = 8
+    grabKeyFocus = TRUE
+    snapshotFormat = SNAPSHOT_RGB
+    outputAviFile = ""
+    autoRedrawWhenRecording = TRUE
+    frameRate = 7
+    frameRateAvi = 15
+    status = ready
+    outputSnapshotFile = none
+    outputSnapshotFileWritten = none
+    autoIncreaseFile = TRUE
+    showSnapshotWithShell = FALSE
+    snapCount = 0
+    inputDevicesList = ""
+  }
+}
+module TestPattern {
+  internal  {
+    frame = "6049 -2696 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "491 141 281 422"
+        sizeHint = "281 422"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = YRamp
+    sizeX = 1972
+    sizeY = 1193
+    sizeZ = 1
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = float
+    fillValue = 1
+    autoApply = FALSE
+    pattern = YRamp
+    voxelSize = "1 1 1"
+    gradient = "0 0 0"
+    eigenValues = "1 0 -1"
+    offDiagonalElements = "0 0 0"
+    fillValue2 = 1193
+    pageSizeX = 1972
+    pageSizeY = 1193
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+  }
+}
+module TestPattern {
+  internal  {
+    frame = "6209 -2696 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "789 142 281 422"
+        sizeHint = "281 422"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "717 329 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ZRamp
+    sizeX = 1972
+    sizeY = 1193
+    sizeZ = 1
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = float
+    fillValue = 1
+    autoApply = FALSE
+    pattern = ZRamp
+    voxelSize = "1 1 1"
+    gradient = "0 0 0"
+    eigenValues = "1 0 -1"
+    offDiagonalElements = "0 0 0"
+    fillValue2 = 1
+    pageSizeX = 1972
+    pageSizeY = 1193
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+  }
+}
+connections  {
+  BaseBypass.baseIn0 = cchistMarkerListContainer.outXMarkerList
+  Histogram3.input0 = MinMaxScan.output0
+  Histogram3.input1 = ZRamp.output0
+  Histogram2.input0 = MinMaxScan.output0
+  Histogram2.input1 = YRamp.output0
+  XRamp.pageSizeX = XRamp.sizeX
+  XRamp.pageSizeY = XRamp.sizeY
+  Histogram1.input0 = MinMaxScan.output0
+  Histogram1.input1 = XRamp.output0
+  Histogram_objectSizes.input0 = MinMaxScan.output0
+  SoDiagram2D.inCurveList = Histogram_objectSizes.outputHistogramCurve
+  SoRenderArea.children = SoDiagram2D.self
+  YRamp.pageSizeX = YRamp.sizeX
+  YRamp.pageSizeY = YRamp.sizeY
+  ZRamp.pageSizeX = ZRamp.sizeX
+  ZRamp.pageSizeY = ZRamp.sizeY
+}
+networkModel = ""
